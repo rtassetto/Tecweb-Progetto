@@ -2,3 +2,76 @@ html {
     margin: 0;
     padding: 0;
 }
+
+
+header{
+    border:1px solid black;
+}
+
+#logo{
+    width:50%;
+}
+
+
+nav {
+
+    border:1px solid black;
+    display:block;
+}
+
+nav ul{
+    margin:0;
+    padding:10px;
+}
+nav ul li{
+    margin-left:10%;
+    width:20%;
+    border:1px solid black;
+    list-style-type: none;
+    display: inline;
+}
+
+#breadcrumb{
+    margin-top:5px;
+    border:1px solid black;
+    padding:5px;
+    
+}
+
+#login{
+    margin-top:5px;
+    padding: 5px;
+    border:1px solid black;
+}
+
+section{
+    float:left;
+    width:48%;
+    margin-top:5px;
+    padding: 5px;
+    border:1px solid black;    
+}
+
+aside{
+    width:49%;
+    margin-left:50%;
+    margin-top:5px;
+    padding: 5px;
+    border:1px solid black;    
+}
+
+aside img{
+    padding-top:45px;
+    width:100%;
+}
+footer{
+    margin-top:5px;
+    display:block;
+    padding: 5px;
+    border:1px solid black;    
+}
+
+footer img{
+    float:right;
+}
+
