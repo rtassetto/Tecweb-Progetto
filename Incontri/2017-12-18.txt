@@ -10,3 +10,18 @@ INCONTRO DEL 15/12/2017
 3.Capire che documenti fare
 4.Dare un'organizzazione al lavoro
 
+
+#RISULTATI
+
+1.Deciso di fare un sito per vendere pezzi per pc.
+2.TexStudio per Latex,visto gitKraken
+3.Relazione su Fasi di Progettazione,Fasi di realizzazione e Test(Validazione,test di accessibilità). Scrivere il ruolo dei singoli componenti.
+Target di utenti del sito.
+prima pagina: indirizzo web del sito,password degli utenti(admin,admin)(user,user),mail del referente.
+php con permessi corretti,link relativi.
+Guardare relazione di Mirko.
+4.Davide:Relazione
+  Riccardo:html,css(login,menu,contenuto)
+  Matteo:Definire le tabelle del database
+  
+
