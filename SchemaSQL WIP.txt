@@ -1,0 +1,37 @@
+Account{
+	*username varchar(20)
+	password varchar(20)
+	email varchar(40)
+	admin bool
+}
+
+PurchaseHistory{
+	*orderid int
+	-username
+	-id
+	data char(10)
+	voto int
+	quantita int
+}
+
+Carrello{
+	*(-username
+	-id)
+	quantita int
+}
+
+Recensione{
+	*(-id
+	-username)
+	review varchar(500/1000)
+}
+
+Prodotto{
+	*id
+	nome varchar(40)
+	categoria enum
+	desc varchar(500)
+	Valutazione int
+	prezzo float / int int
+}
+
