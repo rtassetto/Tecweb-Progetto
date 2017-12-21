@@ -19,25 +19,30 @@
 </head>
     
 <body>
+    
+
     <header>
-        <img id="logo" src="images/img-home.png" alt="Immagine libri" />
+        <!--<img id="logo" src="images/unipd_logo.png" alt="Logo sito"/>-->        
+        <nav>
+            <ul>
+                <li><a class="current" href="">Home</a></li>
+                <li><a href="">Contatti</a></li>
+                <li><a href="">Chi siamo</a></li>
+                <li><a href="">Prodotti</a></li>
+                <li><button id="searchButton" type="submit">Go</button><input id="search" type="text" placeholder="Cerca..."> </li>
+            </ul>
+        </nav>
     </header>
     
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li><a href="">Voce2</a></li>
-            <li><a href="">Voce3</a></li>
-            <li><a href="">Voce4</a></li>
-            <li><a href="">Voce5</a></li>
-            <li><a href="">Voce6</a></li>
-        </ul>
-    </nav>
+    
+    
+    <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
+    
     
     <div id="breadcrumb"> 
         <p> Ti trovi in: Home </p> 
     </div>
-    
+    <!--
     <form id="login" action="login.php" method="post">
 
       <div class="container">
@@ -55,9 +60,12 @@
         <button type="button" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
-    </form>
+    </form> -->
     
-    <section>
+
+
+    
+    <section id="content1">
         <h1>Lorem Ipsum</h1>
         <article>
             <h2>Il passaggio standard del Lorem Ipsum, utilizzato sin dal sedicesimo secolo</h2>
@@ -70,6 +78,28 @@
         </article>
     
     </section>
+    
+    
+     <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Sei già registrato?<a href="#">Accedi</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Non sei registrato? <a href="#">Crea un account</a></p>
+    </form>
+  </div>
+    
+    
+    
+    
+    
     
     <aside>
         <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
