@@ -1,16 +1,16 @@
 Account{
 	*username varchar(20)
 	password varchar(20)
-	email varchar(40)
+	email  unique varchar(40)
 	admin bool
+	datacreazione datetime
 }
 
 PurchaseHistory{
 	*orderid int
 	-username
 	-id
-	data char(10)
-	voto int
+	data datetime
 	quantita int
 }
 
@@ -21,9 +21,11 @@ Carrello{
 }
 
 Recensione{
-	*(-id
-	-username)
+	*(-username
+	-id)
 	review varchar(500/1000)
+	voto int
+	data datetime
 }
 
 Prodotto{
