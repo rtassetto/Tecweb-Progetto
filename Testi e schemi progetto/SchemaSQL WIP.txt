@@ -8,21 +8,21 @@ Account{
 
 PurchaseHistory{
 	*orderid int
-	-username
-	-id
+	-username(Account)
+	-id(Prodotto)
 	data datetime
 	quantita int
 }
 
 Carrello{
-	*(-username
-	-id)
+	*(-username(Account)
+	-id(Prodotto))
 	quantita int
 }
 
 Recensione{
-	*(-username
-	-id)
+	*(-username(Account)
+	-id(Prodotto))
 	review varchar(500/1000)
 	voto int
 	data datetime
@@ -37,3 +37,13 @@ Prodotto{
 	prezzo float / int int
 }
 
+Bundles{
+	nome varchar(25)
+	desc varchar(300)
+}
+
+Bundleparts{
+	-nome(Bundles)
+	-id(Prodotto)
+	data datetime
+}
