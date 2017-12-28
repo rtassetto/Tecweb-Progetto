@@ -84,15 +84,27 @@ nav .current:hover{
 
 
 section{
-    float:left;
-    width:48%;
     margin-top:5px;
     padding: 5px;
     border:1px solid black;    
 }
 
-#content1{
+#content1 {
     float:left;
+    width:49%;
+}
+
+#content2{
+    margin-left:50%;
+}
+
+#content3{
+    width:49%;
+    margin-right:0;
+}
+
+#content4{
+    margin-left:50%;
 }
 
 aside{
