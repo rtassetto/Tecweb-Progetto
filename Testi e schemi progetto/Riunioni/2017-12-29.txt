@@ -1,0 +1,9 @@
+Usiamo Section e non article per html5.
+
+Vista connessione php (verrà pushata).
+
+visto come visualizzare le pagine php.
+
+nel campo descrizione va messo codice html.
+
+sistemata e pushata la classe di prova per la connessione e utilizzo dati del DB
