@@ -6,6 +6,15 @@ Account{
 	datacreazione datetime
 }
 
+Prodotto{
+	*id
+	nome varchar(40)
+	categoria enum
+	desc varchar(500)
+	Valutazione int
+	prezzo float / int int
+}
+
 PurchaseHistory{
 	*orderid int
 	-username(Account)
@@ -28,22 +37,13 @@ Recensione{
 	data datetime
 }
 
-Prodotto{
-	*id
-	nome varchar(40)
-	categoria enum
-	desc varchar(500)
-	Valutazione int
-	prezzo float / int int
-}
-
 Bundles{
 	nome varchar(25)
 	desc varchar(300)
+	data datetime
 }
 
 Bundleparts{
 	-nome(Bundles)
 	-id(Prodotto)
-	data datetime
 }
