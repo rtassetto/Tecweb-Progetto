@@ -46,6 +46,42 @@
     
     
     <section id="content_prodotti">
+        <table>
+            <thead>
+                <tr>
+                    <th>Prodotto</th>
+                    <th>Tipo</th>
+                    <th>Descrizione</th>
+                    <th>Valutazione</th>
+                    <th>Prezzo</th>
+                </tr>
+            </thead>
+        <?php
+            require "php-script\connessione.php";
+            $DB=new DBAccess();
+            $conn=$DB->openc();
+            $P=$DB->getP();
+            foreach($P as $x){
+                echo "<tr>";
+                echo "<td>";
+                echo $x["nome"];
+                echo "</td>";
+                echo "<td>";
+                echo $x["categoria"];
+                echo "</td>";
+                echo "<td>";
+                echo $x["descrizione"];
+                echo "</td>";
+                echo "<td>";
+                echo $x["Valutazione"];
+                echo "</td>";
+                echo "<td>";
+                echo $x["prezzo"];
+                echo "</td>";
+                echo "</tr>";
+            }
+        ?>
+        </table>    
     
     
     </section>
