@@ -3,6 +3,10 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
+<?php
+    require  "php-script/connessione.php";
+    require  "php-script/utente.php";
+?>
 
 <html lang="it">
 <head>    
@@ -38,20 +42,15 @@
     
     
     <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Sei già registrato?<a href="#">Accedi</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+    
+    <form class="login-form" method="post" action="home.php">
+      <input type="text" name="nome_utente" placeholder="username"/>
+      <input type="password" name="pass" placeholder="password"/>
       <button>login</button>
       <p class="message">Non sei registrato? <a href="#">Crea un account</a></p>
     </form>
   </div>
+  
     
     <footer>
         <p>

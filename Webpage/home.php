@@ -4,6 +4,19 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
 
+ <?php
+     require "php-script/connessione.php";
+     require  "php-script/utente.php";
+     $DB=new DBAccess();
+     $conn=$DB->openc();
+     $User=new utente();
+     $pls=$User->isR($_POST["nome_utente"],$_POST["pass"],$DB);
+     if($pls){
+         echo "<h1>YEEEESSSS</h1>";
+     }
+         
+    
+    ?>
 <html lang="it">
 <head>    
     <meta charset="utf-8">
@@ -25,9 +38,9 @@
         <img id="logo" src="images/Capcom_logo.png" alt="Logo sito"/>        
         <nav>
             <ul>
-                <li><a class="current" href="home.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="chi_siamo.html">Chi siamo</a></li>
+                <li><a class="current" href="home.php">Home</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="chi_siamo.php">Chi siamo</a></li>
                 <li><a href="prodotti.php">Prodotti</a></li>
                 <li><button id="searchButton" type="submit">Go</button><input id="search" type="text" placeholder="Cerca..."> </li>
             </ul>
@@ -62,7 +75,7 @@
       </div>
     </form> -->
     
-
+   
 
     
     <section id="content1">
