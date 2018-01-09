@@ -24,7 +24,6 @@
         $querySelect= "SELECT * FROM prodotto";
         
 		$queryResult= mysqli_query($this->connessione, $querySelect);
-        if($queryResult){echo "ok";}
         $result=array();
         while($row=mysqli_fetch_assoc($queryResult)){
             $single=array("nome"=>$row["nome"],
