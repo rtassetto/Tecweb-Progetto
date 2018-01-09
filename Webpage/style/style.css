@@ -47,17 +47,10 @@ nav a:hover{
     color:black;
 }
 
-nav .current{
+nav a:active{
+    background-color:deepskyblue;
     color:white;
-    background-color:#0080ff;
 }
-
-nav .current:hover{
-    color:white;
-    background-color:#0080ff;
-    text-decoration:none;
-}
-
 #search {
     float:right;
     margin:14px 1px 14px 16px;
@@ -118,6 +111,27 @@ aside{
 aside img{
     padding-top:45px;
     width:100%;
+}
+
+
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+
+table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #0080ff;
+    color: white;
 }
 
 footer{

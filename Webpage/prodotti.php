@@ -46,7 +46,7 @@
     
     
     <section id="content_prodotti">
-        <table>
+        <table id="products">
             <thead>
                 <tr>
                     <th>Prodotto</th>
