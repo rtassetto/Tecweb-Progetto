@@ -35,5 +35,21 @@
         }
         return $result;
     }
+       
+       public function ricerca($testo){
+        $querySelect= "SELECT * FROM prodotto WHERE(nome LIKE '%" . $testo . "%') OR(categoria LIKE '%" . $testo . "%') OR(descrizione LIKE '%" . $testo . "%') ";
+        
+		$queryResult= mysqli_query($this->connessione, $querySelect);
+        $result=array();
+        while($row=mysqli_fetch_assoc($queryResult)){
+            $single=array("nome"=>$row["nome"],
+                         "categoria"=>$row["categoria"],
+                         "descrizione"=>$row["descrizione"],
+                         "Valutazione"=>$row["Valutazione"],
+                         "prezzo"=>$row["prezzo"]);
+            array_push($result,$single);
+        }
+        return $result;
+    }
    }
 ?>

@@ -40,13 +40,12 @@
             <ul>
                 <li><a class="current" href="home.php">Home</a></li>
                 <li><a href="login.php">Login</a></li>
-<<<<<<< Updated upstream
-                <li><a href="chi_siamo.php">Chi siamo</a></li>
-=======
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
->>>>>>> Stashed changes
                 <li><a href="prodotti.php">Prodotti</a></li>
-                <li><button id="searchButton" type="submit">Go</button><input id="search" type="text" placeholder="Cerca..."> </li>
+                <li><form action="php-script/cerca.php" method="post">
+                    <button id="searchButton" type="submit">Go</button>
+                    <input id="search" type="text" name="testo" placeholder="Cerca..."></form> 
+                </li>
             </ul>
         </nav>
     </header>

@@ -26,11 +26,14 @@
         <img id="logo" src="images/Capcom_logo.png" alt="Logo sito"/>        
         <nav>
             <ul>
-                <li><a class="current" href="home.html">Home</a></li>
-                <li><a>Login</a></li>
+                <li><a class="current" href="home.php">Home</a></li>
+                <li><a href="login.php">Login</a></li>
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
-                <li><a href="prodotti.html">Prodotti</a></li>
-                <li><button id="searchButton" type="submit">Go</button><input id="search" type="text" placeholder="Cerca..."> </li>
+                <li><a href="prodotti.php">Prodotti</a></li>
+                <li><form action="php-script/cerca.php" method="post">
+                    <button id="searchButton" type="submit">Go</button>
+                    <input id="search" type="text" name="testo" placeholder="Cerca..."></form> 
+                </li>
             </ul>
         </nav>
     </header>
