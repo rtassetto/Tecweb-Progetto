@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 <!--[if lt IE 9]>
@@ -10,7 +14,7 @@
      $DB=new DBAccess();
      $conn=$DB->openc();
      $User=new utente();
-     $pls=$User->isR($_POST["nome_utente"],$_POST["pass"],$DB);
+     $pls=$User->isR($_POST["username"],$_POST["password"],$DB);
      if($pls){
          echo "<h1>YEEEESSSS</h1>";
      }
@@ -39,9 +43,16 @@
         <nav>
             <ul>
                 <li><a class="current" href="home.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
                 <li><a href="prodotti.php">Prodotti</a></li>
+				<?php
+				if(isset($_SESSION['login_user'])){
+				echo '<li><a href="account.php">Account</a></li>';
+				}
+				else{
+				echo '<li><a href="login.php">Login</a></li>';
+				}
+				?>
                 <li><form action="php-script/cerca.php" method="post">
                     <button id="searchButton" type="submit">Go</button>
                     <input id="search" type="text" name="testo" placeholder="Cerca..."></form> 
@@ -97,18 +108,13 @@
     
 
     
-    <section id="content2">
-        <h1>Lorem Ipsum</h1>
-        <article>
-            <h2>Il passaggio standard del Lorem Ipsum, utilizzato sin dal sedicesimo secolo</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        </article>
-    
-        <article>
-            <h2>La sezione 1.10.32 del "de Finibus Bonorum et Malorum", scritto da Cicerone nel 45 AC</h2>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-        </article>
-    
+    <section id="LatestBundles">
+        <h1>Gli ultimi Bundle che abbiamo creato</h1>
+		<table>
+		<?php
+		$DB->getLatestBundles();
+		?>  
+		</table>
     </section>
     
     

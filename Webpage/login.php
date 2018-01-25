@@ -1,12 +1,30 @@
+<?php
+require  "php-script/connessione.php";
+require  "php-script/utente.php";
+
+session_start();
+if(isset($_SESSION['login_user'])){
+	header("location: home.php");
+}
+if(isset($_POST["submit"])){
+	$username=$_POST["nome_utente"];
+	$password=$_POST["pass"];
+	$DB=new DBAccess();
+	$DB->openc();
+	$query = mysqli_query($DB->connessione,"SELECT * FROM account WHERE username='$username' AND password='$password'");
+	$rows = mysqli_num_rows($query);
+	if ($rows == 1) {
+	$_SESSION['login_user']=$username;
+	header("location: home.php");
+}
+}
+
+?>
 <!DOCTYPE html>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-<?php
-    require  "php-script/connessione.php";
-    require  "php-script/utente.php";
-?>
 
 <html lang="it">
 <head>    
@@ -44,12 +62,14 @@
     </div>
     
     
-    <div class="form">
-    
-    <form class="login-form" method="post" action="home.php">
+   <div class="form">
+    <?php
+	echo $_SESSION["login_user"];
+	?>
+    <form class="login-form" method="post" action="login.php">
       <input type="text" name="nome_utente" placeholder="username"/>
       <input type="password" name="pass" placeholder="password"/>
-      <button>login</button>
+      <input type="submit" name="submit" value="Login"/>
       <p class="message">Non sei registrato? <a href="#">Crea un account</a></p>
     </form>
   </div>
