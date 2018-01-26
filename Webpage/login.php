@@ -12,15 +12,25 @@ if(isset($_POST["submit"])){
 	$DB=new DBAccess();
 	$DB->openc();
 	$result=$DB->checkUser($username,$password);
+<<<<<<< HEAD
 	if ($result="user")
 		$_SESSION['login_user']=$username;
 		header("location: home.php");
+=======
+	if ($result="user"){
+		$_SESSION['login_user']=$username;
+		header("location: home.php");
+	}
+>>>>>>> master
 	else if($result="admin"){
 		$_SESSION['login_user']=$username;
 		$_SESSION['admin']=true;
 		//header("location: admin.php");
 	}
+<<<<<<< HEAD
 }
+=======
+>>>>>>> master
 }
 
 ?>
