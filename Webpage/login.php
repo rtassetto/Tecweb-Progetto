@@ -11,12 +11,16 @@ if(isset($_POST["submit"])){
 	$password=$_POST["pass"];
 	$DB=new DBAccess();
 	$DB->openc();
-	$query = mysqli_query($DB->connessione,"SELECT * FROM account WHERE username='$username' AND password='$password'");
-	$rows = mysqli_num_rows($query);
-	if ($rows == 1) {
-	$_SESSION['login_user']=$username;
-	header("location: home.php");
-}
+	$result=$DB->checkUser($username,$password);
+	if ($result="user"){
+		$_SESSION['login_user']=$username;
+		header("location: home.php");
+	}
+	else if($result="admin"){
+		$_SESSION['login_user']=$username;
+		$_SESSION['admin']=true;
+		//header("location: admin.php");
+	}
 }
 
 ?>
