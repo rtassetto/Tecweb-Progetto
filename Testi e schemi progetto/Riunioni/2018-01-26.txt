@@ -1,0 +1,4 @@
+ADMIN: inserimento bundle e inserimento prodotti e "gestione account".
+UTENTE: Carrello, purchase history.
+PRODOTTI: pagina del singolo prodotto.
+ricerca avanzata:ordinamento prezzo,categoria(tendina,checkbox),valutazione
