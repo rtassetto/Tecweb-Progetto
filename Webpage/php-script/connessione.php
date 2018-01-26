@@ -75,7 +75,7 @@
 	}
 	public function createBundle($nome,$descrizione,$bundleparts){
 		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione,"INSERT INTO bundle(nome, descrizione,data) VALUES('$nome','#descrizione','$data')");
+		mysqli_query($this->connessione,"INSERT INTO bundle(nome, descrizione,data) VALUES('$nome','$descrizione','$data')");
 		for($i=0;!$bundleparts[$i];$i++){
 				mysqli_query($this->connessione,"INSERT INTO Bundleparts(bundle, pezzo) VALUES('$nome','$bundleparts[$i]')");
 		}
@@ -83,8 +83,19 @@
 	public function getLatestBundles(){
 		$result=mysqli_query($this->connessione,"SELECT * FROM bundles ORDER by data desc LIMIT 6");
 		while ($row = $result->fetch_assoc()) {
-			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 20).'</p></td></tr>';
-    }
+			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 20).'...</p></td></tr>';
+		}
+	}
+	public function checkUser(){
+		$query = mysqli_query($DB->connessione,"SELECT admin FROM account WHERE username='$username' AND password='$password'");
+		$rows = mysqli_num_rows($query);
+		if ($rows == 1){
+			if ($query=0){
+			return "admin";
+			}
+			return "user";
+		}
+		return "error";
 	}
 	}
 ?>
