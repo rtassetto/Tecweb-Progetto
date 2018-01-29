@@ -97,5 +97,22 @@
 		}
 		return "error";
 	}
+    public function getCarrello($user){
+        $querySelect= "SELECT nome,categoria, descrizione, Valutazione, prezzo, quantita FROM prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
+        
+		$queryResult= mysqli_query($this->connessione, $querySelect) or die (
+			"Error in getListCharacters query: " . mysqli_error($this->connection));
+        $result=array();
+        while($row=mysqli_fetch_assoc($queryResult)){
+            $single=array("nome"=>$row["nome"],
+                         "categoria"=>$row["categoria"],
+                         "descrizione"=>$row["descrizione"],
+                         "Valutazione"=>$row["Valutazione"],
+                         "prezzo"=>$row["prezzo"],
+                         "quantita"=>$row["quantita"]);
+            array_push($result,$single);
+        }
+        return $result;
+    } 
 	}
 ?>

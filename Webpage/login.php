@@ -4,7 +4,7 @@ require  "php-script/utente.php";
 
 session_start();
 if(isset($_SESSION['login_user'])){
-	header("location: home.php");
+	//header("location: home.php");
 }
 if(isset($_POST["submit"])){
 	$username=$_POST["nome_utente"];

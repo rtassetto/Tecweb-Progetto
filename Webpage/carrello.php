@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
+<?php session_start();?>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-<?php session_start();?>
 
 <html lang="it">
 <head>    
@@ -27,14 +26,6 @@
         <nav>
             <ul>
                 <li><a class="current" href="home.php">Home</a></li>
-                <?php
-				if(isset($_SESSION['login_user'])){
-				echo '<li><a href="carrello.php">Carrello</a></li>';
-				}
-				else{
-				echo '<li><a href="login.php">Login</a></li>';
-				}
-				?>
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
                 <li><a href="prodotti.php">Prodotti</a></li>
                 <li><form action="php-script/cerca.php" method="post">
@@ -51,12 +42,12 @@
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Prodotti </p> 
+        <p> Ti trovi in: Home -> Carrello </p> 
     </div>
     
     
     
-    <section id="content_prodotti">
+    <section id="prodotticarrello">
         <table id="products">
             <thead>
                 <tr>
@@ -65,13 +56,15 @@
                     <th>Descrizione</th>
                     <th>Valutazione</th>
                     <th>Prezzo</th>
+                    <th>Quantità</th>
                 </tr>
             </thead>
         <?php
             require "php-script\connessione.php";
             $DB=new DBAccess();
             $conn=$DB->openc();
-            $P=$DB->getP();
+            $username=$_SESSION["login_user"];
+            $P=$DB->getCarrello($username);
             foreach($P as $x){
                 echo "<tr>";
                 echo "<td>";
@@ -89,12 +82,14 @@
                 echo "<td>";
                 echo $x["prezzo"];
                 echo "</td>";
+                echo "<td>";
+                echo $x["quantita"];
+                echo "</td>";
                 echo "</tr>";
             }
         ?>
         </table>    
-    
-    
+        
     </section>
     
     

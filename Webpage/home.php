@@ -13,13 +13,6 @@ session_start();
      require  "php-script/utente.php";
      $DB=new DBAccess();
      $conn=$DB->openc();
-     $User=new utente();
-     $pls=$User->isR($_POST["username"],$_POST["password"],$DB);
-     if($pls){
-         echo "<h1>YEEEESSSS</h1>";
-     }
-         
-    
     ?>
 <html lang="it">
 <head>    
@@ -47,7 +40,7 @@ session_start();
                 <li><a href="prodotti.php">Prodotti</a></li>
 				<?php
 				if(isset($_SESSION['login_user'])){
-				echo '<li><a href="account.php">Account</a></li>';
+				echo '<li><a href="carrello.php">Carrello</a></li>';
 				}
 				else{
 				echo '<li><a href="login.php">Login</a></li>';
