@@ -7,7 +7,7 @@
 <html lang="it">
 <head>    
 <?php
-	require "../general/Meta.php";
+	require "general/Meta.php";
 ?>
     <title>Prodotti</title>
 </head>
@@ -16,7 +16,7 @@
     
 
 <?php
-include "../general/Header.php";
+include "general/Header.php";
 ?>
     
     
@@ -41,7 +41,7 @@ include "../general/Header.php";
                 </tr>
             </thead>
         <?php
-            require "..\php-script\connessione.php";
+            require "php-script\connessione.php";
             $DB=new DBAccess();
             $conn=$DB->openc();
             $P=$DB->getP();
@@ -72,7 +72,7 @@ include "../general/Header.php";
     
     
 <?php
-include "../general/Footer.php";
+include "general/Footer.php";
 ?>
     
 </body>

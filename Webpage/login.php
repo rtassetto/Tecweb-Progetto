@@ -1,9 +1,9 @@
 <?php
-require  "../php-script/connessione.php";
+require  "php-script/connessione.php";
 
 session_start();
 if(isset($_SESSION['login_user'])){
-	header("location: ../home.php");
+	header("location: home.php");
 }
 if(isset($_POST["submit"])){
 	$username=$_POST["nome_utente"];
@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
 	$result=$DB->checkUser($username,$password);
 	if ($result="user"){
 		$_SESSION['login_user']=$username;
-		header("location: ../home.php");
+		header("location: home.php");
 	}
 	else if($result="admin"){
 		$_SESSION['login_user']=$username;
@@ -32,14 +32,14 @@ if(isset($_POST["submit"])){
 <html lang="it">
 <head>    
 <?php
-	require "../general/Meta.php";
+	require "general/Meta.php";
 ?>
 
     <title>Home</title>
 </head>
 
 <?php
-	include "../general/Header.php";
+	include "general/Header.php";
 ?>
     
     
@@ -59,5 +59,5 @@ if(isset($_POST["submit"])){
   
     
 <?php
-	include "../general/Footer.php";
+	include "general/Footer.php";
 ?>
