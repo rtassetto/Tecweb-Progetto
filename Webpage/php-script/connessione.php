@@ -30,7 +30,8 @@
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
                          "Valutazione"=>$row["Valutazione"],
-                         "prezzo"=>$row["prezzo"]);
+                         "prezzo"=>$row["prezzo"],
+                         "id"=>$row["id"]);
             array_push($result,$single);
         }
         return $result;
@@ -97,5 +98,59 @@
 		}
 		return "error";
 	}
+    public function getCarrello($user){
+        $querySelect= "SELECT nome,categoria, descrizione, Valutazione, prezzo, quantita, id FROM prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
+        
+		$queryResult= mysqli_query($this->connessione, $querySelect) or die (
+			"Error in getListCharacters query: " . mysqli_error($this->connessione));
+        $result=array();
+        while($row=mysqli_fetch_assoc($queryResult)){
+            $single=array("nome"=>$row["nome"],
+                         "categoria"=>$row["categoria"],
+                         "descrizione"=>$row["descrizione"],
+                         "Valutazione"=>$row["Valutazione"],
+                         "prezzo"=>$row["prezzo"],
+                         "quantita"=>$row["quantita"],
+                         "id"=>$row["id"]);
+            array_push($result,$single);
+        }
+        return $result;
+    } 
+    public function acquista($user,$id,$q){
+       $insert="INSERT INTO `purchasehistory`(`compratore`, `prodotto`, `data`, `quantita`) VALUES ('$user','$id',NOW(),'$q')";
+       mysqli_query($this->connessione, $insert);
+       $delete="DELETE FROM `carrello` WHERE username='$user' AND prodotto='$id'";
+       mysqli_query($this->connessione, $delete);
+    }
+    public function aggiungiC($id,$name){
+        $query="SELECT * FROM carrello WHERE username='$name' AND prodotto='$id'";
+        $queryResult=mysqli_query($this->connessione, $query);
+        if(mysqli_num_rows($queryResult)==0){
+            $insert="INSERT INTO `carrello`(`username`, `prodotto`, `quantita`) VALUES ('$name','$id','1')";
+            mysqli_query($this->connessione, $insert)or die (
+			"Error in aggiungiC query: " . mysqli_error($this->connessione));
+        }
+        else {
+            $update="UPDATE carrello SET quantita=quantita+1 WHERE username='$name' AND prodotto='$id' ";
+            mysqli_query($this->connessione, $update)or die (
+			"Error in aggiungiC query: " . mysqli_error($this->connessione));
+        }
+    }
+    public function getPH($name){
+        $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM purchasehistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
+        $qresult=mysqli_query($this->connessione, $query)or die (
+			"Error in getPH query: " . mysqli_error($this->connessione));
+        $result=array();
+        while($row=mysqli_fetch_assoc($qresult)){
+            $single=array("nome"=>$row["nome"],
+                         "categoria"=>$row["categoria"],
+                         "descrizione"=>$row["descrizione"],
+                         "Valutazione"=>$row["Valutazione"],
+                         "id"=>$row["id"],
+                         "data"=>$row["data"]);
+            array_push($result,$single);
+        }
+        return $result;
+    }
 	}
 ?>

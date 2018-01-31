@@ -1,18 +1,18 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
-    $P=$DB->getP();
-    foreach($P as $x){
-        $z=$x['id'];
-        if(isset($_POST[$z])){
-            $DB->aggiungiC($z,$_SESSION['login_user']);
-            echo $_POST[$z];
-            echo $z;
-            echo $_SESSION['login_user'];
+    if(isset($_POST["compra"])){
+        $C=$DB->getCarrello($_SESSION['login_user']);
+        foreach($C as $x){
+            $id=$x["id"];
+            $quantita=$x["quantita"];
+            $DB->acquista($_SESSION['login_user'],$id,$quantita);
         }
+    }
+    if(isset($_SESSION["login_user"])){
+        $P=$DB->getPH($_SESSION['login_user']);
     }
 ?>
 <!--[if lt IE 9]>
@@ -39,7 +39,7 @@ include "general/Header.php";
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Prodotti </p> 
+        <p> Ti trovi in: Home -> Purchase History </p> 
     </div>
     
     
@@ -52,7 +52,7 @@ include "general/Header.php";
                     <th>Tipo</th>
                     <th>Descrizione</th>
                     <th>Valutazione</th>
-                    <th>Prezzo</th>
+                    <th>Data</th>
                     <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
                 </tr>
             </thead>
@@ -72,13 +72,13 @@ include "general/Header.php";
                 echo $x["Valutazione"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["prezzo"]."€";
+                echo $x["data"];
                 echo "</td>";
                 if(isset($_SESSION['login_user'])){
                 $id=$x["id"];
                 echo "<td>";
-                echo "<form method='post' action='prodotti.php'>";
-                echo "<input type='submit' name='$id' value='Aggiungi al carrello'/>";
+                echo "<form method='post' action=''>";
+                echo "<input type='submit' name='$id' value='Aggiungi Recensione'/>";
                 }
                 echo "</form>";
                 echo "</td>";
