@@ -1,5 +1,20 @@
 <!DOCTYPE html>
-<?php session_start();?>
+<?php 
+    session_start();
+    require "php-script/connessione.php";
+    $DB=new DBAccess();
+    $conn=$DB->openc();
+    $P=$DB->getP();
+    foreach($P as $x){
+        $z=$x['id'];
+        if(isset($_POST[$z])){
+            $DB->aggiungiC($z,$_SESSION['login_user']);
+            echo $_POST[$z];
+            echo $z;
+            echo $_SESSION['login_user'];
+        }
+    }
+?>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -38,13 +53,10 @@ include "general/Header.php";
                     <th>Descrizione</th>
                     <th>Valutazione</th>
                     <th>Prezzo</th>
+                    <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
                 </tr>
             </thead>
         <?php
-            require "php-script\connessione.php";
-            $DB=new DBAccess();
-            $conn=$DB->openc();
-            $P=$DB->getP();
             foreach($P as $x){
                 echo "<tr>";
                 echo "<td>";
@@ -60,7 +72,15 @@ include "general/Header.php";
                 echo $x["Valutazione"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["prezzo"];
+                echo $x["prezzo"]."€";
+                echo "</td>";
+                if(isset($_SESSION['login_user'])){
+                $id=$x["id"];
+                echo "<td>";
+                echo "<form method='post' action='prodotti.php'>";
+                echo "<input type='submit' name='$id' value='Aggiungi al carrello'/>";
+                }
+                echo "</form>";
                 echo "</td>";
                 echo "</tr>";
             }

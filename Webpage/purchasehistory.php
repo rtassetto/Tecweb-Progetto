@@ -1,9 +1,19 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
+    if(isset($_POST["compra"])){
+        $C=$DB->getCarrello($_SESSION['login_user']);
+        foreach($C as $x){
+            $id=$x["id"];
+            $quantita=$x["quantita"];
+            $DB->acquista($_SESSION['login_user'],$id,$quantita);
+        }
+    }
+    if(isset($_SESSION["login_user"])){
+        $P=$DB->getPH($_SESSION['login_user']);
+    }
 ?>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,21 +31,20 @@
     
 
 <?php
-require "general/Header.php";
+include "general/Header.php";
 ?>
-    
     
     
     <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Carrello </p> 
+        <p> Ti trovi in: Home -> Purchase History </p> 
     </div>
     
     
     
-    <section id="prodotticarrello">
+    <section id="content_prodotti">
         <table id="products">
             <thead>
                 <tr>
@@ -43,13 +52,11 @@ require "general/Header.php";
                     <th>Tipo</th>
                     <th>Descrizione</th>
                     <th>Valutazione</th>
-                    <th>Prezzo</th>
-                    <th>Quantità</th>
+                    <th>Data</th>
+                    <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
                 </tr>
             </thead>
         <?php
-            $username=$_SESSION["login_user"];
-            $P=$DB->getCarrello($username);
             foreach($P as $x){
                 echo "<tr>";
                 echo "<td>";
@@ -65,21 +72,22 @@ require "general/Header.php";
                 echo $x["Valutazione"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["prezzo"]*$x["quantita"]."€";
+                echo $x["data"];
                 echo "</td>";
+                if(isset($_SESSION['login_user'])){
+                $id=$x["id"];
                 echo "<td>";
-                echo $x["quantita"];
+                echo "<form method='post' action=''>";
+                echo "<input type='submit' name='$id' value='Aggiungi Recensione'/>";
+                }
+                echo "</form>";
                 echo "</td>";
                 echo "</tr>";
-                $_SESSION["id"]=$x["id"];
-                $_SESSION["quantita"]=$x["quantita"];
             }
         ?>
-        </table>  
-        <form class="onclick" method="post" action="purchasehistory.php">
-        <input type="submit" name="compra" value="Acquista"/>
-        </form>
-        
+        </table>    
+    
+    
     </section>
     
     
