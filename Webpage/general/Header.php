@@ -9,6 +9,7 @@
 				if(isset($_SESSION['login_user'])){
 				echo '<li><a href="carrello.php">Carrello</a></li>';
                 echo '<li><a href="purchasehistory.php">Purchase History</a></li>';
+                echo '<li><a href="php-script/logout.php">Logout</a></li>';
 				}
 				else{
 				echo '<li><a href="login.php">Login</a></li>';
