@@ -14,7 +14,7 @@
 				echo '<li><a href="login.php">Login</a></li>';
 				}
 				?>
-                <li><form action="php-script/cerca.php" method="post">
+                <li><form action="prodotti.php" method="get">
                     <button id="searchButton" type="submit">Go</button>
                     <input id="search" type="text" name="testo" placeholder="Cerca..."></form> 
                 </li>
