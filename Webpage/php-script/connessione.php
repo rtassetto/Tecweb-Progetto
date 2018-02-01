@@ -87,11 +87,11 @@
 			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 20).'...</p></td></tr>';
 		}
 	}
-	public function checkUser(){
-		$query = mysqli_query($DB->connessione,"SELECT admin FROM account WHERE username='$username' AND password='$password'");
-		$rows = mysqli_num_rows($query);
-		if ($rows == 1){
-			if ($query=0){
+	public function checkUser($username,$password){
+		$query = mysqli_query($this->connessione,"SELECT * FROM account WHERE username='$username' AND password='$password'");
+		$row = mysqli_fetch_assoc($query);
+		if ($row){
+			if ($row['admin']==true){
 			return "admin";
 			}
 			return "user";

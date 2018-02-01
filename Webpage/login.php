@@ -12,19 +12,15 @@ if(isset($_POST["submit"])){
 	$DB->openc();
 	$result=$DB->checkUser($username,$password);
 
-	if ($result="user")
-		$_SESSION['login_user']=$username;
-		header("location: home.php");
-
-	if ($result="user"){
+	if ($result=="user"){
 		$_SESSION['login_user']=$username;
 		header("location: home.php");
 	}
 
-	else if($result="admin"){
+	else if($result=="admin"){
 		$_SESSION['login_user']=$username;
 		$_SESSION['admin']=true;
-		//header("location: admin.php");
+		header("location: adminmenu.php");
 	}
 }
 
