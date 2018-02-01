@@ -9,9 +9,6 @@
         $z=$x['id'];
         if(isset($_POST[$z])){
             $DB->aggiungiC($z,$_SESSION['login_user']);
-            echo $_POST[$z];
-            echo $z;
-            echo $_SESSION['login_user'];
         }
     }
 ?>
@@ -31,13 +28,14 @@
     
 
 <?php
-include "general/Header.php";
+    include "general/Header.php";
+    if(isset($_GET["testo"])){
     $testo=$_GET["testo"];
     if($testo){
     $result=$DB->ricerca($testo);
     
     $n_risultati=count($result);
-    
+    }
     if($n_risultati>0)
     {
         echo "<p> Trovati $n_risultati risultati per $testo</p>\n";
