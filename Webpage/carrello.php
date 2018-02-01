@@ -71,8 +71,6 @@ require "general/Header.php";
                 echo $x["quantita"];
                 echo "</td>";
                 echo "</tr>";
-                $_SESSION["id"]=$x["id"];
-                $_SESSION["quantita"]=$x["quantita"];
             }
         ?>
         </table>  
