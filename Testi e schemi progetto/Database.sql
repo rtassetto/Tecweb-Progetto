@@ -10,7 +10,7 @@ CREATE TABLE Account(
 );
 
 CREATE TABLE Prodotto(
-  	id int PRIMARY KEY,
+  	id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(150),
     categoria enum ('Monitor','HDD','SSD'),
     descrizione varchar(2000),
@@ -19,7 +19,7 @@ CREATE TABLE Prodotto(
 );
 
 CREATE TABLE PurchaseHistory(
-	idordine int PRIMARY KEY,
+	idordine int PRIMARY KEY AUTO_INCREMENT,
 	compratore varchar(20) REFERENCES username(Account),
 	prodotto int REFERENCES id(Prodotto),
 	data datetime,
