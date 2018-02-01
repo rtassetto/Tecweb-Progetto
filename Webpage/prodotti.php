@@ -4,7 +4,14 @@
     require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
-    $P=$DB->getP();
+    if(isset($_GET["testo"])){
+        $testo=$_GET["testo"];
+        $P=$DB->ricerca($testo);
+        $n_risultati=count($P);
+    }
+    else{
+        $P=$DB->getP();
+    }
     foreach($P as $x){
         $z=$x['id'];
         if(isset($_POST[$z])){
@@ -30,55 +37,14 @@
 <?php
     include "general/Header.php";
     if(isset($_GET["testo"])){
-    $testo=$_GET["testo"];
-    if($testo){
-    $result=$DB->ricerca($testo);
-    
-    $n_risultati=count($result);
-    }
     if($n_risultati>0)
     {
-        echo "<p> Trovati $n_risultati risultati per $testo</p>\n";
-     ?>   
-        <table id="searchResult">
-            <thead>
-                <tr>
-                    <th>Prodotto</th>
-                    <th>Tipo</th>
-                    <th>Descrizione</th>
-                    <th>Valutazione</th>
-                    <th>Prezzo</th>
-                </tr>
-            </thead>
-        <?php
-        foreach($result as $x){
-            echo "<tr>";
-            echo "<td>";
-            echo $x["nome"];
-            echo "</td>";
-            echo "<td>";
-            echo $x["categoria"];
-            echo "</td>";
-            echo "<td>";
-            echo $x["descrizione"];
-            echo "</td>";
-            echo "<td>";
-            echo $x["Valutazione"];
-            echo "</td>";
-            echo "<td>";
-            echo $x["prezzo"];
-            echo "</td>";
-            echo "</tr>";
-        }
-        ?>
-        
-        </table>
-
-    <?php
+        echo "<p> Trovati $n_risultati risultati per $testo</p>\n";  
+    
     }else{
         echo "<p> Nessun risultato trovato per $testo</p>\n";
     }
-    }else{
+    }
     ?>
     <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
@@ -129,7 +95,7 @@
                 echo "</td>";
                 echo "</tr>";
             }
-    }
+    
         ?>
         </table>    
     

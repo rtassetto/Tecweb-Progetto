@@ -47,7 +47,8 @@
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
                          "Valutazione"=>$row["Valutazione"],
-                         "prezzo"=>$row["prezzo"]);
+                         "prezzo"=>$row["prezzo"],
+                         "id"=>$row["id"]);
             array_push($result,$single);
         }
         return $result;
