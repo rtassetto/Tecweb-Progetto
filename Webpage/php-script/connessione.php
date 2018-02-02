@@ -99,6 +99,13 @@
 		}
 		return "error";
 	}
+	public function getUserlist(){
+		$query=mysqli_query($this->connessione,"SELECT username,email,admin,datacreazione FROM account");
+		for($i=0;$i<mysqli_num_rows($query);$i++){
+			$result[$i]=mysqli_fetch_assoc($query);
+		}
+		return $result;
+	}
     public function getCarrello($user){
         $querySelect= "SELECT nome,categoria, descrizione, Valutazione, prezzo, quantita, id FROM prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
         
