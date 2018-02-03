@@ -124,12 +124,27 @@
         }
         return $result;
     } 
+       
+    public function eliminaC($id,$user){
+        $update="UPDATE carrello SET quantita=quantita-1 WHERE username='$user' AND prodotto='$id' ";
+        $query="SELECT * FROM carrello WHERE username='$user' AND prodotto='$id'AND quantita>1";
+        $delete="DELETE FROM `carrello` WHERE username='$user' AND prodotto='$id'";
+        $queryResult=mysqli_query($this->connessione, $query);
+        if(mysqli_num_rows($queryResult)==0){
+            mysqli_query($this->connessione, $delete);
+        }else{
+            mysqli_query($this->connessione, $update);
+        }
+    }
+       
+       
     public function acquista($user,$id,$q){
        $insert="INSERT INTO `purchasehistory`(`compratore`, `prodotto`, `data`, `quantita`) VALUES ('$user','$id',NOW(),'$q')";
        mysqli_query($this->connessione, $insert);
        $delete="DELETE FROM `carrello` WHERE username='$user' AND prodotto='$id'";
        mysqli_query($this->connessione, $delete);
     }
+       
     public function aggiungiC($id,$name){
         $query="SELECT * FROM carrello WHERE username='$name' AND prodotto='$id'";
         $queryResult=mysqli_query($this->connessione, $query);
