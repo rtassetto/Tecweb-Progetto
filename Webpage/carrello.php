@@ -37,7 +37,7 @@ require "general/Header.php";
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Carrello </p> 
+        <p> Ti trovi in: Home &#8594; Carrello </p> 
     </div>
     
     

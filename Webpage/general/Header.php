@@ -8,7 +8,7 @@
 				<?php
 				if(isset($_SESSION['login_user'])){
 				echo '<li><a href="carrello.php">Carrello</a></li>';
-                echo '<li><a href="purchasehistory.php">Purchase History</a></li>';
+                echo '<li><a href="purchasehistory.php">Storico acquisti</a></li>';
                 echo '<li><a href="php-script/logout.php">Logout</a></li>';
 				}
 				else{
@@ -16,8 +16,8 @@
 				}
 				?>
                 <li><form action="prodotti.php" method="get">
-                    <button id="searchButton" type="submit">Go</button>
-                    <input id="search" type="text" name="testo" placeholder="Cerca..."></form> 
+                    <button id="searchButton" type="submit">Vai</button>
+                    <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?"></form> 
                 </li>
             </ul>
         </nav>

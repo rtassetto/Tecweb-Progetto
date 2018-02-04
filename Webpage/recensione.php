@@ -28,9 +28,7 @@ session_start();
 	require "general/Header.php";
 ?>
     
-    
-    
-    <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
+
     
     
     <div id="breadcrumb"> 

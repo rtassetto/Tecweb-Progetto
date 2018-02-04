@@ -12,7 +12,7 @@ session_start();
      require "php-script/connessione.php";
 	 $DB= new DBAccess();
 	 $DB->openc();
-    ?>
+?>
 <html lang="it">
 <head>    
 <?php

@@ -37,20 +37,20 @@
 <?php
     include "general/Header.php";
     if(isset($_GET["testo"])){
-    if($n_risultati>0)
-    {
-        echo "<p> Trovati $n_risultati risultati per $testo</p>\n";  
-    
-    }else{
-        echo "<p> Nessun risultato trovato per $testo</p>\n";
-    }
+        if($n_risultati>0)
+        {
+            echo "<p> Trovati $n_risultati risultati per $testo</p>\n";  
+
+        }else{
+            echo "<p> Nessun risultato trovato per $testo</p>\n";
+        }
     }
     ?>
     <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Prodotti </p> 
+        <p> Ti trovi in: Home &#8594; Prodotti </p> 
     </div>
     
     

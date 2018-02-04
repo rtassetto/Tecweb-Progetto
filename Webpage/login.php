@@ -47,7 +47,7 @@ if(isset($_POST["submit"])){
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home </p> 
+        <p> Ti trovi in: Home &#8594; Login </p> 
     </div>
     
     

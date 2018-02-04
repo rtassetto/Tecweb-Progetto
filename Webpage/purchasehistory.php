@@ -24,7 +24,7 @@
 <?php
 	require "general/Meta.php";
 ?>
-    <title>Prodotti</title>
+    <title>Storico acquisti</title>
 </head>
     
 <body>
@@ -39,13 +39,13 @@ include "general/Header.php";
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Purchase History </p> 
+        <p> Ti trovi in: Home &#8594; Storico acquisti </p> 
     </div>
     
     
     
     <section id="content_prodotti">
-        <table id="products">
+        <table id="purchase">
             <thead>
                 <tr>
                     <th>Prodotto</th>
@@ -53,7 +53,7 @@ include "general/Header.php";
                     <th>Descrizione</th>
                     <th>Valutazione</th>
                     <th>Data</th>
-                    <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
+                    <?php if(isset($_SESSION['login_user'])){echo "<th></th>";}?>
                 </tr>
             </thead>
         <?php

@@ -21,11 +21,10 @@
     
     
     
-    <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home -> Prodotti </p> 
+        <p> Ti trovi in: Home &#8594; Chi siamo </p> 
     </div>
  <?php
 	require "general/Footer.php";
