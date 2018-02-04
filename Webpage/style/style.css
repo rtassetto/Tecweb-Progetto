@@ -56,10 +56,10 @@ nav a:active{
 #search {
     float:right;
     margin:0.5em 0.1em;
-    border: 3px solid #808080;
+    border: 3px solid #0080ff;
     border-radius: 5px;
     padding: 5px;
-    height: 20px;
+    height: 1.5em;
     outline:none;
     font-size:15px;
     box-shadow: 2px 4px cornflowerblue;
@@ -68,10 +68,10 @@ nav a:active{
 #searchButton{
     float:right;
     padding: 5px;
-    height:35px;
-    margin:0.5em 1em 0.5em 0;
-    border: 3px solid #808080;
-    background-color:#808080;
+    height:2.4em;
+    margin:0.6em 1em 0.5em 0;
+    border: 3px solid #0080ff;
+    background-color:#0080ff;
     text-align: center;
     color: #fff;
     border-radius: 5px;
