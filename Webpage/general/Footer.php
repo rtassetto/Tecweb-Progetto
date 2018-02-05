@@ -6,6 +6,6 @@
             </a>
         </p>
         
-        <p> Developed by Lotto Matteo, Tassetto Riccardo, Davide Zago</p>
+        <p> Developed by Lotto Matteo, Tassetto Riccardo, Zago Davide</p>
 
     </footer>

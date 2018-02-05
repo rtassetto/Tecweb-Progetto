@@ -1,5 +1,5 @@
     <header>
-        <img id="logo" src="images/Capcom_logo.png" alt="Logo sito"/>        
+        <img id="logo" src="images/logo.png" alt="Logo sito"/>        
         <nav>
             <ul>
                 <li><a class="current" href="home.php">Home</a></li>
