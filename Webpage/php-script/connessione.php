@@ -38,18 +38,21 @@
     }
        
        public function ricerca($testo){
+           
         $querySelect= "SELECT * FROM prodotto WHERE(nome LIKE '%" . $testo . "%') OR(categoria LIKE '%" . $testo . "%') OR(descrizione LIKE '%" . $testo . "%') ";
         
 		$queryResult= mysqli_query($this->connessione, $querySelect);
         $result=array();
-        while($row=mysqli_fetch_assoc($queryResult)){
-            $single=array("nome"=>$row["nome"],
-                         "categoria"=>$row["categoria"],
-                         "descrizione"=>$row["descrizione"],
-                         "Valutazione"=>$row["Valutazione"],
-                         "prezzo"=>$row["prezzo"],
-                         "id"=>$row["id"]);
-            array_push($result,$single);
+        if($testo!=""){
+            while($row=mysqli_fetch_assoc($queryResult)){
+                $single=array("nome"=>$row["nome"],
+                             "categoria"=>$row["categoria"],
+                             "descrizione"=>$row["descrizione"],
+                             "Valutazione"=>$row["Valutazione"],
+                             "prezzo"=>$row["prezzo"],
+                             "id"=>$row["id"]);
+                array_push($result,$single);
+            }
         }
         return $result;
     }
@@ -159,6 +162,9 @@
 			"Error in aggiungiC query: " . mysqli_error($this->connessione));
         }
     }
+       
+    
+    
     public function getPH($name){
         $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM purchasehistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (

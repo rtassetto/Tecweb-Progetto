@@ -92,7 +92,6 @@ nav a:active{
 section{
     margin-top:5px;
     padding: 5px;
-    border:1px solid black;    
 }
 
 #content1 {
@@ -105,29 +104,33 @@ aside{
     width:49%;
     margin-left:50%;
     margin-top:5px;
-    padding: 5px;
-    border:1px solid black;    
+    padding: 5px;   
 }
 
 
 table{
     border-collapse: collapse;
+    border: 1.5px solid darkslateblue;
     width: 100%;
 }
 
-table td, table th {
+table td{
     border: 1px solid #ddd;
     padding: 5px;
 }
 
 
 table th {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px 0 10px 5px;
     text-align: left;
     background-color: #0080ff;
     color: white;
-}  
+}
+
+#totale{
+    text-align: right;
+}
 
 footer{
     margin-top:5px;

@@ -36,8 +36,11 @@
 
 <?php
     include "general/Header.php";
-    if(isset($_GET["testo"])){
-        if($n_risultati>0)
+    if(isset($testo)){
+        if($testo==""){
+            echo "<p> Inserire un nome valido nella ricerca </p>\n";
+        }
+        else if($n_risultati>0)
         {
             echo "<p> Trovati $n_risultati risultati per $testo</p>\n";  
 

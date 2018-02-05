@@ -87,10 +87,22 @@ require "general/Header.php";
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";
-            
             }
             
             ?>
+            <tr> 
+                <td id="totale" name="totale" colspan="5">
+                <?php
+                    $totale=0;
+                    foreach($P as $y){
+                        $totale+=$y["prezzo"]*$y["quantita"];
+                    }    
+                    echo "Totale : ".$totale." €";
+                ?>
+                
+                
+                </td>
+            </tr>
         </table>  
         <form class="onclick" method="post" action="purchasehistory.php">
         <input type="submit" name="compra" value="Acquista"/>
