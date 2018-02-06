@@ -14,7 +14,7 @@ CREATE TABLE Prodotto(
     nome varchar(150),
     categoria enum ('Monitor','HDD','SSD'),
     descrizione varchar(2000),
-    Valutazione int,
+    Valutazione float,
     prezzo float
 );
 
@@ -38,7 +38,8 @@ CREATE TABLE Recensione(
 	prodotto int REFERENCES id(Prodotto),
 	review varchar(1000),
 	voto int,
-	data datetime
+	data datetime,
+	PRIMARY KEY (username,prodotto)
 );
 
 CREATE TABLE Bundles(
@@ -53,3 +54,11 @@ CREATE TABLE Bundleparts(
 	pezzo int REFERENCES id(Prodotto),
     PRIMARY KEY(bundle, pezzo)
 );
+
+CREATE TRIGGER AggiornaVoto after Insert on Recensione
+for each Row
+UPDATE Prodotto SET Valutazione=(SELECT avg(voto) FROM Recensione WHERE prodotto=new.prodotto) WHERE id=new.prodotto;
+
+CREATE TRIGGER AggiornaVotoEdit after Update on Recensione
+for each Row
+UPDATE Prodotto SET Valutazione=(SELECT avg(voto) FROM Recensione WHERE prodotto=new.prodotto) WHERE id=new.prodotto;
