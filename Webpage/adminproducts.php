@@ -4,14 +4,21 @@ session_start();
 require "php-script/connessione.php";
 $DB=new DBAccess();
 $DB->openc();
-if (isset($_POST["submit"])){
-    
+if (isset($_POST["aggiungi"])){
 	$nome=$_POST["nome"];
-	$desc=$_POST["desc"];
+	$descrizione=$_POST["descrizione"];
 	$prezzo=$_POST["prezzo"];
 	$categoria=$_POST["categoria"];
-	$DB->createProduct($nome, $categoria, $desc, $prezzo);
+	$DB->createProduct($nome, $categoria, $descrizione, $prezzo);
 }
+    $P=$DB->getP();
+        foreach($P as $x){
+            $z=$x['id'];
+            if(isset($_POST[$z])){
+                echo "$z";
+                $DB->modifyProduct($z,$_POST["nome"],$_POST["categoria"],$_POST["descrizione"],$_POST["prezzo"]);
+            }
+        }
 if($_SESSION['admin']==true){
 	$path = $_SERVER['DOCUMENT_ROOT'];
 }
@@ -37,16 +44,16 @@ else{
 ?>
 <h1>Aggiunta/Modifica dei Prodotti</h1>
 <h2>Aggiunta Prodotto</h2>
-<form method="post" action="adminproducts.php">
+<form id="aggiuntaProd" method="post" action="adminproducts.php">
 <label for="nome">Nome del Prodotto:</label> <input type="text" name="nome"/>
 <label for="categoria">Categoria:</label>
 <select name="categoria">
   <option value="monitor">Monitor</option>
   <option value="hdd">HDD</option>
 </select>
-<label for="desc">Descrizione del Prodotto:</label> <textarea name="desc" rows="7"></textarea>
+<label for="descrizione">Descrizione del Prodotto:</label> <textarea name="descrizione" rows="7"></textarea>
 <label for="prezzo">Prezzo:</label><input type="text" name="prezzo"/>
-<input type="submit" name="submit" value="Crea"/>
+<input type="submit" name="aggiungi" value="Crea"/>
 </form>
 
 <h2>Modifica Prodotto</h2>
@@ -80,9 +87,14 @@ else{
             echo "<td>";
             echo $x["prezzo"];
             echo "</td>";
-			echo "<td>";
-			echo "<button>Modifica</button>";
-			echo "</td>";
+			if(isset($_SESSION['login_user'])){
+                $id=$x["id"];
+                echo "<td>";
+                echo "<form method='post' action='php-script/modificaProd.php'>";
+                echo "<input type='submit' name='$id' value='Modifica prodotto'/>";
+            }
+            echo "</form>";
+            echo "</td>";
             echo "</tr>";
         }
         ?>

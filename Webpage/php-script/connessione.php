@@ -70,6 +70,14 @@
 	public function createProduct($nome, $categoria, $descrizione,$prezzo){
 		mysqli_query($this->connessione, "INSERT INTO Prodotto(nome,categoria,descrizione,prezzo) VALUES ('$nome','$categoria','$descrizione','$prezzo')");
 	}
+       
+       
+    public function modifyProduct($id, $nome, $categoria, $descrizione, $prezzo)
+    {
+        mysqli_query($this->connessione,"UPDATE Prodotto SET nome='$nome',categoria='$categoria',descrizione='$descrizione',prezzo='$prezzo' WHERE id='$id'") or die (
+			"Error in modifyProductquery: " . mysqli_error($this->connessione));
+    }
+       
 	public function addPurchase($user,$product,$quantity){
 		$data=date("Y-m-d H:i:s");
 		mysqli_query($this->connessione, "INSERT INTO Prodotto(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
@@ -88,7 +96,7 @@
 	public function getLatestBundles(){
 		$result=mysqli_query($this->connessione,"SELECT * FROM Bundles ORDER by data desc LIMIT 6");
 		while ($row = $result->fetch_assoc()) {
-			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 20).'...</p></td></tr>';
+			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 200).'...</p></td></tr>';
 		}
 	}
 	public function checkUser($username,$password){
