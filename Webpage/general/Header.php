@@ -7,8 +7,14 @@
                 <li><a href="prodotti.php">Prodotti</a></li>
 				<?php
 				if(isset($_SESSION['login_user'])){
-				echo '<li><a href="carrello.php">Carrello</a></li>';
-                echo '<li><a href="purchasehistory.php">Storico acquisti</a></li>';
+                $isA=$_SESSION['admin'];   
+                if(!$isA){
+				    echo '<li><a href="carrello.php">Carrello</a></li>';
+                    echo '<li><a href="purchasehistory.php">Storico acquisti</a></li>';
+                }
+                else{
+                    echo '<li><a href="adminproducts.php">Inserimento Prodotti</a></li>'; 
+                }
                 echo '<li><a href="php-script/logout.php">Logout</a></li>';
 				}
 				else{

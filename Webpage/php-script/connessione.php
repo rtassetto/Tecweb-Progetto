@@ -110,6 +110,15 @@
 		}
 		return "error";
 	}
+    public function isAdmin($username){
+		$query = mysqli_query($this->connessione,"SELECT * FROM Account WHERE username='$username'");
+		$row = mysqli_fetch_assoc($query);
+		if ($row){
+			if ($row['admin']==true){
+			return true;
+            }
+	}
+    }
 	public function getUserlist(){
 		$query=mysqli_query($this->connessione,"SELECT username,email,admin,datacreazione FROM account");
 		for($i=0;$i<mysqli_num_rows($query);$i++){
@@ -150,7 +159,7 @@
        
        
     public function acquista($user,$id,$q){
-       $insert="INSERT INTO `Purchasehistory`(`compratore`, `prodotto`, `data`, `quantita`) VALUES ('$user','$id',NOW(),'$q')";
+       $insert="INSERT INTO `PurchaseHistory`(`compratore`, `prodotto`, `data`, `quantita`) VALUES ('$user','$id',NOW(),'$q')";
        mysqli_query($this->connessione, $insert);
        $delete="DELETE FROM `Carrello` WHERE username='$user' AND prodotto='$id'";
        mysqli_query($this->connessione, $delete);
@@ -174,7 +183,7 @@
     
     
     public function getPH($name){
-        $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM Purchasehistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
+        $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
         $result=array();
