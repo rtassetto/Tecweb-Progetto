@@ -39,7 +39,7 @@
        
        public function ricerca($testo){
            
-        $querySelect= "SELECT * FROM prodotto WHERE(nome LIKE '%" . $testo . "%') OR(categoria LIKE '%" . $testo . "%') OR(descrizione LIKE '%" . $testo . "%') ";
+        $querySelect= "SELECT * FROM Prodotto WHERE(nome LIKE '%" . $testo . "%') OR(categoria LIKE '%" . $testo . "%') OR(descrizione LIKE '%" . $testo . "%') ";
         
 		$queryResult= mysqli_query($this->connessione, $querySelect);
         $result=array();
