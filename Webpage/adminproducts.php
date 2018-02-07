@@ -5,6 +5,7 @@ require "php-script/connessione.php";
 $DB=new DBAccess();
 $DB->openc();
 if (isset($_POST["submit"])){
+    
 	$nome=$_POST["nome"];
 	$desc=$_POST["desc"];
 	$prezzo=$_POST["prezzo"];
@@ -27,12 +28,12 @@ else{
 <html lang="it">
 <head>
 <?php
-	include $path."/general/Meta.php";
+	include "general/Meta.php";
 ?>
 </head>
 <body>
 <?php
-	include $path."/general/Header.php";
+	include "general/Header.php";
 ?>
 <h1>Aggiunta/Modifica dei Prodotti</h1>
 <h2>Aggiunta Prodotto</h2>
@@ -88,7 +89,7 @@ else{
         
         </table>
 <?php
-	include $path."/general/Footer.php";
+	include "general/Footer.php";
 ?>
 </body>
 </html>

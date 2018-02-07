@@ -16,12 +16,12 @@ else{
 <html lang="it">
 <head>
 <?php
-	include $path."/general/Meta.php";
+	include "general/Meta.php";
 ?>
 </head>
 <body>
 <?php
-	include $path."/general/Header.php";
+	include "general/Header.php";
 ?>
 
 <h1>Pannello Amministrazione</h1>
@@ -31,7 +31,7 @@ else{
 <p><a href="adminbundle.php">Aggiungi/Modifica Bundles</a></p>
 <p><a href="adminpurchasehist.php">Storia degli Acquisti</a></p>
 <?php
-	include $path."/general/Footer.php";
+	include "general/Footer.php";
 ?>
 </body>
 </html>

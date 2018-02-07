@@ -12,6 +12,12 @@ session_start();
      require "php-script/connessione.php";
 	 $DB= new DBAccess();
 	 $DB->openc();
+     if(isset($_POST["subr"]){
+         $testo=$_POST["recensione"];
+         echo $_POST["voto"];
+         $valutazione=$_POST["voto"];
+         DB->aggiungiR($testo,$valutazione);
+     }
     ?>
 <html lang="it">
 <head>    
@@ -37,7 +43,7 @@ session_start();
     
     <div id="recensione">
         <h3>Scrivi una recensione per il prodotto <?php echo "NOME PRODOTTO QUI";?></h3>
-        <form method="post" action="">
+        <form method="post" action="recensione.php">
         <textarea name="recensione" rows="10" cols="50"></textarea>
         <p>immetti la tua valutazione</p>
         <select name="voto" size="1">
