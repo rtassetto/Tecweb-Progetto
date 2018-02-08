@@ -71,7 +71,7 @@ include "general/Header.php";
                 echo $x["descrizione"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["Valutazione"];
+                echo $x["valutazione"];
                 echo "</td>";
                 echo "<td>";
                 echo $x["data"];

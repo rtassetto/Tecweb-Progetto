@@ -24,7 +24,7 @@ $DB->openc();
 	echo "<h1>".$product['nome']."</h1>
 		<img src='images/".$_GET['id'].".jpg'/>
 		<span>Categoria di prodotto:".$product['categoria']."</span>
-		<span>".$product['Valutazione']."/5</span>
+		<span>".$product['valutazione']."/5</span>
 		<span>".$product['prezzo']."€</span>
 		<p>".$product['descrizione']."</p>";
 	//$product[]

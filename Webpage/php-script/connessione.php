@@ -73,7 +73,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "valutazione"=>$row["Valutazione"],
+                         "valutazione"=>$row["valutazione"],
                          "prezzo"=>$row["prezzo"],
                          "id"=>$row["id"]);
             array_push($result,$single);
@@ -91,7 +91,7 @@
                 $single=array("nome"=>$row["nome"],
                              "categoria"=>$row["categoria"],
                              "descrizione"=>$row["descrizione"],
-                             "Valutazione"=>$row["Valutazione"],
+                             "valutazione"=>$row["valutazione"],
                              "prezzo"=>$row["prezzo"],
                              "id"=>$row["id"]);
                 array_push($result,$single);
@@ -102,32 +102,42 @@
     public function ricercaAvanzata($categoria,$ordine){
         if($ordine=="valC")
         {
-            $ordine="valutazione ASC";
-               
-           }else if($ordine=="valD")
-           {
-               $ordine="valutazione DESC";
-           }else if($ordine=="preC")
-           {
-               $ordine="prezzo ASC";
-           }else{
-               $ordine="prezzo DESC";
-           }
-           $querySelect="SELECT * FROM Prodotto WHERE(categoria='$categoria') ORDER BY $ordine";
-           $queryResult=mysqli_query($this->connessione,$querySelect) or die (
-			"Error in getListCharacters query: " . mysqli_error($this->connessione));
-           $result=array();
-           while($row=mysqli_fetch_assoc($queryResult)){
-                $single=array("nome"=>$row["nome"],
-                             "categoria"=>$row["categoria"],
-                             "descrizione"=>$row["descrizione"],
-                             "Valutazione"=>$row["Valutazione"],
-                             "prezzo"=>$row["prezzo"],
-                              "id"=>$row["id"]);
-                array_push($result,$single);
-            }
-           return $result;
+            $ordine="valutazione ASC";   
+        }else if($ordine=="valD")
+        {
+           $ordine="valutazione DESC";
+        }else if($ordine=="preC")
+        {
+           $ordine="prezzo ASC";
+        }else{
+            $ordine="prezzo DESC";
+        }
+        
+        if($ordine==" "){
+            $ordine="id";
+        }
+        if($categoria==" ")
+        {
+            $querySelect="SELECT * FROM Prodotto WHERE 1=1 ORDER BY $ordine";
+        }else{
+            $querySelect="SELECT * FROM Prodotto WHERE(categoria='$categoria') ORDER BY $ordine";
+        }
+       
+       $queryResult=mysqli_query($this->connessione,$querySelect);
+       $result=array();
+       while($row=mysqli_fetch_assoc($queryResult)){
+            $single=array("nome"=>$row["nome"],
+                         "categoria"=>$row["categoria"],
+                         "descrizione"=>$row["descrizione"],
+                         "valutazione"=>$row["valutazione"],
+                         "prezzo"=>$row["prezzo"],
+                          "id"=>$row["id"]);
+            array_push($result,$single);
+        }
+       return $result;
     }
+       
+       
 	public function createProduct($nome, $categoria, $descrizione,$prezzo){
 		mysqli_query($this->connessione, "INSERT INTO Prodotto(nome,categoria,descrizione,prezzo) VALUES ('$nome','$categoria','$descrizione','$prezzo')");
 	}
@@ -142,7 +152,7 @@
 	
 	//PurchaseHistory
 	public function getPH($name){
-        $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
+        $query="SELECT nome,categoria,descrizione,valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
         $result=array();
@@ -150,7 +160,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "Valutazione"=>$row["Valutazione"],
+                         "valutazione"=>$row["valutazione"],
                          "id"=>$row["id"],
                          "data"=>$row["data"]);
             array_push($result,$single);
@@ -195,7 +205,7 @@
         }
     }
     public function getCarrello($user){
-        $querySelect= "SELECT nome,categoria, descrizione, Valutazione, prezzo, quantita, id FROM Prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
+        $querySelect= "SELECT nome,categoria, descrizione, valutazione, prezzo, quantita, id FROM Prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
         
 		$queryResult= mysqli_query($this->connessione, $querySelect) or die (
 			"Error in getListCharacters query: " . mysqli_error($this->connessione));
@@ -204,7 +214,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "Valutazione"=>$row["Valutazione"],
+                         "valutazione"=>$row["valutazione"],
                          "prezzo"=>$row["prezzo"],
                          "quantita"=>$row["quantita"],
                          "id"=>$row["id"]);

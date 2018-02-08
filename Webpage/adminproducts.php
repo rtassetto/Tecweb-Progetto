@@ -81,7 +81,7 @@ else{
             echo $x["descrizione"];
             echo "</td>";
             echo "<td>";
-            echo $x["Valutazione"];
+            echo $x["valutazione"];
             echo "</td>";
             echo "<td>";
             echo $x["prezzo"];

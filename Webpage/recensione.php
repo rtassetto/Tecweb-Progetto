@@ -72,7 +72,7 @@ session_start();
         <h3>Scrivi una recensione per il prodotto <?php echo $nome;?></h3>
         <form method="post" action="recensione.php">
         <textarea name="recensione" rows="10" cols="50" required></textarea><span><?php echo $erroreR;?></span>
-        <p>immetti la tua valutazione</p>
+        <p>Immetti la tua valutazione</p>
         <input type="radio" name="voto"  value="1" required><span>1</span>
         <input type="radio" name="voto"  value="2" required><span>2</span>
         <input type="radio" name="voto"  value="3" required><span>3</span>
