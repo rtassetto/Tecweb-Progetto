@@ -14,6 +14,7 @@ if(isset($_POST["submit"])){
 
 	if ($result=="user"){
 		$_SESSION['login_user']=$username;
+        $_SESSION['admin']=false;
 		header("location: home.php");
 	}
 

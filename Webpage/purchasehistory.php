@@ -14,6 +14,7 @@
     }
     if(isset($_SESSION["login_user"])){
         $P=$DB->getPH($_SESSION['login_user']);
+        $S=$DB->getP();
     }
 ?>
 <!--[if lt IE 9]>
@@ -78,7 +79,7 @@ include "general/Header.php";
                 if(isset($_SESSION['login_user'])){
                 $id=$x["id"];
                 echo "<td>";
-                echo "<form method='post' action=''>";
+                echo "<form method='post' action='recensione.php'>";
                 echo "<input type='submit' name='$id' value='Aggiungi Recensione'/>";
                 }
                 echo "</form>";

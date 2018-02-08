@@ -12,11 +12,20 @@ session_start();
      require "php-script/connessione.php";
 	 $DB= new DBAccess();
 	 $DB->openc();
-     if(isset($_POST["subr"]){
-         $testo=$_POST["recensione"];
-         echo $_POST["voto"];
-         $valutazione=$_POST["voto"];
-         DB->aggiungiR($testo,$valutazione);
+     $P=$DB->getP();
+     foreach($P as $x){
+         if(isset($_POST[$x['id']."1"])){
+              $testo=htmlspecialchars($_POST["recensione"]);
+              $valutazione=$_POST["voto"];
+              $prodotto=$x['id'];
+              $user=$_SESSION["login_user"];
+              $DB->aggiungiR($user,$prodotto,$testo,$valutazione);
+              header("location: purchasehistory.php");
+         }
+         if(isset($_POST[$x['id']])){
+             $nome=$x['nome'];
+             $id=$x['id'];
+         }
      }
     ?>
 <html lang="it">
@@ -42,7 +51,7 @@ session_start();
     </div>
     
     <div id="recensione">
-        <h3>Scrivi una recensione per il prodotto <?php echo "NOME PRODOTTO QUI";?></h3>
+        <h3>Scrivi una recensione per il prodotto <?php echo $nome; echo $id;?></h3>
         <form method="post" action="recensione.php">
         <textarea name="recensione" rows="10" cols="50"></textarea>
         <p>immetti la tua valutazione</p>
@@ -54,7 +63,7 @@ session_start();
             <option value="4">4</option>
             <option value="5">5</option>
         </select>    
-        <input type="submit" name="subr" value="Aggiungi recensione"/>
+        <input type="submit" name="<?php echo $id."1"; ?>" value="Aggiungi recensione"/>
         </form>
     </div>
     

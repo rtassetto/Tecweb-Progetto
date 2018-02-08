@@ -234,6 +234,8 @@
     }
     public function aggiungiR($name,$prodotto,$testo,$voto){
         $insert="INSERT INTO `Recensione`(`username`, `prodotto`, `review`, `voto`, `data`) VALUES ('$name','$prodotto','$testo','$voto',NOW())";
+        mysqli_query($this->connessione, $insert)or die (
+			"Errore nell' inserimento della recensione: " . mysqli_error($this->connessione));
     }
 	}
 ?>
