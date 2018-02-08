@@ -4,12 +4,25 @@
     require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
-    if(isset($_GET["testo"])){
+    
+    
+    if(isset($_GET["advancedSubmit"])){
+        if(($_GET["categoria"]!=" ")&&(($_GET["ordine"])!=" "))
+        {
+            $categoria=$_GET["categoria"];
+            $ordine=$_GET["ordine"];
+            $P=$DB->ricercaAvanzata($categoria,$ordine);
+            $a_nrisultati=count($P);
+        }else{
+            $P=$DB->getP(); //aggiunto per evitare errore, si potrebbe sistemare
+        }
+            
+    }else if(isset($_GET["testo"])){
         $testo=$_GET["testo"];
         $P=$DB->ricerca($testo);
         $n_risultati=count($P);
-    }
-    else{
+        
+    }else{
         $P=$DB->getP();
     }
     foreach($P as $x){
@@ -57,7 +70,39 @@
     </div>
     
     
-    
+    <form method="get" action="prodotti2.php" id="avdancedSearch" name="advancedSearch">
+        <label for="categoria">Filtra per:</label>
+        <select id="categoria" name="categoria" required>
+            <option value=" " selected>Scegli categoria</option>
+            <option value="Monitor">Monitor</option>
+            <option value="HDD">HDD</option>
+        </select> 
+        
+        <label for="ordine">Filtra per ordine:</label>
+        <select id="ordine" name="ordine" required>
+            <option value=" " selected>Scegli ordine</option>
+            <option value="preC">Prezzo crescente</option>
+            <option value="preD">Prezzo decrescente</option>
+            <option value="valC">Valutazione crescente</option>
+            <option value="valD">Valutazione decrescente</option>
+        </select>
+        
+        <input type="submit" name="advancedSubmit" value="Cerca"/>
+    </form>
+    <?php
+    if(isset($_GET["advancedSubmit"]))
+    {
+        if(($_GET["categoria"]==" ")||(($_GET["ordine"])==" ")){
+            echo "<p> Selezionare un valore per entrambi i filtri </p>";
+        }
+     }else if(isset($a_nrisultati)){
+        if($a_nrisultati==0){
+            echo "<p>Nessun risultato prodotto dalla ricerca avanzata</p>\n";
+        }else{
+            echo "<p>Trovati $a_nrisultati risultati per la categoria: '$categoria' </p>\n";
+        }
+    }
+    ?>
     <section id="content_prodotti">
         <?php
             foreach($P as $x){
@@ -84,6 +129,7 @@
                 echo "</div>";
             }
         ?>   
+    
     
     
     </section>

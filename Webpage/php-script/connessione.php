@@ -56,6 +56,40 @@
         }
         return $result;
     }
+       
+       
+       public function ricercaAvanzata($categoria,$ordine){
+           if($ordine=="valC")
+           {
+               $ordine="valutazione ASC";
+               
+           }else if($ordine=="valD")
+           {
+               $ordine="valutazione DESC";
+           }else if($ordine=="preC")
+           {
+               $ordine="prezzo ASC";
+           }else{
+               $ordine="prezzo DESC";
+           }
+           $querySelect="SELECT * FROM Prodotto WHERE(categoria='$categoria') ORDER BY $ordine";
+           $queryResult=mysqli_query($this->connessione,$querySelect) or die (
+			"Error in getListCharacters query: " . mysqli_error($this->connessione));
+           $result=array();
+           while($row=mysqli_fetch_assoc($queryResult)){
+                $single=array("nome"=>$row["nome"],
+                             "categoria"=>$row["categoria"],
+                             "descrizione"=>$row["descrizione"],
+                             "Valutazione"=>$row["Valutazione"],
+                             "prezzo"=>$row["prezzo"],
+                              "id"=>$row["id"]);
+                array_push($result,$single);
+            }
+           return $result;
+       }
+       
+       
+       
 	public function createUser($username, $password, $email){
 		if(mysqli_num_rows(mysqli_query($this->connessione, "SELECT username FROM Account WHERE username='$username';"))!=0)
 			return 1;

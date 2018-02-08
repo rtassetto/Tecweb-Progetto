@@ -15,7 +15,6 @@ if (isset($_POST["aggiungi"])){
         foreach($P as $x){
             $z=$x['id'];
             if(isset($_POST[$z])){
-                echo "$z";
                 $DB->modifyProduct($z,$_POST["nome"],$_POST["categoria"],$_POST["descrizione"],$_POST["prezzo"]);
             }
         }
