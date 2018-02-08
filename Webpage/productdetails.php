@@ -16,6 +16,7 @@ $DB->openc();
 <?php
 	include "general/Meta.php";
 ?>
+    <!--<script language=”JavaScript” type=”text/JavaScript” src=”script.js”></script> -->
 </head>
 <body>
 <?php
@@ -29,7 +30,7 @@ $DB->openc();
 		<p>".$product['descrizione']."</p>";
 	//$product[]
 	echo "<form method='post' action='prodotti.php'>
-          <input type='submit' name=".$_GET['id']." value='Aggiungi al carrello'/>
+          <input type='submit' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
 		  </form>";
 	$reviews=$DB->getProdReview($_GET['id']);
 	echo "<h2>Recensioni</h2>";
@@ -45,7 +46,11 @@ $DB->openc();
 	}
 	}
 	?>
-
+    <script>
+        function myFunction() {
+        alert("Prodotto aggiunto al carrello");
+        }
+    </script>
 <?php
 	include "general/Footer.php";
 ?>

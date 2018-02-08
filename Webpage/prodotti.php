@@ -36,6 +36,7 @@
 <?php
 	require "general/Meta.php";
 ?>
+    
     <title>Prodotti</title>
 </head>
     
