@@ -133,7 +133,7 @@
 	}
 	public function addPurchase($user,$product,$quantity){
 		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione, "INSERT INTO Prodotto(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
+		mysqli_query($this->connessione, "INSERT INTO PurchaseHistory(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
 	}
     public function modifyProduct($id, $nome, $categoria, $descrizione, $prezzo)
     {

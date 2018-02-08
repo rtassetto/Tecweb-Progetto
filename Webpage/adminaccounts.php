@@ -43,7 +43,6 @@ else{
 				<th>email</th>
 				<th>Data Crezione</th>
 				<th></th>
-				<th></th>
 			</tr>";
 	foreach($accountab as $result){
 		if($result["admin"]==false){$type="Utente";}
@@ -57,12 +56,9 @@ else{
 		echo "
 		<td>
 			<a href='adminaccounts.php?type=edit&user=".$result["username"]."'>Cambia privilegi</a>
-		</td>
-		<td>
-			<a>Elimina Utente</a>
 		</td>";
 		}
-		else{echo "<td></td><td></td>";}
+		else{echo "<td></td>";}
 	}
 	echo "</table>";
 	
