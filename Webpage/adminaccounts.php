@@ -5,10 +5,15 @@ require "php-script/connessione.php";
 $DB=new DBAccess();
 $DB->openc();
 if($_SESSION['admin']==true){
-	$path = $_SERVER['DOCUMENT_ROOT'];
+	if(isset($_GET['type'])){
+		if($_GET['type']=="edit"){
+			$DB->alterAdminright($_GET['user']);
+		}
+		header("location: adminaccounts.php");
+	}	
 }
 else{
-	header("location: /home.php");
+	header("location: home.php");
 }
 ?>
 <!DOCTYPE HTML>
@@ -20,26 +25,48 @@ else{
 <html lang="it">
 <head>
 <?php
-	include $path."/general/Meta.php";
+	include "general/Meta.php";
 ?>
 </head>
 <body>
 <?php
-	include $path."/general/Header.php";
+	include "general/Header.php";
 ?>
 <h1>Gestione Accounts</h1>
 
 <?php
 	$accountab=$DB->getUserlist();
-	echo "<table><tr><th>Username</th><th>Tipo</th><th>email</th><th>Data Crezione</th><th></th></tr>";
+	echo "<table>
+			<tr>
+				<th>Username</th>
+				<th>Tipo</th>
+				<th>email</th>
+				<th>Data Crezione</th>
+				<th></th>
+				<th></th>
+			</tr>";
 	foreach($accountab as $result){
 		if($result["admin"]==false){$type="Utente";}
 		else{$type="Admin";}
-		echo "<tr><td>".$result["username"]."</td><td>".$type."</td><td>".$result["email"]."</td><td>".$result["datacreazione"]."</td><td><button>Modifica privilegi</button></td></tr>";
-	};
+		echo "<tr><td>".$result["username"]."</td>
+		<td>".$type."</td>
+		<td>".$result["email"]."</td>
+		<td>".$result["datacreazione"]."</td>";
+		
+		if ($_SESSION['login_user']!=$result["username"]){
+		echo "
+		<td>
+			<a href='adminaccounts.php?type=edit&user=".$result["username"]."'>Cambia privilegi</a>
+		</td>
+		<td>
+			<a>Elimina Utente</a>
+		</td>";
+		}
+		else{echo "<td></td><td></td>";}
+	}
 	echo "</table>";
 	
-	include $path."/general/Footer.php";
+	include "general/Footer.php";
 ?>
 </body>
 </html>
