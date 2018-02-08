@@ -230,8 +230,10 @@
 		$query = mysqli_query($this->connessione,"SELECT username,review,voto,data
 												  FROM Recensione
 												  WHERE prodotto='$id'");
+		if(mysqli_num_rows($query)==0)
+			return false;
 		for($i=0;$i<mysqli_num_rows($query);$i++){
-		$result[$i]=mysqli_fetch_assoc($query);
+			$result[$i]=mysqli_fetch_assoc($query);
 		}
 		return $result;
 	}

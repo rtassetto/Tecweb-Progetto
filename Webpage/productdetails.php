@@ -33,6 +33,8 @@ $DB->openc();
 		  </form>";
 	$reviews=$DB->getProdReview($_GET['id']);
 	echo "<h2>Recensioni</h2>";
+	if(!$reviews){echo "<span>Non ci sono recensioni per questo prodotto</span>";}
+	else{
 	foreach($reviews as $result){
 		echo "<div class='recensione'>
 			  <span>".$result['username']."</span>
@@ -40,6 +42,7 @@ $DB->openc();
 			  <span>".$result['voto']."</span>
 			  <p>".$result['review']."</p>
 			  </div>";
+	}
 	}
 	?>
 
