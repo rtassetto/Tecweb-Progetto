@@ -13,14 +13,32 @@ session_start();
 	 $DB= new DBAccess();
 	 $DB->openc();
      $P=$DB->getP();
-     foreach($P as $x){
+     $erroreR='';
+     $errore=false;
+     foreach($P as $x){         
          if(isset($_POST[$x['id']."1"])){
-              $testo=htmlspecialchars($_POST["recensione"]);
-              $valutazione=$_POST["voto"];
-              $prodotto=$x['id'];
-              $user=$_SESSION["login_user"];
-              $DB->aggiungiR($user,$prodotto,$testo,$valutazione);
+              if (!preg_match("/^[a-zA-Z'èà ]*$/",$_POST["recensione"])) {
+                  $erroreR = "solo lettere e spazi possono essere inseriti in questo campo";
+                  $errore=true;
+              }
+              if(!$errore){
+                  $testo=htmlspecialchars($_POST["recensione"]);
+                  $testo=addslashes($testo);
+                  $testo = str_replace ("à", "&agrave", $testo);
+                  $testo = str_replace ("è", "&egrave", $testo);
+                  $testo = str_replace ("ì", "&igrave", $testo);
+                  $testo = str_replace ("ò", "&ograve", $testo);
+                  $testo = str_replace ("ù", "&ugrave", $testo);
+                  $valutazione=$_POST["voto"];
+                  $prodotto=$x['id'];
+                  $user=$_SESSION["login_user"];
+                  $DB->aggiungiR($user,$prodotto,$testo,$valutazione);
               header("location: purchasehistory.php");
+              }
+              else{
+                 $nome=$x['nome'];
+                 $id=$x['id'];
+              }
          }
          if(isset($_POST[$x['id']])){
              $nome=$x['nome'];
@@ -51,18 +69,15 @@ session_start();
     </div>
     
     <div id="recensione">
-        <h3>Scrivi una recensione per il prodotto <?php echo $nome; echo $id;?></h3>
+        <h3>Scrivi una recensione per il prodotto <?php echo $nome;?></h3>
         <form method="post" action="recensione.php">
-        <textarea name="recensione" rows="10" cols="50"></textarea>
+        <textarea name="recensione" rows="10" cols="50" required></textarea><span><?php echo $erroreR;?></span>
         <p>immetti la tua valutazione</p>
-        <select name="voto" size="1">
-            <option value="none"></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>    
+        <input type="radio" name="voto"  value="1" required><span>1</span>
+        <input type="radio" name="voto"  value="2" required><span>2</span>
+        <input type="radio" name="voto"  value="3" required><span>3</span>
+        <input type="radio" name="voto"  value="4" required><span>4</span>
+        <input type="radio" name="voto"  value="5" required><span>5</span> 
         <input type="submit" name="<?php echo $id."1"; ?>" value="Aggiungi recensione"/>
         </form>
     </div>
