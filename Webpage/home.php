@@ -1,5 +1,8 @@
 <?php
-session_start();
+	session_start();
+    require "php-script/connessione.php";
+	$DB= new DBAccess();
+	$DB->openc();
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +11,6 @@ session_start();
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
 
- <?php
-     require "php-script/connessione.php";
-	 $DB= new DBAccess();
-	 $DB->openc();
-?>
 <html lang="it">
 <head>    
 <?php

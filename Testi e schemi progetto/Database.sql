@@ -14,7 +14,7 @@ CREATE TABLE Prodotto(
     nome varchar(150),
     categoria enum ('Monitor','HDD','SSD'),
     descrizione varchar(2000),
-    Valutazione float,
+    valutazione float,
     prezzo float
 );
 

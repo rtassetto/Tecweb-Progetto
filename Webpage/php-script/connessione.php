@@ -73,7 +73,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "Valutazione"=>$row["Valutazione"],
+                         "valutazione"=>$row["valutazione"],
                          "prezzo"=>$row["prezzo"],
                          "id"=>$row["id"]);
             array_push($result,$single);
@@ -131,18 +131,17 @@
 	public function createProduct($nome, $categoria, $descrizione,$prezzo){
 		mysqli_query($this->connessione, "INSERT INTO Prodotto(nome,categoria,descrizione,prezzo) VALUES ('$nome','$categoria','$descrizione','$prezzo')");
 	}
-	public function addPurchase($user,$product,$quantity){
-		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione, "INSERT INTO PurchaseHistory(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
+	public function getProddata($id){
+		$query = mysqli_query($this->connessione,"SELECT * FROM Prodotto WHERE id='$id'");
+		return mysqli_fetch_assoc($query);
 	}
-    public function modifyProduct($id, $nome, $categoria, $descrizione, $prezzo)
-    {
+    public function modifyProduct($id, $nome, $categoria, $descrizione, $prezzo){
         mysqli_query($this->connessione,"UPDATE Prodotto SET nome='$nome',categoria='$categoria',descrizione='$descrizione',prezzo='$prezzo' WHERE id='$id'") or die (
 			"Error in modifyProductquery: " . mysqli_error($this->connessione));
     }
 	
 	//PurchaseHistory
-	    public function getPH($name){
+	public function getPH($name){
         $query="SELECT nome,categoria,descrizione,Valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
@@ -164,6 +163,10 @@
        $delete="DELETE FROM `Carrello` WHERE username='$user' AND prodotto='$id'";
        mysqli_query($this->connessione, $delete);
     }
+	public function addPurchase($user,$product,$quantity){
+		$data=date("Y-m-d H:i:s");
+		mysqli_query($this->connessione, "INSERT INTO PurchaseHistory(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
+	}
 	
 	//Carrello
     public function eliminaC($id,$user){
