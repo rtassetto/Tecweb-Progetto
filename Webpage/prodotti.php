@@ -74,7 +74,7 @@
             foreach($P as $x){
                 echo "<tr>";
                 echo "<td>";
-                echo $x["nome"];
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";
                 echo "</td>";
                 echo "<td>";
                 echo $x["categoria"];

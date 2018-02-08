@@ -226,6 +226,15 @@
         mysqli_query($this->connessione, $insert)or die (
 			"Errore nell' inserimento della recensione: " . mysqli_error($this->connessione));
     }
+	public function getProdReview($id){
+		$query = mysqli_query($this->connessione,"SELECT username,review,voto,data
+												  FROM Recensione
+												  WHERE prodotto='$id'");
+		for($i=0;$i<mysqli_num_rows($query);$i++){
+		$result[$i]=mysqli_fetch_assoc($query);
+		}
+		return $result;
+	}
 	
 	//Bundles
 	public function createBundle($nome,$descrizione,$bundleparts){
