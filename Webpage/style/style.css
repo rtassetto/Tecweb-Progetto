@@ -329,3 +329,14 @@ footer img{
 .container .info span .fa {
   color: #EF3B3A;
 }
+
+#prod{
+     float:left;
+     width:49%;
+}
+
+#bundle{
+     float:right
+     width 49%
+}
+

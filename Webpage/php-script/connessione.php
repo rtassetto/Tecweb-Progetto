@@ -73,7 +73,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "valutazione"=>$row["valutazione"],
+                         "valutazione"=>$row["Valutazione"],
                          "prezzo"=>$row["prezzo"],
                          "id"=>$row["id"]);
             array_push($result,$single);
@@ -91,7 +91,7 @@
                 $single=array("nome"=>$row["nome"],
                              "categoria"=>$row["categoria"],
                              "descrizione"=>$row["descrizione"],
-                             "valutazione"=>$row["valutazione"],
+                             "valutazione"=>$row["Valutazione"],
                              "prezzo"=>$row["prezzo"],
                              "id"=>$row["id"]);
                 array_push($result,$single);
@@ -129,7 +129,7 @@
             $single=array("nome"=>$row["nome"],
                          "categoria"=>$row["categoria"],
                          "descrizione"=>$row["descrizione"],
-                         "valutazione"=>$row["valutazione"],
+                         "valutazione"=>$row["Valutazione"],
                          "prezzo"=>$row["prezzo"],
                           "id"=>$row["id"]);
             array_push($result,$single);
