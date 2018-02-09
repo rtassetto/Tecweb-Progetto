@@ -4,11 +4,20 @@
 	$DB= new DBAccess();
 	$DB->openc();
     $P=$DB->getP();
+    $B=$DB->getB();
     $val='';
-    $bundle=false;
+    $creazione=false;
     if(isset($_POST['nome'])){
-        $bundle=true;
+        $creazione=true;
         $val=$_POST['nome'];
+    }
+    foreach($B as $x){
+        $n=$x['nome'];
+        if(isset($_GET[$n])){
+            $nome=$n;
+            $creazione=true;
+            $PB=$DB->getPB($nome);
+        }
     }
 ?>
 
@@ -32,21 +41,73 @@
     <div>
     
     <div id="prod">
-        <span>Nome Bundle:</span>
-    <form method="post" action="adminbundle.php">
-    <input type='text' name="nome" value='<?php echo $val; ?>' />
-    <input type='submit' name='crea' value='crea'/>
-    </form>
-        <table id="products">
-            <thead>
-                <tr>
-                    <th>Prodotto</th>
-                    <th>Prezzo</th>
-                    <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
-                </tr>
-            </thead>
         <?php
-            if($bundle){
+        if(!$creazione){
+         echo '<table id="products">';
+            echo '<thead>';
+                echo '<tr>';
+               echo  '<th>Nome Bundle</th>';
+               echo  '<th>        </th>';
+               echo '</tr>';
+               echo '</thead>';
+               foreach($B as $x){
+                echo "<tr>";
+                echo "<td>";
+                $nome=$x['nome'];
+                echo $nome;
+                echo "</td>";
+                echo "<td>";
+                echo "<form method='get' action='adminbundle.php'>";
+                echo "<input type='submit' name='$nome' value='Modifica bundle'/>";
+                echo "</form>";
+                echo "</td>";
+                echo "</tr>";
+               }
+        }
+         if($creazione){
+                echo "</table>";
+        echo '<table id="products">';
+            echo '<thead>';
+                echo '<tr>';
+               echo  '<th>Prodotto</th>';
+               echo "<th>      </th>";
+               echo '</tr>';
+            echo '</thead>';
+            
+            foreach($PB as $x){
+                $id=$x["id"];
+                echo "<tr>";
+                echo "<td>";
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";
+                echo "</td>";
+                echo "<td>";
+                echo "<form method='get' action='adminbundle.php/$nome=Modifica+bundle'>";
+                echo "<input type='submit' name='$id' value='Rimuovi dal bundle'/>";
+                echo "</form>";
+                echo "</td>";
+                echo "</tr>";
+            }
+            }
+    
+        
+        echo '</table>' 
+        ?>
+    
+    
+    </div>
+    <?php
+     if($creazione){
+                echo "</table>";
+        echo '<table id="products">';
+            echo '<thead>';
+                echo '<tr>';
+               echo  '<th>Prodotto</th>';
+                    echo '<th>Prezzo</th>';
+                     if(isset($_SESSION['login_user'])){echo "<th>      </th>";}
+               echo '</tr>';
+            echo '</thead>';
+        
+           
             foreach($P as $x){
                 echo "<tr>";
                 echo "<td>";
@@ -58,56 +119,17 @@
                 if(isset($_SESSION['login_user'])){
                 $id=$x["id"];
                 echo "<td>";
-                echo "<form method='post' action='adminbundle.php'>";
-                echo "<input type='submit' name='$id' value='Aggiungi al bundle'/>";
+                echo "<form method='post' action='adminbundle.php/$nome=Modifica+bundle'>";
+                echo "<input type='submit' name='$id.r' value='aggiungi al bundle'/>";
                 }
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";
             }
             }
-    
+        echo "</table>";
+        echo "</div>"
         ?>
-        </table>    
-    
-    
-    </div>
-    
-    <div id="bundle">
-        <table id="products">
-            <thead>
-                <tr>
-                    <th>Prodotto</th>
-                    <th>Prezzo</th>
-                    <?php if(isset($_SESSION['login_user'])){echo "<th>      </th>";}?>
-                </tr>
-            </thead>
-        <?php
-            if($bundle){
-            foreach($P as $x){
-                echo "<tr>";
-                echo "<td>";
-                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";
-                echo "</td>";
-                echo "<td>";
-                echo $x["prezzo"]."€";
-                echo "</td>";
-                if(isset($_SESSION['login_user'])){
-                $id=$x["id"];
-                echo "<td>";
-                echo "<form method='post' action='adminbundle.php'>";
-                echo "<input type='submit' name='$id.r' value='Rimuovi dal bundle'/>";
-                }
-                echo "</form>";
-                echo "</td>";
-                echo "</tr>";
-            }
-            }
-        ?>
-        </table>    
-    
-    
-    </div>
     </div>
     
 <?php

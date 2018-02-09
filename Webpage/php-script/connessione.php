@@ -262,6 +262,27 @@
 			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 200).'...</p></td></tr>';
 		}
 	}
+    public function getB(){
+        $query='SELECT nome FROM Bundles';
+        $queryresult=mysqli_query($this->connessione,$query) or die("errore richiesta bundle".mysqli_error($this->connessione));
+        $result=array();
+        while($row=mysqli_fetch_assoc($queryresult)){
+            $single=array('nome'=>$row['nome']);
+            array_push($result,$single);
+        }
+       return $result;
+    }
+    public function getPB($nome){
+        $query="SELECT id,Prodotto.nome FROM BundleParts JOIN Prodotto WHERE BundleParts.bundle='$nome' AND pezzo=id";
+        $queryresult=mysqli_query($this->connessione,$query) or die("errore richiesta bundle".mysqli_error($this->connessione));
+        $result=array();
+        while($row=mysqli_fetch_assoc($queryresult)){
+            $single=array('nome'=>$row['nome'],
+                          'id'=>$row['id']);
+            array_push($result,$single);
+        }
+       return $result;
+    }
 	}
 	
 ?>
