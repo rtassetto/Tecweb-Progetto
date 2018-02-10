@@ -30,7 +30,6 @@ else{
 <h1>Pannello Amministrazione</h1>
 <p><a href="adminproducts.php">Aggiunta/Modifica dei Prodotti</a></p>
 <p><a href="adminaccounts.php">Gestione Accounts</a></p>
-<p><a href="adminreview.php">Gestione Recensioni</a></p>
 <p><a href="adminbundle.php">Aggiunta/Modifica Bundles</a></p>
 <p><a href="adminpurchasehist.php">Storia degli Acquisti</a></p>
 <?php

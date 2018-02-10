@@ -5,4 +5,3 @@
     <meta name="author" content="Lotto Matteo, Tassetto Riccardo, Zago Davide"/>
     <link rel="stylesheet" href="style/style.css"/>
     <link rel="stylesheet" href="style/print.css" media="print"/>
-    <!--<link rel="stylesheet" href="style/small.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>--> 

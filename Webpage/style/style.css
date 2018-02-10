@@ -266,7 +266,6 @@ section{
     cursor: pointer;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
     visibility: hidden;
     width: 160px;
@@ -461,4 +460,16 @@ footer img{
      float:right
      width 30%
 }
+
+----------------------------------------
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+
+
+
 
