@@ -23,7 +23,12 @@
     foreach($P as $x){
         $z=$x['id'];
         if(isset($_POST[$z])){
-            $DB->aggiungiC($z,$_SESSION['login_user']);
+            if(isset($_SESSION['login_user']))
+            {
+                $DB->aggiungiC($z,$_SESSION['login_user']);
+            }else{
+                echo "<p>Per effettuare un acquisto devi prima essere registrato!</p>";
+            }
         }
     }
 ?>
@@ -41,10 +46,18 @@
 </head>
     
 <body>
-    
-
+  
 <?php
     include "general/Header.php";
+    
+    
+    
+?>
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Prodotti </p> 
+    </div>
+      
+<?php
     if(isset($testo)){
         if($testo==""){
             echo "<p> Inserire un nome valido nella ricerca </p>\n";
@@ -61,12 +74,9 @@
     <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
     
-    <div id="breadcrumb"> 
-        <p> Ti trovi in: Home &#8594; Prodotti </p> 
-    </div>
     
     
-    <form method="get" action="prodotti2.php" id="avdancedSearch" name="advancedSearch">
+    <form method="get" action="prodotti.php" id="avdancedSearch" name="advancedSearch">
         <label for="categoria">Filtra per:</label>
         <select id="categoria" name="categoria" required>
             <option value=" " selected>Scegli categoria</option>

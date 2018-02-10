@@ -179,6 +179,58 @@ section{
 
 
 
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
 
 aside{
     width:49%;
@@ -216,14 +268,13 @@ footer{
     margin-top:5px;
     display:block;
     padding: 5px;
-    border:1px solid black;    
+    background-color:#e6e6e6;
 }
 
 footer img{
     float:right;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
   width: 360px;
@@ -234,16 +285,17 @@ footer img{
 .form {
   background: #FFFFFF;
   max-width: 360px;
-  margin:10% 35%;
+  margin:3% 35%;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+
+
 .form input {
-  font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background-color:#e6e6e6;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -252,34 +304,21 @@ footer img{
   font-size: 14px;
 }
 
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #0080ff;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
 
-.form button:hover,.form button:active,.form button:focus {
-  background: #0059b3;
+.form_submit:hover,.form_submit:active,.form_submit:focus {
+  background: cornflowerblue;
+    cursor: pointer;
 }
 
 .form .message {
-  margin: 15px 0 0;
+  margin: 10% 0 0;
   color: #808080;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .form .message a {
   color: #0080ff;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .form .message a:hover {

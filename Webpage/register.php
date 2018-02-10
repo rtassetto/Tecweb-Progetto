@@ -25,17 +25,24 @@ if(isset($_POST["submit"])){
 <?php
 	require "general/Header.php";
 ?>
-<form action="register.php" method="POST">
-<label for="username">Username:</label>
-<input type="text" name="username"/>
+    
+        <div id="breadcrumb"> 
+        <p> Ti trovi in: Home </p> 
+        </div>
+    
+   <div class="form"> 
+    <form class="login-form" action="register.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username"/>
 
-<label for="password">Password:</label>
-<input type="password" name="password"/>
+        <label for="password">Password:</label>
+        <input type="password" name="password"/>
 
-<label for="email">E-mail</label>
-<input type="email" name="email"/>
-<input type="submit" name="submit" value="Registra"/>
-</form>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email"/>
+        <input type="submit" class="form_submit" name="submit" value="Registra"/>
+    </form>
+    </div>
 <?php
 	require "general/Footer.php";
 ?> 

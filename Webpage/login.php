@@ -54,9 +54,11 @@ if(isset($_POST["submit"])){
     
    <div class="form">
     <form class="login-form" method="post" action="login.php">
+      <label for="nome_utente">Username:</label>
       <input type="text" name="nome_utente" placeholder="username"/>
+      <label for="pass">Password:</label>
       <input type="password" name="pass" placeholder="password"/>
-      <input type="submit" name="submit" value="Login"/>
+      <input type="submit" class="form_submit" name="submit" value="Login"/>
       <p class="message">Non sei registrato? <a href="register.php">Crea un account</a></p>
     </form>
   </div>
