@@ -17,7 +17,7 @@ session_start();
      $errore=false;
      foreach($P as $x){         
          if(isset($_POST[$x['id']."1"])){
-              if (!preg_match("/^[a-zA-Z'èà ]*$/",$_POST["recensione"])) {
+              if (!preg_match("/^[a-zA-Z'èà,.; ]*$/",$_POST["recensione"])) {
                   $erroreR = "solo lettere e spazi possono essere inseriti in questo campo";
                   $errore=true;
               }
