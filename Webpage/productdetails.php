@@ -31,20 +31,22 @@ function myFunction() {
 	include "general/Header.php";
     $product=$DB->getProddata($_GET['id']);
     echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Prodotti &#8594; ".$product['nome']."</p></div>";
-	echo "<h1>".$product['nome']."</h1>
-		<img src='images/".$_GET['id'].".jpg'/>
-		<span>Categoria di prodotto:".$product['categoria']."</span>
-		<span>".$product['valutazione']."/5</span>
-		<span>".$product['prezzo']."€</span>
-		<p>".$product['descrizione']."</p>";
+	echo "
+        <div id='dettaglioProdotto'>
+        <h1 class='nome'>".$product['nome']."</h1>
+		<div class='img'><img src='images/".$_GET['id'].".jpg'/></div>
+		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
+		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p></div>
+		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
+		<div class='descrizione'><p>".$product['descrizione']."</p></div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
         echo "<form class='popup' method='post' action='prodotti.php'>
-              <input type='submit' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
+              <input type='submit' id='aggiungiCarrello' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
               <span class='popuptext' id='myPopup'>Prodotto aggiunto al carrello</span>
-              </form>";
+              </form></div>";
     }else{
-        echo "<p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.";  
+        echo "<p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p></div>";  
     }
     echo "<h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);

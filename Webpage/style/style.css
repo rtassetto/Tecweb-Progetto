@@ -179,6 +179,86 @@ section{
 
 
 
+
+#dettaglioProdotto{
+    margin:0;
+    width:1280px;
+    height:480px;
+    border:1px solid black;
+}
+
+
+
+#dettaglioProdotto .img{
+    margin:1%;
+    width:30%;
+    height:auto;
+}
+
+#dettaglioProdotto .img img{
+    float:left;
+    width:100%;
+    height:auto;
+}
+
+
+
+
+#dettaglioProdotto .nome{
+    width:95%;
+    margin-left:8px;
+    border:1px solid black;
+}
+
+#dettaglioProdotto .descrizione{
+    position:relative;
+    float:right;
+    margin-top:0;
+    left:-5%;
+    padding:5px;
+    width:60%;
+    height:50%;
+    border:2px solid purple;
+
+}
+
+#dettaglioProdotto .prezzo{
+    float:right;
+    border:2px solid yellow;
+    position:relative;
+    right:-5%;
+    top:65%;
+}
+
+#dettaglioProdotto .valutazione{
+    float:right;
+    border:2px solid brown; 
+    position:relative;
+    right:30%;
+    top:-5%;
+}
+
+#dettaglioProdotto .categoria{
+    border:2px solid blue;
+    position:relative;
+    right:5%;
+    top:-5%;
+    float:right;
+}
+
+
+#aggiungiCarrello{
+    float:right;
+    position:relative;
+    margin-top:15%;
+    margin-bottom:50%;
+    left:500%;
+    width:100%;
+    
+}
+
+
+
 .popup {
     position: relative;
     display: inline-block;
@@ -265,7 +345,7 @@ table th {
 }
 
 footer{
-    margin-top:5px;
+    margin-top:10%;
     display:block;
     padding: 5px;
     background-color:#e6e6e6;
