@@ -56,7 +56,7 @@
 										 WHERE username='$username'");
 	}
 	public function getUserlist(){
-		$query=mysqli_query($this->connessione,"SELECT username,email,admin,datacreazione FROM account");
+		$query=mysqli_query($this->connessione,"SELECT * FROM account");
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
 		}

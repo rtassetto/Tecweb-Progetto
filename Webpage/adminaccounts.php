@@ -39,8 +39,9 @@ else{
 	echo "<table>
 			<tr>
 				<th>Username</th>
+				<th>Password</th>
 				<th>Tipo</th>
-				<th>email</th>
+				<th>E-mail</th>
 				<th>Data Crezione</th>
 				<th></th>
 			</tr>";
@@ -48,6 +49,7 @@ else{
 		if($result["admin"]==false){$type="Utente";}
 		else{$type="Admin";}
 		echo "<tr><td>".$result["username"]."</td>
+		<td>".$result["password"]."</td>
 		<td>".$type."</td>
 		<td>".$result["email"]."</td>
 		<td>".$result["datacreazione"]."</td>";
