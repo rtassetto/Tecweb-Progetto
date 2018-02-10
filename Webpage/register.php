@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
 	$password=$_POST["password"];
 	$email=$_POST["email"];
 	$DB->createUser($username, $password, $email);
-	header("location: /home.php");
+	header("location: home.php");
 }
 ?>
 <!DOCTYPE html>
