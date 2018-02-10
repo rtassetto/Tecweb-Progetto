@@ -291,6 +291,14 @@
         }
        return $result;
     }
+    public function aggiungiPB($nome,$id){
+        $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
+        mysqli_query($this->connessione,$insert) or die("errore nell'inserimento nel bundle".mysqli_error($this->connessione));
+    }
+        public function rimuoviPB($nome,$id){
+        $delete="DELETE FROM BundleParts WHERE bundle='$nome' AND pezzo='$id'";
+        mysqli_query($this->connessione,$delete) or die("errore nella rimozione del prodotto dal bundle".mysqli_error($this->connessione));
+    }
 	}
 	
 ?>
