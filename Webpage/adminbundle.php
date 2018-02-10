@@ -7,6 +7,13 @@
     $B=$DB->getB();
     $nome='';
     $creazione=false;
+    if(isset($_POST["crea"])){
+        $creazione=true;
+        $nome=$_POST['nome'];
+        $descrizione=$_POST['descrizione'];
+        $DB->creaB($nome,$descrizione);
+        header("location:adminbundle.php?$nome=Modifica+bundle"); 
+    }
     foreach($B as $x){
         $n=$x['nome'];
         if(isset($_GET[$n])){
@@ -49,6 +56,11 @@
     <div id="prod">
         <?php
         if(!$creazione){
+            echo "<form method='post' action='adminbundle.php'>";
+            echo "<input type='text' name='nome'>";
+            echo "<input type='textarea' name='descrizione'>";
+            echo "<input type='submit' name='crea' value='Crea bundle'/>";
+            echo "</form>";
          echo '<table id="products">';
             echo '<thead>';
                 echo '<tr>';

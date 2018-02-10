@@ -110,8 +110,9 @@
     <section id="content_prodotti">
         <?php
             foreach($P as $x){
+                $id=$x['id'];
                 echo "<div class='prodotto'>";
-                echo "<div class='img'><img src='images/hdd.jpg' alt='immagine prodotto'/>";
+                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
                 echo "</div>";
                 echo "<div class='nome'>";
                 echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";

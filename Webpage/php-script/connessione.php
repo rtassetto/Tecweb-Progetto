@@ -300,6 +300,10 @@
         $delete="DELETE FROM BundleParts WHERE bundle='$nome' AND pezzo='$id'";
         mysqli_query($this->connessione,$delete) or die("errore nella rimozione del prodotto dal bundle".mysqli_error($this->connessione));
     }
+    public function creaB($nome,$descrizione){
+        $insert="INSERT INTO Bundles (nome,descrizione,data) VALUES ('$nome','$descrizione',NOW())";
+        mysqli_query($this->connessione,$insert) or die("errore nella creazione del bundle".mysqli_error($this->connessione));
+    }
 	}
 	
 ?>
