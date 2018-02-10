@@ -247,7 +247,7 @@ section{
 }
 
 
-#aggiungiCarrello{
+.aggiungiCarrello{
     float:right;
     position:relative;
     margin-top:15%;

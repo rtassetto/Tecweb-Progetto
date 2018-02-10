@@ -42,7 +42,7 @@ function myFunction() {
 	//$product[]
     if(isset($_SESSION['login_user'])){
         echo "<form class='popup' method='post' action='prodotti.php'>
-              <input type='submit' id='aggiungiCarrello' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
+              <input type='submit' class='aggiungiCarrello' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
               <span class='popuptext' id='myPopup'>Prodotto aggiunto al carrello</span>
               </form></div>";
     }else{
