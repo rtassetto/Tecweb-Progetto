@@ -3,7 +3,6 @@
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="chi_siamo.php">Chi siamo</a></li>
                 <li><a href="prodotti.php">Prodotti</a></li>
 				<?php
 				if(isset($_SESSION['login_user'])){
