@@ -12,7 +12,8 @@
 <![endif]-->
 
 <html lang="it">
-<head>    
+<head>
+<title>Buy Tech</title>    
 <?php
 	require "general/Meta.php";
 ?>

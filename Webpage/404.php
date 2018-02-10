@@ -4,11 +4,11 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
 <html lang="it">
-<head>    
+<head>  
+    <title>Pagina non trovata - Buy Tech</title>  
 <?php
 	require "general/Meta.php";
 ?>
-    <title>Home</title>
 </head>
     
 <body>

@@ -34,7 +34,8 @@ if(isset($_POST["submit"])){
 <![endif]-->
 
 <html lang="it">
-<head>    
+<head>  
+<title>Login - Buy Tech</title>  
 <?php
 	require "general/Meta.php";
 ?>
