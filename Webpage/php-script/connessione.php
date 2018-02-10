@@ -24,10 +24,15 @@
 	
 	//Account
 	public function createUser($username, $password, $email){
+		//Validazione form
+		if ((strlen($username)<5) || (strlen($username)>20) || (strlen($password)<5) || (strlen($password)>20) || (strlen($email)<5) ||(strlen($email)>50)) 
+			return 3;
 		if(mysqli_num_rows(mysqli_query($this->connessione, "SELECT username FROM Account WHERE username='$username';"))!=0)
 			return 1;
+		if(mysqli_num_rows(mysqli_query($this->connessione, "SELECT email FROM Account WHERE email='$email';"))!=0)
+			return 4;
 		$data=date("Y-m-d H:i:s");
-		if(!mysqli_query($this->connessione, "INSERT INTO Account(username,password,email,datacreazione) VALUES ('$username','$password','$email','$data')")) //DA VERIFICARE SE CORRETTA PROCEDURA DI VERIFICA
+		if(!mysqli_query($this->connessione, "INSERT INTO Account(username,password,email,datacreazione) VALUES ('$username','$password','$email','$data')"))
 			return 2;
 		return 0;
 	}
