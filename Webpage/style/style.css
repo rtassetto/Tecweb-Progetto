@@ -124,8 +124,8 @@ section{
 
 #content_prodotti .img img{
     float:left;
-    height:100%;
-    width:auto;
+    max-height:100%;
+    max-width:100%;
 }
 
 #content_prodotti .nome{
@@ -191,8 +191,9 @@ section{
 
 #dettaglioProdotto .img{
     margin:1%;
-    width:30%;
-    height:auto;
+    max-width:30%;
+    max-height:100%;
+    border:1px solid black;
 }
 
 #dettaglioProdotto .img img{
@@ -226,8 +227,8 @@ section{
     float:right;
     border:2px solid yellow;
     position:relative;
-    right:-5%;
-    top:65%;
+    right:-2%;
+    top:-4%;
 }
 
 #dettaglioProdotto .valutazione{
@@ -235,28 +236,22 @@ section{
     border:2px solid brown; 
     position:relative;
     right:30%;
-    top:-5%;
+    top:-4%;
 }
 
 #dettaglioProdotto .categoria{
     border:2px solid blue;
     position:relative;
     right:5%;
-    top:-5%;
+    top:65%;
     float:right;
 }
 
 
-.aggiungiCarrello{
-    float:right;
+#dettaglioProdotto .aggiungiCarrello{
     position:relative;
-    margin-top:15%;
-    margin-bottom:50%;
     left:500%;
-    width:100%;
-    
 }
-
 
 
 .popup {
