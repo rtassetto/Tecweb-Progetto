@@ -32,7 +32,11 @@ else{
 <?php
 	include "general/Header.php";
 ?>
-<h1>Gestione Accounts</h1>
+    
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Gestione accounts </p> 
+    </div>
+
 
 <?php
 	$accountab=$DB->getUserlist();

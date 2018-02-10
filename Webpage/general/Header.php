@@ -1,4 +1,4 @@
-    <header>
+    <header id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>        
         <nav>
             <ul>
@@ -13,6 +13,7 @@
 
                 }
                 else{
+                    echo '<li><a href="account.php">Account</a></li>';
                     echo '<li><a href="adminmenu.php">Gestione sito</a></li>'; 
                 }
                 echo '<li><a href="php-script/logout.php">Logout</a></li>';

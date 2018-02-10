@@ -13,14 +13,19 @@ if(!isset($_SESSION['login_user'])){
     <title>Account - Buy Tech</title>  
 <?php
 	require "general/Meta.php";
+    require "general/Header.php";
 ?>
+    
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Account </p> 
+    </div>
 </head>
     
 <body>
 <?php
-require "general/header.php";
+
 echo "<h1>Gestione account</h1>";
-echo "<p>Username:".$_SESSION['login_user']."</p>";
+echo "<p>Benvenuto, ".$_SESSION['login_user']." !</p>";
 
 echo "<a href='purchasehistory.php'>Storia degli Acquisti</a>
 	  <a href='carrello.php'>Carrello</a>

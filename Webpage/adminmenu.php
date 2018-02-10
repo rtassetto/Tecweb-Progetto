@@ -23,12 +23,15 @@ else{
 <?php
 	include "general/Header.php";
 ?>
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Gestione sito </p> 
+    </div>
 
 <h1>Pannello Amministrazione</h1>
 <p><a href="adminproducts.php">Aggiunta/Modifica dei Prodotti</a></p>
 <p><a href="adminaccounts.php">Gestione Accounts</a></p>
 <p><a href="adminreview.php">Gestione Recensioni</a></p>
-<p><a href="adminbundle.php">Aggiungi/Modifica Bundles</a></p>
+<p><a href="adminbundle.php">Aggiunta/Modifica Bundles</a></p>
 <p><a href="adminpurchasehist.php">Storia degli Acquisti</a></p>
 <?php
 	include "general/Footer.php";

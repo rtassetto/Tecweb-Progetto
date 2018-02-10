@@ -41,7 +41,7 @@ include "general/Header.php";
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home &#8594; Storico acquisti </p> 
+        <p> Ti trovi in: Home &#8594; Account &#8594; Storico acquisti </p> 
     </div>
     
     

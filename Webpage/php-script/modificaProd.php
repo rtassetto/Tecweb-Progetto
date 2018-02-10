@@ -51,7 +51,7 @@
                 <td><?php echo $y["nome"]?></td>
                 <td><?php echo $y["categoria"]?></td>
                 <td><?php echo $y["descrizione"]?></td>
-                <td><?php echo $y["Valutazione"]?></td>
+                <td><?php echo $y["valutazione"]?></td>
                 <td><?php echo $y["prezzo"]?></td>
             </tr>
     </table>

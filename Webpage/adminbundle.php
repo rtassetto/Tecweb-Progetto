@@ -50,7 +50,9 @@
 <?php
 	include "general/Header.php";
 ?>
-    
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Aggiunta/Modifica bundles </p> 
+    </div>
     <div>
     
     <div id="prod">

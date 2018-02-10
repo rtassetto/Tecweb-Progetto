@@ -84,8 +84,7 @@
 		</table>
     </section>
     
-    
-    
+
  <?php
 	require "general/Footer.php";
  ?>   

@@ -36,12 +36,16 @@ else{
 <?php
 	include "general/Meta.php";
 ?>
+    
+      
 </head>
 <body>
 <?php
 	include "general/Header.php";
 ?>
-<h1>Aggiunta/Modifica dei Prodotti</h1>
+    <div id="breadcrumb"> 
+        <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Aggiunta/Modifica prodotti </p> 
+    </div>
 <h2>Aggiunta Prodotto</h2>
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
 <label for="nome">Nome del Prodotto:</label> <input type="text" name="nome"/>

@@ -10,6 +10,12 @@ html {
     border:1px solid black;
 }
 
+body{
+    height:100%;
+}
+
+
+
 nav {
     height:3.5em;
     border-color:darkcyan;
@@ -340,11 +346,13 @@ table th {
 }
 
 footer{
-    margin-top:10%;
+    margin:10% 0 0 0;
     display:block;
     padding: 5px;
     background-color:#e6e6e6;
 }
+
+
 
 footer img{
     float:right;
