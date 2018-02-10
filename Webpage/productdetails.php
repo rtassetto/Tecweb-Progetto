@@ -48,7 +48,8 @@ function myFunction() {
               <span class='popuptext' id='myPopup'>Prodotto aggiunto al carrello</span>
               </form></div>";
     }else{
-        echo "<p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p></div>";  
+        
+        echo "</div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
     echo "<h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);
