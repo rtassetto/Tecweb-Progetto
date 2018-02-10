@@ -1,6 +1,7 @@
 <?php
 
    class DBAccess {
+	   //DA MODIFICARE SUL SERVER DEL LAB
 	const HOST_DB= "localhost";
 	const USERNAME= "root";
 	const PASSWORD = "";
@@ -30,15 +31,6 @@
 			return 2;
 		return 0;
 	}
-    public function isAdmin($username){
-		$query = mysqli_query($this->connessione,"SELECT * FROM Account WHERE username='$username'");
-		$row = mysqli_fetch_assoc($query);
-		if ($row){
-			if ($row['admin']==true){
-			return true;
-            }
-		}
-    }
 	public function checkUser($username,$password){
 		$query = mysqli_query($this->connessione,"SELECT * FROM Account WHERE username='$username' AND password='$password'");
 		$row = mysqli_fetch_assoc($query);
@@ -135,9 +127,7 @@
             array_push($result,$single);
         }
        return $result;
-    }
-       
-       
+    }     
 	public function createProduct($nome, $categoria, $descrizione,$prezzo){
 		mysqli_query($this->connessione, "INSERT INTO Prodotto(nome,categoria,descrizione,prezzo) VALUES ('$nome','$categoria','$descrizione','$prezzo')");
 	}
@@ -149,7 +139,6 @@
         mysqli_query($this->connessione,"UPDATE Prodotto SET nome='$nome',categoria='$categoria',descrizione='$descrizione',prezzo='$prezzo' WHERE id='$id'") or die (
 			"Error in modifyProductquery: " . mysqli_error($this->connessione));
     }
-	
 	public function getBestselling(){
 		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id having p.valutazione>=4 ORDER by sum(ph.quantita) desc LIMIT 6 ");
         $result=array();
@@ -182,10 +171,6 @@
        $delete="DELETE FROM `Carrello` WHERE username='$user' AND prodotto='$id'";
        mysqli_query($this->connessione, $delete);
     }
-	public function addPurchase($user,$product,$quantity){
-		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione, "INSERT INTO PurchaseHistory(compratore,prodotto,quantita,data) VALUES ('$user','$product','$quantity','$data')");
-	}
 	
 	//Carrello
     public function eliminaC($id,$user){
@@ -236,10 +221,6 @@
 	}
 	
 	//Recensione
-	public function createReview($user,$product,$review,$vote,$data){
-		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione, "INSERT INTO Recensione(username,prodotto,review,voto,data) VALUES ('$user','$product','$review','$vote','$data')");
-	}
     public function aggiungiR($name,$prodotto,$testo,$voto){
         $insert="INSERT INTO `Recensione`(`username`, `prodotto`, `review`, `voto`, `data`) VALUES ('$name','$prodotto','$testo','$voto',NOW())";
         mysqli_query($this->connessione, $insert)or die (
@@ -296,9 +277,9 @@
         $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
         mysqli_query($this->connessione,$insert) or die("errore nell'inserimento nel bundle".mysqli_error($this->connessione));
     }
-        public function rimuoviPB($nome,$id){
-        $delete="DELETE FROM BundleParts WHERE bundle='$nome' AND pezzo='$id'";
-        mysqli_query($this->connessione,$delete) or die("errore nella rimozione del prodotto dal bundle".mysqli_error($this->connessione));
+    public function rimuoviPB($nome,$id){
+		$delete="DELETE FROM BundleParts WHERE bundle='$nome' AND pezzo='$id'";
+		mysqli_query($this->connessione,$delete) or die("errore nella rimozione del prodotto dal bundle".mysqli_error($this->connessione));
     }
 	}
 	
