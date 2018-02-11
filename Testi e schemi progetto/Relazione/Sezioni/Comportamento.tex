@@ -1,1 +1,32 @@
 \subsection{Comportamento}
+Per definire il comportamento del sito è stato utilizzato PHP 7 e in qualche caso JavaScript. \newline
+Per memorizzare i dati è stato utilizzato un database relazionale MySql.
+\subsubsection{PHP}
+PHP è stato utilizzato per la gestione del sito lato server, è stato utile per: 
+\begin{itemize}
+    \item la visualizzazione dinamica dei dati memorizzati nel database;
+    \item la gestione degli utenti che effettuano il \emph{login};
+    \item l'inserimento e il controllo di input di utenti all'interno del database;
+    \item l'inserimento di dati nel database da parte degli admin.
+\end{itemize}
+Abbiamo raggruppato le parti ricorrenti in ogni pagina in dei file php contenuti nella cartella general chiamati:
+\begin{itemize}
+	\item \textit{Header.php;}
+	\item \textit{Meta.php;}
+	\item \textit{Footer.php.}
+\end{itemize}
+questi file vengono poi richiamati nelle varie pagine attraverso il comando \emph{require}.\newline
+La gestione della connessione al database è affidata alla classe \emph{DBAccess} contenuta in \textit{connessione.php}, questa classe oltre ad aprire la connessione al database contiene diverse funzioni che si occupano di interrogare con linguaggio SQL il database:
+\begin{*nome-ambiente*}
+	\item \textbf{createUser:} Serve per la registrazione degli utenti, controlla che i valori inseriti abbiano una definita lunghezza minima e massima, che il nome utente non sia già registrato e inserisce nel database il nuovo utente;
+	\item \textbf{checkUser:} Se l'utente inserito è registrato permette la login,controlla anche se l'utente è un admin o meno;
+	\item \textbf{alterAdminright:} toglie i privilegi di amministratore ad un admin;
+	\item \textbf{getUserlist:} ritorna una array associativo contenente i dati di tutti gli utenti;
+	\item \textbf{getP:} ritorna un array associativo contenente i dati di tutti i prodotti nel database;
+	\item \textbf{ricerca:} questa funzione ritorna un array associativo contenente tutti i prodotti che in almeno uno dei campi nome,categoria o descrizione contiene una stringa data; 
+	\item
+	\item
+	\item
+	\item
+\end{*nome-ambiente*}
+
