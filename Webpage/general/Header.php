@@ -22,10 +22,12 @@
 				echo '<li><a href="login.php">Login</a></li>';
 				}
 				?>
-                <li><form action="prodotti.php" method="get">
-                    <button id="searchButton" type="submit">Vai</button>
-                    <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?"></form> 
-                </li>
             </ul>
         </nav>
+            <div id="searchBar">
+            <form action="prodotti.php" method="get">
+                    <button id="searchButton" type="submit">Vai</button>
+                    <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?">
+            </form> 
+            </div>
     </header>

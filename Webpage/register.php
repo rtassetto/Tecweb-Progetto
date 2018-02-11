@@ -2,15 +2,6 @@
 require "php-script/connessione.php";
 $DB=new DBAccess();
 $DB->openc();
-if(isset($_POST["submit"])){
-	$username=$_POST["username"];
-	$password=$_POST["password"];
-	$email=$_POST["email"];
-	$result=$DB->createUser($username, $password, $email);
-	if ($result==0){
-		header("location: home.php");
-	}
-}
 ?>
 <!DOCTYPE html>
 
@@ -82,6 +73,16 @@ if(isset($_POST["submit"])){
         <p> Ti trovi in: Home </p> 
         </div>
 <?php
+    if(isset($_POST["submit"])){
+	$username=$_POST["username"];
+	$password=$_POST["password"];
+	$email=$_POST["email"];
+	$result=$DB->createUser($username, $password, $email);
+	if ($result==0){
+		header("location: home.php");
+	}
+
+
 	switch ($result){
 		case 1 : echo "<p>Esiste gia\' un utente con username '".$username."'</p>";
 				 break;
@@ -92,6 +93,7 @@ if(isset($_POST["submit"])){
 		case 4 : echo "<p>L'indirizzo mail ".$email." e' gia' associato ad un utente</p>";
 				 break;
 	}
+}
 ?>
 
 	<div id="istruzioni">
