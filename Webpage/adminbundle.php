@@ -5,6 +5,8 @@
 	$DB->openc();
     $P=$DB->getP();
     $B=$DB->getB();
+	if($_SESSION['admin']!=true){
+		header("location: home.php");}
     $nome='';
     $creazione=false;
     if(isset($_POST["crea"])){
@@ -24,7 +26,7 @@
     foreach($P as $x){
         $id=$x['id'];
         if(isset($_POST[$id])){
-            $DB->AggiungiPB($nome,$id);
+            $result=$DB->AggiungiPB($nome,$id);
         }
         if(isset($_POST[$id.'r'])){
             $DB->rimuoviPB($nome,$id);
@@ -53,14 +55,16 @@
     <div id="breadcrumb"> 
         <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Aggiunta/Modifica bundles </p> 
     </div>
+	<a href="adminmenu.php">Torna Indietro</a>
+	<h1>Aggiunta/Modifica bundles</h1>
     <div>
-    
+    <p id="errore"><?php if(isset($result)) echo $result;?></p>
     <div id="prod">
         <?php
         if(!$creazione){
             echo "<form method='post' action='adminbundle.php'>";
-            echo "<input type='text' name='nome'>";
-            echo "<input type='textarea' name='descrizione'>";
+            echo "<label for='nome'>Nome Bundle:</label><input type='text' name='nome'>";
+            echo "<label for='descrizione'>Descrizione Bundle:</label><input type='textarea' name='descrizione'>";
             echo "<input type='submit' name='crea' value='Crea bundle'/>";
             echo "</form>";
          echo '<table id="products">';
@@ -106,7 +110,8 @@
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";
-            }
+			}
+		echo "</table>";
             }
     
         
@@ -117,7 +122,8 @@
     </div>
     <?php
      if($creazione){
-                echo "</table>";
+		echo "<a href='adminbundle.php'>Torna alla lista Bundles</a>";
+
         echo '<table id="products">';
             echo '<thead>';
                 echo '<tr>';

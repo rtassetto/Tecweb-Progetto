@@ -22,7 +22,7 @@ if($_SESSION['admin']==true){
 	$path = $_SERVER['DOCUMENT_ROOT'];
 }
 else{
-	header("location: /home.php");
+	header("location: home.php");
 }
 ?>
 <!DOCTYPE HTML>
@@ -46,6 +46,7 @@ else{
     <div id="breadcrumb"> 
         <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Aggiunta/Modifica prodotti </p> 
     </div>
+	<a href="adminmenu.php">Torna Indietro</a>
 <h2>Aggiunta Prodotto</h2>
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
 <label for="nome">Nome del Prodotto:</label> <input type="text" name="nome"/>
@@ -93,7 +94,7 @@ else{
 			if(isset($_SESSION['login_user'])){
                 $id=$x["id"];
                 echo "<td>";
-                echo "<form method='post' action='php-script/modificaProd.php'>";
+                echo "<form method='post' action='modificaProd.php'>";
                 echo "<input type='submit' name='$id' value='Modifica prodotto'/>";
             }
             echo "</form>";

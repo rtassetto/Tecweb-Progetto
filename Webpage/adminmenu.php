@@ -4,7 +4,7 @@ if($_SESSION['admin']==true){
 	$path = $_SERVER['DOCUMENT_ROOT'];
 }
 else{
-	header("location: /home.php");
+	header("location: home.php");
 }
 ?>
 <!DOCTYPE HTML>

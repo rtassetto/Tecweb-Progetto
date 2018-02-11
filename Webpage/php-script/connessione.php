@@ -32,7 +32,7 @@
 		if(mysqli_num_rows(mysqli_query($this->connessione, "SELECT email FROM Account WHERE email='$email';"))!=0)
 			return 4;
 		$data=date("Y-m-d H:i:s");
-		if(!mysqli_query($this->connessione, "INSERT INTO Account(username,password,email,datacreazione) VALUES ('$username','$password','$email','$data')"))
+		if(!mysqli_query($this->connessione, "INSERT INTO Account(username,password,email,datacreazione,admin) VALUES ('$username','$password','$email','$data', 'false')"))
 			return 2;
 		return 0;
 	}
@@ -145,7 +145,7 @@
 			"Error in modifyProductquery: " . mysqli_error($this->connessione));
     }
 	public function getBestselling(){
-		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id having p.valutazione>=4 ORDER by sum(ph.quantita) desc LIMIT 6 ");
+		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id ORDER by sum(ph.quantita) desc LIMIT 6 ");
         $result=array();
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
@@ -154,6 +154,15 @@
 	}
 	
 	//PurchaseHistory
+	public function getfullPH(){
+		$query="SELECT compratore,nome,categoria,valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE prodotto=id";
+        $qresult=mysqli_query($this->connessione, $query)or die (
+			"Error in getPH query: " . mysqli_error($this->connessione));
+		for($i=0;$i<mysqli_num_rows($qresult);$i++){
+			$result[$i]=mysqli_fetch_assoc($qresult);
+		}
+		return $result;
+	}
 	public function getPH($name){
         $query="SELECT nome,categoria,descrizione,valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (
@@ -279,6 +288,7 @@
        return $result;
     }
     public function aggiungiPB($nome,$id){
+	if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM bundleparts WHERE bundle='$nome' and pezzo='$id' "))!=0){return "prodotto gia' inserito";};
         $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
         mysqli_query($this->connessione,$insert) or die("errore nell'inserimento nel bundle".mysqli_error($this->connessione));
     }
