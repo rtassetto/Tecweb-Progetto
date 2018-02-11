@@ -75,7 +75,7 @@
     
     
     
-    
+    <div id="advSearch">
     <form method="get" action="prodotti.php" id="avdancedSearch" name="advancedSearch">
         <label for="categoria">Filtra per:</label>
         <select id="categoria" name="categoria" required>
@@ -95,6 +95,7 @@
         
         <input type="submit" name="advancedSubmit" value="Cerca"/>
     </form>
+    </div>
     <?php
     if(isset($_GET["advancedSubmit"]))
     {

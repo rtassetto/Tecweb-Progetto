@@ -1,9 +1,12 @@
 html {
     margin: 0;
     padding: 0;
-    width: 480px !important;
+    width: 480px;
 }
 
+body{
+    width:480px;
+}
 
 #logo{
     display:none;

@@ -4,6 +4,10 @@ html {
     width:1350px;
 }
 
+body{
+    width:1350px;
+}
+
 #logo{
     margin-top:1%;
     float:left;
@@ -116,12 +120,18 @@ nav a:active{
 
 #breadcrumb{
     background-color:#232f3e;
-    margin:5% 0 0 0;
+    margin:2em 0;
     padding:0 0.5em;
     font-size:15pt;
     color:white;
 }
 
+#advSearch{
+    border:2px solid #232f3e;
+    padding:0.5em;
+    width:35em;
+    
+}
 
 section{
     margin-top:0.5em;
@@ -134,22 +144,24 @@ section{
 }
 
 #content_prodotti{
-    position:absolute;
-    width:1024px;
+    border:2px solid #232f3e;
+    width:100%;
+    background-color:cadetblue;
+    
 }
 
-#content_prodotti div{
 
-}
 
 #content_prodotti .prodotto{
+    background-color:#adbdd1;
+    border:2px solid #232f3e;
     height:13em;
     margin:0.5em;
-    border:2px solid red;
 }
 
 #content_prodotti .img{
-    border:2px solid black;
+    border:2px solid #232f3e;
+    background-color:white;
     margin:0.5em;
     height:90%;
     width:20%;
@@ -162,52 +174,57 @@ section{
 }
 
 #content_prodotti .nome{
-    border:2px solid green;
-    margin-top:-18%;
+    margin-top:-8em;
     margin-left:25%;
-    width:40%;
+    width:50%;
+    font-size:18pt;
 }
 
 #content_prodotti .descrizione{
-    border:2px solid purple;
-    margin-top:1%;
+    margin-top:1em;
     margin-left:25%;
     height:40%;
     width:60%;
 }
 
 #content_prodotti .categoria{
-    border:2px solid blue;
     position:relative;
     right:15%;
     top:-11%;
     float:right;
+    font-weight:bold;
+    color:#232f3e;
+    font-size:14pt;
     
 }
 
 #content_prodotti .valutazione{
     float:right;
-    border:2px solid brown; 
     position:relative;
     right:60%;
     top:10%;
+    font-size:16pt;
+    font-weight:bold;
+    color:#232f3e;
 }
 
 #content_prodotti .prezzo{
     float:right;
-    border:2px solid yellow;
     position:relative;
     right:30%;
     top:10%;
+    font-size:16pt;
+    font-weight:bold;
+    color:#232f3e;
 }
 
 
 #content_prodotti .dettaglio{
-    border:2px solid orange;
     position:relative;
-    margin-top:-7%;
+    margin-top:-2em;
     margin-left:88%;
     margin-right:1%;
+    font-size:14pt;
 }
 
 
