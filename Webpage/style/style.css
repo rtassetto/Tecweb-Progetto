@@ -392,12 +392,68 @@ section{
 
 
 
-aside{
-    width:49%;
-    margin-left:50%;
-    margin-top:0.5em;
-    padding: 0.5em;   
+#LatestBundles{
+ 
+    float:left;
+ 
+    width:50%;
+ 
+    margin-left:48%;
+ 
+    margin-top:-35.9em;
+ 
+    border:2px solid #232f3e;
+ 
+    background-color:cadetblue;
+ 
 }
+ 
+
+ 
+
+ 
+.bundle{
+ 
+    width:100%;
+ 
+    border:2px solid #232f3e;
+ 
+    height:auto;
+ 
+    background-color:#becbda;
+ 
+    margin-bottom:2em;
+ 
+}
+ 
+
+ 
+.nomebundle{
+ 
+    text-align:center;
+ 
+    width:100%;
+ 
+    font-size:16pt;
+ 
+    margin-bottom:0.5em;
+ 
+}
+ 
+
+ 
+.descrizionebundle{
+ 
+    width:100%;
+ 
+    font-size:14pt;
+ 
+    padding-left:1em;
+ 
+    margin-bottom:1em;
+ 
+}
+ 
 
 
 table{
