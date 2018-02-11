@@ -1,12 +1,16 @@
 html {
     margin: 0;
     padding: 0;
-    width: 480px;
+    width:100%;
 }
 
 body{
     margin:0;
     padding:0;
+    width:100%;
+}
+
+#breadcrumb{
     width:480px;
 }
 
@@ -17,13 +21,18 @@ body{
 header{
     margin:0;
     padding:0;
+    width:100%,
 }
 
 #menu{
     margin:0!important;
     padding:0!important;
     height:21em;
-    width:100%;
+    width:480px;
+}
+
+#footer{
+    width:100%x;
 }
 
 nav{
@@ -72,16 +81,17 @@ nav a{
     height:4.5em;
 }
 
-#filtroCat{
-    
-}
 
 #filtroOrd{
-    position:relative;
-    top:1em;
-    left:-1.2em;
+    margin-top:1em;
 }
 
+#content_prodotti{
+    width:480px;
+    margin:0;
+    padding:0;
+    margin-top:1em;
+}
 
 #content_prodotti .img{
     float:none;
@@ -143,4 +153,9 @@ nav a{
     top:-3em;
     right:2em;
     text-align:center;
+}
+
+
+#prodotticarrello{
+    overflow:scroll;
 }
