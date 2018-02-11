@@ -236,6 +236,8 @@
 	
 	//Recensione
     public function aggiungiR($name,$prodotto,$testo,$voto){
+		if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM Recensione WHERE username='$name' and prodotto='$prodotto' "))!=0)
+			mysqli_query($this->connessione,"DELETE FROM Recensione WHERE username='$name' and prodotto='$prodotto'" );
         $insert="INSERT INTO `Recensione`(`username`, `prodotto`, `review`, `voto`, `data`) VALUES ('$name','$prodotto','$testo','$voto',NOW())";
         mysqli_query($this->connessione, $insert)or die (
 			"Errore nell' inserimento della recensione: " . mysqli_error($this->connessione));
