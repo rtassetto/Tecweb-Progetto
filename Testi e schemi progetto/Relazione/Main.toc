@@ -8,4 +8,5 @@
 \contentsline {subsection}{\numberline {4.2}Presentazione}{6}
 \contentsline {subsection}{\numberline {4.3}Comportamento}{7}
 \contentsline {subsubsection}{\numberline {4.3.1}PHP}{7}
-\contentsline {section}{\numberline {5}Ruoli}{8}
+\contentsline {paragraph}{Gestione utente}{9}
+\contentsline {section}{\numberline {5}Ruoli}{10}

@@ -17,7 +17,7 @@ Abbiamo raggruppato le parti ricorrenti in ogni pagina in dei file php contenuti
 \end{itemize}
 questi file vengono poi richiamati nelle varie pagine attraverso il comando \emph{require}.\newline
 La gestione della connessione al database è affidata alla classe \emph{DBAccess} contenuta in \textit{connessione.php}, questa classe oltre ad aprire la connessione al database contiene diverse funzioni che si occupano di interrogare con linguaggio SQL il database:
-\begin{*nome-ambiente*}
+\begin{itemize}
 	\item \textbf{createUser:} Serve per la registrazione degli utenti, controlla che i valori inseriti abbiano una definita lunghezza minima e massima, che il nome utente non sia già registrato e inserisce nel database il nuovo utente;
 	\item \textbf{checkUser:} Se l'utente inserito è registrato permette la login,controlla anche se l'utente è un admin o meno;
 	\item \textbf{alterAdminright:} toglie i privilegi di amministratore ad un admin;
@@ -43,7 +43,9 @@ La gestione della connessione al database è affidata alla classe \emph{DBAccess
 	\item \textbf{aggiungiPB:} inserisce un prodotto in un dato bundle;
 	\item \textbf{rimuoviPB:} rimuove un prodotto da un dato bundle;
 	\item \textbf{creaB:} crea un nuovo bundle;
-	\item
-	\item
-\end{*nome-ambiente*}
+	\item \textbf{getBundlepartsdata:} ritorna un array associativo contenente le informazioni di tutti i prodotti contenuti in un dato bundle;
+\end{itemize}
+
+\paragraph{Gestione utente} \mbox{}
+Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi chiudono il browser, grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account come lo storico degli acquisti.
 
