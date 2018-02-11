@@ -4,8 +4,6 @@ html {
     width:1350px;
 }
 
-
-
 #logo{
     margin-top:1%;
     float:left;
@@ -351,22 +349,22 @@ aside{
 
 table{
     border-collapse: collapse;
-    border: 1.5px solid darkslateblue;
+    border: 1px solid #232f3e;
     width: 100%;
 }
 
 table td{
-    border: 1px solid #ddd;
+    border: 1px solid #232f3e;
     padding: 0.5em;
 }
 
 
 table th {
-    border: 1px solid #ddd;
+    border: 1px solid #232f3e;
     padding: 0.8em 0 0.8em 0.5em;
     text-align: left;
-    background-color: #0080ff;
-    color: white;
+    background-color:cadetblue;
+    color: #232f3e;
 }
 
 #totale{
@@ -377,7 +375,8 @@ footer{
     margin:10% 0 0 0;
     display:block;
     padding: 0.5em;
-    background-color:#e6e6e6;
+    background-color:cadetblue;
+    border:1px solid #232f3e;
 }
 
 
@@ -489,8 +488,3 @@ footer img{
      float:right
      width 30%
 }
-
-
-
-
-
