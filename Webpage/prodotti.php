@@ -88,15 +88,15 @@
     <div id="advSearch">
     <form method="get" action="prodotti.php" id="avdancedSearch" name="advancedSearch">
         <label for="categoria">Filtra per:</label>
-        <select id="categoria" name="categoria" required multiple>
-            <option value=" " selected>Scegli categoria</option>
+        <select id="categoria" name="categoria" required>
+            <option value='' selected>Scegli categoria</option>
             <option value="Monitor">Monitor</option>
             <option value="HDD">HDD</option>
         </select> 
         
         <label for="ordine">Filtra per ordine:</label>
-        <select id="ordine" name="ordine" required multiple>
-            <option value=" " selected>Scegli ordine</option>
+        <select id="ordine" name="ordine" required size=''>
+            <option value='' selected>Scegli ordine</option>
             <option value="preC">Prezzo crescente</option>
             <option value="preD">Prezzo decrescente</option>
             <option value="valC">Valutazione crescente</option>
