@@ -311,6 +311,19 @@ section{
 }
 
 
+
+
+#recensioni{
+    background-color:#becbda;
+    width:100%;
+    margin-top:1em;
+    padding:0.5em;
+    height:auto;
+}
+
+
+
+
 .popup {
     position: relative;
     display: inline-block;
@@ -388,7 +401,7 @@ table th {
     padding: 0.8em 0 0.8em 0.5em;
     text-align: left;
     background-color:cadetblue;
-    color: #232f3e;
+    color: white;
 }
 
 #totale{

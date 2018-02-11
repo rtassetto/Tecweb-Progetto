@@ -51,17 +51,17 @@ function myFunction() {
         
         echo "</div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
-    echo "<h2>Recensioni</h2>";
+    echo "<div id='recensioni'><h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);
-	if(!$reviews){echo "<span>Non ci sono recensioni per questo prodotto</span>";}
+	if(!$reviews){echo "<span>Non ci sono recensioni per questo prodotto</span></div>";}
 	else{
 	foreach($reviews as $result){
-		echo "<div class='recensione'>
+		echo "<div id='dettRecensione'>
 			  <span>".$result['username']."</span>
 			  <span>".$result['data']."</span>
 			  <span>".$result['voto']."</span>
 			  <p>".$result['review']."</p>
-			  </div>";
+			  </div></div>";
 	}
 	}
 	?>
