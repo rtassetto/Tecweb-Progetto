@@ -24,6 +24,7 @@ else{
 
 <html lang="it">
 <head>
+<title>Amministrazione Account - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

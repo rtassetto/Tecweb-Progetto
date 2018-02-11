@@ -13,6 +13,7 @@ $conn=$DB->openc();
 
 <html lang="it">
 <head>
+<title>Dettagli <?php echo $product['nome'];?> - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>
