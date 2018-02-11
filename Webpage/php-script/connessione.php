@@ -263,10 +263,17 @@
 		}
 	}
 	public function getLatestBundles(){
-		$result=mysqli_query($this->connessione,"SELECT * FROM Bundles ORDER by data desc LIMIT 6");
-		while ($row = $result->fetch_assoc()) {
-			echo "<tr><td><p id='bundlename'><a href='bundledetails.php?bundle=".$row['nome']."'>".$row["nome"]."</a></p> <p id='bundledesc'>". substr($row["descrizione"], 0, 200)."...</p></td></tr>";
-		}
+		$query=mysqli_query($this->connessione,"SELECT * FROM Bundles ORDER by data desc LIMIT 3");
+        $result=array();
+        while($row=mysqli_fetch_assoc($query)){
+            $single=array("nome"=>$row["nome"],
+                         "descrizione"=>$row["descrizione"],
+                         "data"=>$row["data"]);
+            array_push($result,$single);
+        }
+        return $result;
+		//substr($row["descrizione"], 0, 200)."...</p></td></tr>";
+		
 	}
     public function getB(){
         $query='SELECT nome FROM Bundles';

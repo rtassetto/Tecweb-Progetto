@@ -82,7 +82,14 @@
         <h1>Gli ultimi Bundle che abbiamo creato</h1>
 		<table>
 		<?php
-		$DB->getLatestBundles();
+		$LB=$DB->getLatestBundles();
+        foreach ($LB as $result){
+			
+			echo "<div class='bundle'>
+				<div class='nomebundle'><a href='bundledetails.php?bundle=".$result["nome"]."'>".$result["nome"]."</a></div>
+				<div class='descrizionebundle'>".$result["descrizione"]."</div>
+				</div>";
+			}
 		?>  
 		</table>
     </section>
