@@ -456,6 +456,16 @@ section{
  
 
 
+#creaBundle{
+    border:1px solid black;
+    margin-bottom:1em;
+    padding:0.5em;
+}
+
+#creaBundle input{
+    padding-right:0.5em;
+}
+
 table{
     border-collapse: collapse;
     border: 1px solid #232f3e;
@@ -474,6 +484,17 @@ table th {
     text-align: left;
     background-color:cadetblue;
     color: white;
+}
+
+#products th{
+    color:#232f3e;
+}
+
+#acquista{
+    float:right;
+    position:relative;
+    top:-2em;
+    right:18em;
 }
 
 #totale{
@@ -589,13 +610,15 @@ footer img{
 }
 
 #prod{
-     float:left;
      width:50%;
+}
+#prod th{
+    color:#232f3e;
 }
 
 #bundle{
      float:right
-     width 30%
+     width 30%;
 }
 #Bestsellers {
     max-height: 100%;

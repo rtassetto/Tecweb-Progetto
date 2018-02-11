@@ -63,6 +63,7 @@
     <div id="prod">
         <?php
         if(!$creazione){
+            echo "<div id='creaBundle'>";
             echo "<form method='post' action='adminbundle.php'>";
             echo "<label for='nome'>Nome Bundle:</label><input type='text' name='nome'>";
             echo "<label for='descrizione'>Descrizione Bundle:</label><input type='textarea' name='descrizione'>";

@@ -31,7 +31,7 @@ function myFunction() {
 <?php
 	include "general/Header.php";
     $product=$DB->getBundle($_GET['bundle']);
-    echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Bundles &#8594; ".$product['nome']."</p></div>";
+    echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Bundle '".$product['nome']."'</p></div>";
 	echo "
         <div id='dettaglioBundle'>
         <h1 class='nome'>".$product['nome']."</h1>
