@@ -38,6 +38,7 @@ function myFunction() {
 		<div class='data'><p>Creato il:".$product['data']."</p></div>
 		<div class='descrizione'><p>".$product['descrizione']."</p></div>";
 	$query=$DB->getBundlepartsdata($_GET['bundle']);
+	if($query!="vuoto"){
 	echo "<table>
 			<thead>
 				<th>Nome</th>
@@ -66,6 +67,8 @@ function myFunction() {
         
         echo "</div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
+	}
+	else {echo "Il bundle e' vuoto.";}
 	?>
 <?php
 	include "general/Footer.php";
