@@ -294,7 +294,7 @@
 		return mysqli_fetch_assoc($query);
 	}
 	public function getBundlepartsdata($bundle){
-		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'");
+		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'") or die("errore richiesta bundle".mysqli_error($this->connessione));
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
 		}
