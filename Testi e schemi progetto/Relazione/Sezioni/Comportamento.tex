@@ -24,8 +24,25 @@ La gestione della connessione al database è affidata alla classe \emph{DBAccess
 	\item \textbf{getUserlist:} ritorna una array associativo contenente i dati di tutti gli utenti;
 	\item \textbf{getP:} ritorna un array associativo contenente i dati di tutti i prodotti nel database;
 	\item \textbf{ricerca:} questa funzione ritorna un array associativo contenente tutti i prodotti che in almeno uno dei campi nome,categoria o descrizione contiene una stringa data; 
-	\item
-	\item
+	\item \textbf{ricercaAvanzata:} ritorna un array associativo contenente i dati di tutti i prodotti di uno specifico tipo in ordine di prezzo;
+	\item \textbf{createProduct:} inserisce nel database un nuovo prodotto con i parametri dati;
+	\item \textbf{getProddata:} ritorna una array associativo contenente i dati di uno specifico prodotto;
+	\item \textbf{modifyProduct:} permette di modificare le informazioni riguardanti uno specifico prodotto contenuto nel database;
+	\item \textbf{getBestselling:} ritorna un array associativo contenente i 6 prodotti più venduti; 
+	\item \textbf{getfullPH:} ritorna un array associativo contenente tutto lo storico dei prodotti venduti;
+	\item \textbf{getPH:} ritorna un array associativo contenente lo storico degli acquisti di uno specifico utente;
+	\item \textbf{acquista:} inserisce nello storico degli acquisti i prodotti presenti nel carrello di uno specifico utente;
+	\item \textbf{eliminaC:} se nel carrello di un dato utente vi è un dato prodotto con quantità 1 questo viene rimosso dal carrello, se la quantità è maggiore di 1 invece la quantità viene diminuita di 1;
+	\item \textbf{aggiungiC:} aggiunge un prodotto al carrello di un dato utente, se il prodotto è già presente viene incrementata la quantità;
+    \item \textbf{getCarrello:} ritorna un array associativo contenente i prodotti all'interno del carrello di uno specifico utente;
+	\item \textbf{getProdReview:} ritorna un array associativo contenente tutte le recensioni di un dato prodotto;
+	\item \textbf{aggiungiR:} inserisce nel database una recensione fatta da un utente per un dato prodotto;
+	\item \textbf{getLatestBundles:} ritorna un array associativo contenente gli ultimi bundle creati; 
+	\item \textbf{getB:} ritorna un array associativo contente i nomi di tutti i bundle;
+	\item \textbf{getPB:} ritorna un array associativo contenente l'id di tutti i prodotti di un dato bundle;
+	\item \textbf{aggiungiPB:} inserisce un prodotto in un dato bundle;
+	\item \textbf{rimuoviPB:} rimuove un prodotto da un dato bundle;
+	\item \textbf{creaB:} crea un nuovo bundle;
 	\item
 	\item
 \end{*nome-ambiente*}
