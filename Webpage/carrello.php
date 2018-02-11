@@ -109,7 +109,8 @@ require "general/Header.php";
             </tr>
         </table>  
         <form class="onclick" method="post" action="purchasehistory.php">
-        <input type="submit" name="compra" value="Acquista"/>
+        <input id='acquista' type="submit" name="compra" value="Acquista"/>
+
         </form>
         
     </section>
