@@ -20,6 +20,8 @@
 				}
 				else{
 				echo '<li><a href="login.php">Login</a></li>';
+				echo '<li><a href="register.php">Registrati</a></li>';
+				
 				}
 				?>
             </ul>
