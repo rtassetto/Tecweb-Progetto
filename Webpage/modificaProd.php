@@ -22,6 +22,7 @@
 
 <html lang="it">
 <head>
+<title>Modifica Prodotto - Amministrazione - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

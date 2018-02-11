@@ -4,6 +4,7 @@ session_start();
 require "php-script/connessione.php";
 $DB=new DBAccess();
 $conn=$DB->openc();
+$product=$DB->getProddata($_GET['id']);
 ?>
 <!DOCTYPE HTML>
 
@@ -13,6 +14,7 @@ $conn=$DB->openc();
 
 <html lang="it">
 <head>
+<title>Dettagli <?php echo $product['nome'];?> - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>
@@ -29,7 +31,6 @@ function myFunction() {
 <body>
 <?php
 	include "general/Header.php";
-    $product=$DB->getProddata($_GET['id']);
     echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Prodotti &#8594; ".$product['nome']."</p></div>";
 	echo "
         <div id='dettaglioProdotto'>

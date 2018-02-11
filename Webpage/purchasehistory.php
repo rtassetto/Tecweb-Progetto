@@ -16,6 +16,7 @@
         $P=$DB->getPH($_SESSION['login_user']);
         $S=$DB->getP();
     }
+	else{header("location: home.php")}
 ?>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -26,7 +27,7 @@
 <?php
 	require "general/Meta.php";
 ?>
-    <title>Storico acquisti</title>
+    <title>Storico acquisti - Buy Tech</title>
 </head>
     
 <body>

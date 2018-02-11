@@ -52,7 +52,7 @@
 	require "general/Meta.php";
 ?>
     
-    <title>Prodotti</title>
+    <title>Prodotti - Buy Tech</title>
 </head>
     
 <body>

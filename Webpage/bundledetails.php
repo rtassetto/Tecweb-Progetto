@@ -13,6 +13,7 @@ $conn=$DB->openc();
 
 <html lang="it">
 <head>
+<title>Bundle <?php echo $_GET['bundle'];?> - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

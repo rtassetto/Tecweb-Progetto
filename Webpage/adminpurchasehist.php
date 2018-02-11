@@ -14,6 +14,7 @@ if($_SESSION['admin']!=true)
 
 <html lang="it">
 <head>
+<title>Visione Storia degli Acquisti - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

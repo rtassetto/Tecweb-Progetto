@@ -33,6 +33,7 @@ else{
 
 <html lang="it">
 <head>
+<title>Amministrazone Prodotti - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

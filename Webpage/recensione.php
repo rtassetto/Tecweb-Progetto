@@ -47,7 +47,8 @@ session_start();
      }
     ?>
 <html lang="it">
-<head>    
+<head> 
+<title>Aggiunta Recensione - Buy Tech</title>   
 <?php
 	require "general/Meta.php";
 ?>

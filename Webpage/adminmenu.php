@@ -15,6 +15,7 @@ else{
 
 <html lang="it">
 <head>
+<title>Menù Amministrazione - Buy Tech</title>
 <?php
 	include "general/Meta.php";
 ?>

@@ -44,6 +44,7 @@
 
 <html lang="it">
 <head>
+<title>Amministrazione Bundles</title>
 <?php
 	include "general/Meta.php";
 ?>

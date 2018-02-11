@@ -17,7 +17,8 @@
 <![endif]-->
 
 <html lang="it">
-<head>    
+<head>  
+<title>Carrello - Buy Tech</title>  
 <?php
 	require "general/Meta.php";
 ?>
