@@ -64,13 +64,13 @@
 		$bestsellers=$DB->getBestselling();
 		foreach ($bestsellers as $result){
 			
-			echo "<div class='prodottobestseller'>
-				<div class='imgbestseller'><img  src='images/".$result["id"].".jpg'/></div>
-				<div class='nomebestseller'>".$result["nome"]."</div>
-				<div class='categoriabestseller'>".$result["categoria"]."</div>
-				<div class='votobestseller'>".$result["valutazione"]."/5</div>
-				<div class='prezzobestseller'>".$result["prezzo"]."€</div>
-				</div>";
+			echo "<div class='prodottobestseller'>";
+			echo "<div class='imgbestseller'><img  src='images/".$result["id"].".jpg'/></div>";
+            echo "<div class='nomebestseller'><a href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a></div>";
+			echo "<div class='categoriabestseller'>Categoria: ".$result["categoria"]."</div>";
+            echo "<div class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</div>";
+			echo "<div class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</div>";
+			echo "</div>";
 			}
 		?>  
     

@@ -121,6 +121,7 @@
     
     
     </div>
+    <div>
     <?php
      if($creazione){
 		echo "<a href='adminbundle.php'>Torna alla lista Bundles</a>";

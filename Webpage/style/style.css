@@ -548,6 +548,7 @@ footer img{
     border:2px solid #232f3e;
 }
 .prodottobestseller{
+    background-color:#becbda;
     margin-top: 0.5em;
     border:2px solid #232f3e;
     width:100%;
@@ -555,44 +556,48 @@ footer img{
 }
 
 .prodottobestseller .imgbestseller{
-    border:2px solid #232f3e;
+    float:left;
+    border:1px solid #232f3e;
     background-color:white;
-    height: 85%;
+    height: 99%;
     width: 20%;
 }
 
 .prodottobestseller .imgbestseller img{
-    border:2px solid #232f3e;
-    
-    max-height:95%;
-    max-width:95%; 
+    max-height:100%;
+    max-width:100%; 
 }
 
 .prodottobestseller .nomebestseller{
-    float: left;
-    margin-left:25%;
+    float:left;
     position: relative;
-    top: -6em;
+    left:1em;
+    top:0.5em;
+    font-size:12pt;
+    width:70%;
+    border:1px solid black;
+    
 }
 
 .prodottobestseller .categoriabestseller{
-    float: left;
-    
     position: relative;
-    top: -4em;
+    top:2.1em;
+    left:1em;
+    
+
 }
 
 .prodottobestseller .votobestseller{
-    float: left;
-    
     position: relative;
-    top: -3em;
+    top:1em;
+    left:20em;
+    
 }
 
 .prodottobestseller .prezzobestseller{
-    float: left;
+    position:relative;
+    top:2em;
+    left:12em;
     
-   
-    top: -2em;
 }
 
