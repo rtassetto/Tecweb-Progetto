@@ -160,7 +160,7 @@
 	
 	//PurchaseHistory
 	public function getfullPH(){
-		$query="SELECT compratore,nome,categoria,valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE prodotto=id";
+		$query="SELECT compratore,nome,categoria,valutazione,idordine,data FROM PurchaseHistory JOIN prodotto WHERE prodotto=id ORDER BY idordine asc";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
 		for($i=0;$i<mysqli_num_rows($qresult);$i++){
