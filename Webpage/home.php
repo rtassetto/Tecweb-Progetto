@@ -64,7 +64,7 @@
 		$bestsellers=$DB->getBestselling();
 		foreach ($bestsellers as $result){
 			
-			echo "<div class='prodottobesteller'>
+			echo "<div class='prodottobestseller'>
 				<div class='imgbestseller'><img  src='images/".$result["id"].".jpg'/></div>
 				<div class='nomebestseller'>".$result["nome"]."</div>
 				<div class='categoriabestseller'>".$result["categoria"]."</div>

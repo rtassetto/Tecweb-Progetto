@@ -541,3 +541,38 @@ footer img{
      float:right
      width 30%
 }
+#Bestsellers {
+    max-height: 100%;
+    max-width: 45%;
+    background-color: cadetblue;
+    border:2px solid #232f3e;
+}
+#Bestsellers .prodottobestseller{
+    margin-top: 5em;
+    border:2px solid #232f3e;
+}
+
+#Bestsellers .prodottobestseller .imgbestseller{
+    border:2px solid #232f3e;
+    background-color:white;
+    margin:0.5em;
+    height:90%;
+    width:20%;
+}
+
+#Bestsellers .prodottobestseller .imgbestseller img{
+    float:left;
+    max-height:100%;
+    max-width:100%; 
+}
+
+#Bestsellers .prodottobestseller .nomebestseller{
+    margin-top: 0%;
+    margin-left: 25%;
+}
+
+#Bestsellers .prodottobestseller .categoriabestseller{
+    margin-left: 80%;
+}
+
+
