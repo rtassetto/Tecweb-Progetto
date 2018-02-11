@@ -29,41 +29,42 @@ function myFunction() {
 <body>
 <?php
 	include "general/Header.php";
-    $product=$DB->getProddata($_GET['id']);
-    echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Prodotti &#8594; ".$product['nome']."</p></div>";
+    $product=$DB->getBundle($_GET['bundle']);
+    echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Bundles &#8594; ".$product['nome']."</p></div>";
 	echo "
-        <div id='dettaglioProdotto'>
+        <div id='dettaglioBundle'>
         <h1 class='nome'>".$product['nome']."</h1>
-		<div class='img'><img src='images/".$_GET['id'].".jpg'/></div>
-		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
-		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p></div>
-		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
+		<div class='data'><p>Creato il:".$product['data']."</p></div>
 		<div class='descrizione'><p>".$product['descrizione']."</p></div>";
+	$query=$DB->getBundlepartsdata($_GET['bundle']);
+	echo "<table>
+			<thead>
+				<th>Nome</th>
+				<th>Categoria</th>
+				<th>Valutazione</th>
+				<th>Prezzo</th>
+			</thead>";
+	foreach($query as $result){
+		echo"<tr>
+				<td><a href='productdetails.php?id=".$result['id']."'>".$result['nome']."</a></td>
+				<td>".$result['categoria']."</td>
+				<td>".$result['valutazione']."</td>
+				<td>".$result['prezzo']."</td>
+			</tr>";
+	}
+	echo "</table>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
-        echo "<form class='popup' method='post' action='prodotti.php'>
+        echo "<form class='popup' method='post' action='prodotti.php?bundle=".$_GET['bundle']."'>
               <div class='aggiungiCarrello'>
-              <input type='submit' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
+              <input type='submit' name='compraBundle' value='Aggiungi al carrello'/>
               </div>
-              <span class='popuptext' id='myPopup'>Prodotto aggiunto al carrello</span>
+              <span class='popuptext' id='myPopup'>Bundle aggiunto al carrello</span>
               </form></div>";
     }else{
         
         echo "</div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
-    echo "<h2>Recensioni</h2>";
-    $reviews=$DB->getProdReview($_GET['id']);
-	if(!$reviews){echo "<span>Non ci sono recensioni per questo prodotto</span>";}
-	else{
-	foreach($reviews as $result){
-		echo "<div class='recensione'>
-			  <span>".$result['username']."</span>
-			  <span>".$result['data']."</span>
-			  <span>".$result['voto']."</span>
-			  <p>".$result['review']."</p>
-			  </div>";
-	}
-	}
 	?>
 <?php
 	include "general/Footer.php";

@@ -5,7 +5,17 @@
     $DB=new DBAccess();
     $conn=$DB->openc();
     
-    
+    if(isset($_POST["compraBundle"])){
+		if(isset($_SESSION['login_user']))
+            {
+				$bundleresult=$DB->getBundlepartsdata($_GET['bundle']);
+				foreach($bundleresult as $pi)
+                $DB->aggiungiC($pi['id'],$_SESSION['login_user']);
+        }else{
+            echo "<p>Per effettuare un acquisto devi prima essere registrato!</p>";
+        }
+		header("location: prodotti.php");
+	}
     if(isset($_GET["advancedSubmit"])){
         $categoria=$_GET["categoria"];
         $ordine=$_GET["ordine"];

@@ -265,7 +265,7 @@
 	public function getLatestBundles(){
 		$result=mysqli_query($this->connessione,"SELECT * FROM Bundles ORDER by data desc LIMIT 6");
 		while ($row = $result->fetch_assoc()) {
-			echo '<tr><td><p id="bundlename">'.$row["nome"].'</p> <p id="bundledesc">'. substr($row["descrizione"], 0, 200).'...</p></td></tr>';
+			echo "<tr><td><p id='bundlename'><a href='bundledetails.php?bundle=".$row['nome']."'>".$row["nome"]."</a></p> <p id='bundledesc'>". substr($row["descrizione"], 0, 200)."...</p></td></tr>";
 		}
 	}
     public function getB(){
@@ -289,12 +289,12 @@
         }
        return $result;
     }
-	public function getBundle($bundle, $data){
-		$query=mysqli_query($this->connessione,"SELECT * FROM Bundles WHERE nome='$bundle' and data='$data'");
+	public function getBundle($bundle){
+		$query=mysqli_query($this->connessione,"SELECT * FROM Bundles WHERE nome='$bundle'");
 		return mysqli_fetch_assoc($query);
 	}
 	public function getBundlepartsdata($bundle){
-		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.descrizione, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'");
+		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'");
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
 		}

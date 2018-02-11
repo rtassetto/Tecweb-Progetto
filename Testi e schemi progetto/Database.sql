@@ -46,7 +46,7 @@ CREATE TABLE Bundles(
 	nome varchar(25),
 	descrizione varchar(300),
 	data datetime,
-    PRIMARY KEY(nome, data)
+    PRIMARY KEY(nome)
 );
 
 CREATE TABLE Bundleparts(
