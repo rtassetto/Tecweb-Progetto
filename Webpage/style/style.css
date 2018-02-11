@@ -25,7 +25,6 @@ body{
     height:5em;
     width:100%;
     background-color:cadetblue;
-    margin:0;
 }
 
 nav {
@@ -121,7 +120,7 @@ nav a:active{
 
 #breadcrumb{
     background-color:#232f3e;
-    margin:2em 0 1em 0;
+    margin:2em 0;
     padding:0 0.5em;
     font-size:15pt;
     color:white;
@@ -145,9 +144,8 @@ section{
 }
 
 #content_prodotti{
-    margin-top:1em;
     border:2px solid #232f3e;
-    width:99%;
+    width:100%;
     background-color:cadetblue;
     
 }
@@ -155,7 +153,7 @@ section{
 
 
 #content_prodotti .prodotto{
-    background-color:#adbdd1;
+    background-color:#becbda;
     border:2px solid #232f3e;
     height:13em;
     margin:0.5em;
@@ -237,21 +235,21 @@ section{
     width:100%;
     height:30em;
     border:2px solid #232f3e;
-    background-color:#adbdd1;
+    background-color:#becbda;
 }
 
 
 
 #dettaglioProdotto .img{
     margin:1%;
-    width:25em;
+    max-width:30%;
     max-height:100%;
 }
 
 #dettaglioProdotto .img img{
     float:left;
     max-width:100%;
-    max-height:100;
+    max-height:100%;
     border:2px solid #232f3e;
 }
 
@@ -261,13 +259,12 @@ section{
 #dettaglioProdotto .nome{
     width:70%;
     margin-left:0.5em;
-    color:#232f3e;
 }
 
 #dettaglioProdotto .descrizione{
     position:relative;
     float:right;
-    top:-2em;
+    top:-4em;
     left:-5%;
     padding:0.5em;
     width:60%;
@@ -279,29 +276,29 @@ section{
 #dettaglioProdotto .prezzo{
     float:right;
     position:relative;
-    right:-8em;
-    top:15em;
+    right:-3em;
+    top:14em;
     font-size:16pt;
-        font-weight:bold;
     color:#232f3e;
+    font-weight:bold;
 }
 
 #dettaglioProdotto .valutazione{
     float:right;
     position:relative;
-    right:15em;
-    top:15em;
+    right:30%;
+    top:14em;
     font-size:16pt;
-        font-weight:bold;
+    font-weight:bold;
     color:#232f3e;
 }
 
 #dettaglioProdotto .categoria{
     position:relative;
-    right:3em;
-    top:-3.5em;
+    right:4em;
+    top:-4em;
     float:right;
-    font-size:16pt;
+    font-size:14pt;
     font-weight:bold;
     color:#232f3e;
 }
@@ -309,8 +306,8 @@ section{
 
 #dettaglioProdotto .aggiungiCarrello{
     position:relative;
-    top:21.5em;
-    left:45em;
+    left:40em;
+    top:20em;
 }
 
 
