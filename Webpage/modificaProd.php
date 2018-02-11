@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <?php 
     session_start();
-    require "connessione.php";
+    require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
-    if($_SESSION['admin']==true){
-        $path = $_SERVER['DOCUMENT_ROOT'];
-    }
-    else{
-        header("location: /home.php");
+    if($_SESSION['admin']!=true){
+        header("location: home.php");
     }
         $P=$DB->getP();
         foreach($P as $x){
@@ -26,17 +23,17 @@
 <html lang="it">
 <head>
 <?php
-	include $path."/general/Meta.php";
+	include "general/Meta.php";
 ?>
 </head>
 <body>
 <?php
-	include $path."/general/Header.php";
+	include "general/Header.php";
 ?>
 <?php
     echo "<p>Stai modificando il prodotto :<p>\n";
     ?>
-    <table id="searchResult">
+<table id="searchResult">
             <thead>
                 <tr>
                     <th>Prodotto</th>
@@ -57,20 +54,23 @@
     </table>
     
     
-    <a href="../adminproducts.php">Torna indietro</a>
- <?php   
-    
-    
-    
-?>
+    <a href="adminproducts.php">Torna indietro</a>
+
 <form id="modificaProd" method="post" action="../adminproducts.php">
-<label for="nome">Nome del Prodotto:</label> <input type="text" name="nome"/>
+<label for="nome">Nome del Prodotto:</label> <input type="text" name="nome" value="<?php echo $y["nome"]?>"/>
 <label for="categoria">Categoria:</label>
-<select name="categoria">
-  <option value="monitor">Monitor</option>
-  <option value="hdd">HDD</option>
+<select name="categoria" selected="<?php echo $y["categoria"];?>">
+  <option value="monitor"  <?php if($y["categoria"]=="Monitor")echo "selected"; ?> >Monitor</option>
+  <option value="hdd"  <?php if($y["categoria"]=="HDD")echo "selected"; ?> >HDD</option>
 </select>
-<label for="descrizione">Descrizione del Prodotto:</label> <textarea name="descrizione" rows="7"></textarea>
-<label for="prezzo">Prezzo:</label><input type="text" name="prezzo"/>
+<label for="descrizione">Descrizione del Prodotto:</label> <textarea id="descarea" name="descrizione" rows="7" value="<?php echo $y["descrizione"];?>"></textarea>
+<label for="prezzo">Prezzo:</label><input type="text" name="prezzo" value="<?php echo $y["prezzo"]?>"/>
 <input type="submit" name='<?php echo $y['id'];?>' value="Modifica"/>
 </form>
+<script>
+document.getElementById("descarea").value = "<?php echo $y["descrizione"]?>";
+</script>
+
+<?php
+	include "general/Footer.php";
+?>

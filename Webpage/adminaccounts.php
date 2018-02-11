@@ -36,8 +36,8 @@ else{
     <div id="breadcrumb"> 
         <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Gestione accounts </p> 
     </div>
-
-
+	<a href="adminmenu.php">Torna Indietro</a>
+	<h1>Gestione Accounts</h1>
 <?php
 	$accountab=$DB->getUserlist();
 	echo "<table>
