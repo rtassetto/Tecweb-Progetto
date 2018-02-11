@@ -46,7 +46,7 @@ if($_SESSION['admin']!=true)
 				<td>".$result["nome"]."</td>
 				<td>".$result["categoria"]."</td>
 				<td>".$result["valutazione"]."</td>
-				<td>".$result["id"]."</td>
+				<td>".$result["idordine"]."</td>
 				<td>".$result["data"]."</td>
 			  </tr>";
 	}
