@@ -106,16 +106,16 @@ $DB->openc();
    <div class="form"> 
     <form name="registration" class="login-form" action="register.php" method="POST" onsubmit="return validateForm()">
         <label for="username">Username:</label>
-        <input type="text" name="username" maxlength="20"/>
+        <input type="text" id='username' name="username" maxlength="20"/>
 		<span id="usernameerr"></span>
 
         <label for="password">Password:</label>
-        <input type="password" name="password" maxlength="20"/>
+        <input type="password" id='password' name="password" maxlength="20"/>
 		<span id="passworderr"></span>
 
 
         <label for="email">E-mail:</label>
-        <input type="email" name="email" maxlength="50"/>
+        <input type="email" id='email' name="email" maxlength="50"/>
 		<span id="emailerr"></span>
 
         <input type="submit" class="form_submit" name="submit" value="Registra"/>
@@ -125,3 +125,4 @@ $DB->openc();
 	require "general/Footer.php";
 ?> 
 </body>
+</html>

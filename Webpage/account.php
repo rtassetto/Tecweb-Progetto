@@ -16,15 +16,15 @@ if(!isset($_SESSION['login_user'])){
     <title>Account - Buy Tech</title>  
 <?php
 	require "general/Meta.php";
+    echo "</head>
+         <body>";
     require "general/Header.php";
 ?>
     
     <div id="breadcrumb"> 
         <p> Ti trovi in: Home &#8594; Account </p> 
     </div>
-</head>
-    
-<body>
+
 <?php
 
 echo "<h1>Gestione account</h1>";

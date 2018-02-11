@@ -39,8 +39,6 @@ if(isset($_POST["submit"])){
 <?php
 	require "general/Meta.php";
 ?>
-
-    <title>Home</title>
 </head>
 
 <?php
@@ -56,9 +54,9 @@ if(isset($_POST["submit"])){
    <div class="form">
     <form class="login-form" method="post" action="login.php">
       <label for="nome_utente">Username:</label>
-      <input type="text" name="nome_utente" placeholder="username"/>
+      <input type="text" id='nome_utente' name="nome_utente" placeholder="username"/>
       <label for="pass">Password:</label>
-      <input type="password" name="pass" placeholder="password"/>
+      <input type="password" id='pass' name="pass" placeholder="password"/>
       <input type="submit" class="form_submit" name="submit" value="Login"/>
       <p class="message">Non sei registrato? <a href="register.php">Crea un account</a></p>
     </form>
@@ -68,3 +66,4 @@ if(isset($_POST["submit"])){
 <?php
 	include "general/Footer.php";
 ?>
+</html>
