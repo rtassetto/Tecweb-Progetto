@@ -27,8 +27,8 @@ body{
 
 nav {
     margin-top:1%;
-    height:3em;
-    width:35em;
+    height:3.5em;
+    width:36em;
     margin-left:20%;
     padding:0;
     overflow: hidden;
@@ -54,13 +54,14 @@ nav ul li{
 
 nav a{
     height:100%;
-    width:4.85em;
+    width:5.3em;
     float: left;
+    margin-top:0.25em;
     display: block;
     color: white;
     text-align: center;
     padding:0.67em 0.67em;
-    font-size: 13.5pt;
+    font-size: 13pt;
     text-decoration: none;
 }
 
