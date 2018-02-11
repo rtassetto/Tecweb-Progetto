@@ -132,7 +132,7 @@
                 echo "Categoria: ".$x["categoria"];
                 echo "</div>";
                 echo "<div class='descrizione'>";
-                echo substr($x["descrizione"], 0, 200)."...°;
+                echo substr($x["descrizione"], 0, 200)."...";
                 echo "</div>";
                 echo "<div class='valutazione'>";
                 echo "Valutazione: ".$x["valutazione"];
