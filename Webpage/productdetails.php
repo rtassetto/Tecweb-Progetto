@@ -53,20 +53,21 @@ function myFunction() {
     }
     echo "<div id='recensioni'><h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);
-	if(!$reviews){echo "<span>Non ci sono recensioni per questo prodotto</span></div>";}
-	else{
-	foreach($reviews as $result){
-		echo "<div id='dettRecensione'>
-			  <span>".$result['username']."</span>
-			  <span>".$result['data']."</span>
-			  <span>".$result['voto']."</span>
-			  <p>".$result['review']."</p>
-			  </div></div>";
+	if(!$reviews){
+        echo "<span>Non ci sono recensioni per questo prodotto</span></div>";
+    }else{
+        foreach($reviews as $result){
+            echo "<div class='dettRecensione'>
+                  <span>Autore: ".$result['username']."</span>
+                  <span>Data: ".$result['data']."</span>
+                  <span>Valutazione: ".$result['voto']."</span>
+                  <p>".$result['review']."</p>
+                  </div>";
+        }
 	}
-	}
-	?>
-<?php
-	include "general/Footer.php";
+    echo"</div>";
+	
+    include "general/Footer.php";
 ?>
 </body>
 </html>

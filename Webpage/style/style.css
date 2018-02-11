@@ -321,8 +321,24 @@ section{
     height:auto;
 }
 
+.dettRecensione{
+    margin-top:1em;
+    border:2px solid #232f3e;
+    padding:1em;
+    border-radius:5px;
+}
 
+.dettRecensione span{
+    font-size:12pt;
+    color:#232f3e;
+    font-weight:bold;
+    padding-right:1em;
+    margin-bottom:1em;
+}
 
+.dettRecensione p{
+    font-size:14pt;
+}
 
 .popup {
     position: relative;
