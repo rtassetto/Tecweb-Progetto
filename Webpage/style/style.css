@@ -557,7 +557,6 @@ footer img{
 
 .prodottobestseller .imgbestseller{
     float:left;
-    border:1px solid #232f3e;
     background-color:white;
     height: 99%;
     width: 20%;
@@ -575,7 +574,6 @@ footer img{
     top:0.5em;
     font-size:12pt;
     width:70%;
-    border:1px solid black;
     
 }
 
@@ -600,4 +598,3 @@ footer img{
     left:12em;
     
 }
-
