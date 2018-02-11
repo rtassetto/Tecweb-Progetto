@@ -47,6 +47,11 @@
 		}
 		return "error";
 	}
+	
+	public function getUser($username){
+		$query = mysqli_query($this->connessione,"SELECT username, email, datacreazione FROM Account WHERE username='$username'");
+		return mysqli_fetch_assoc($query);
+	}
 	public function alterAdminright($username){
 		mysqli_query($this->connessione,"UPDATE Account 
 										 SET admin=NOT admin

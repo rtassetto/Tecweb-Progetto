@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php session_start();
+<?php 
+session_start();
+require "php-script/connessione.php";
+$DB=new DBAccess();
+$DB->openc();
 if(!isset($_SESSION['login_user'])){
 	header("location: home.php");
 }
@@ -25,7 +29,9 @@ if(!isset($_SESSION['login_user'])){
 
 echo "<h1>Gestione account</h1>";
 echo "<p>Benvenuto, ".$_SESSION['login_user']." !</p>";
-
+$Dati=$DB->getUser($_SESSION['login_user']);
+echo "<p>Email utente: ".$Dati['email']."</p>
+	  <p>Creato il: ".$Dati['datacreazione']."</p>";
 echo "<a href='purchasehistory.php'>Storia degli Acquisti</a>
 	  <a href='carrello.php'>Carrello</a>
 	  <a href='logout.php'>Logout</a>";
