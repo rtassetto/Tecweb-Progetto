@@ -65,11 +65,11 @@
         if(!$creazione){
             echo "<div id='creaBundle'>";
             echo "<form method='post' action='adminbundle.php'>";
-            echo "<label for='nome'>Nome Bundle:</label><input type='text' name='nome'>";
-            echo "<label for='descrizione'>Descrizione Bundle:</label><input type='textarea' name='descrizione'>";
+            echo "<label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'>";
+            echo "<label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea>";
             echo "<input type='submit' name='crea' value='Crea bundle'/>";
             echo "</form>";
-         echo '<table id="products">';
+         echo '<table class="products">';
             echo '<thead>';
                 echo '<tr>';
                echo  '<th>Nome Bundle</th>';
@@ -89,10 +89,12 @@
                 echo "</td>";
                 echo "</tr>";
                }
+            echo "</table>";
+            echo "</div>";
         }
          if($creazione){
-                echo "</table>";
-        echo '<table id="products">';
+                
+        echo '<table class="products">';
             echo '<thead>';
                 echo '<tr>';
                echo  '<th>Prodotto</th>';
@@ -115,9 +117,6 @@
 			}
 		echo "</table>";
             }
-    
-        
-        echo '</table>' 
         ?>
     
     
@@ -127,7 +126,7 @@
      if($creazione){
 		echo "<a href='adminbundle.php'>Torna alla lista Bundles</a>";
 
-        echo '<table id="products">';
+        echo '<table class="products">';
             echo '<thead>';
                 echo '<tr>';
                echo  '<th>Prodotto</th>';
@@ -153,8 +152,9 @@
                 echo "</td>";
                 echo "</tr>";
             }
+         echo "</table>";
             }
-        echo "</table>";
+        
         echo "</div>"
         ?>
     </div>
