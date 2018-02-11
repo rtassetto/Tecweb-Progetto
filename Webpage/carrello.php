@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+	if(!isset($_SESSION['login_user'])){
+	header("location: home.php");
+	}
     require "php-script/connessione.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
