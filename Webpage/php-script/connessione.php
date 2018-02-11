@@ -145,7 +145,7 @@
 			"Error in modifyProductquery: " . mysqli_error($this->connessione));
     }
 	public function getBestselling(){
-		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id ORDER by sum(ph.quantita) desc LIMIT 6 ");
+		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id ORDER by sum(ph.quantita) desc LIMIT 6 ");
         $result=array();
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
@@ -289,6 +289,17 @@
         }
        return $result;
     }
+	public function getBundle($bundle, $data){
+		$query=mysqli_query($this->connessione,"SELECT * FROM Bundles WHERE nome='$bundle' and data='$data'");
+		return mysqli_fetch_assoc($query);
+	}
+	public function getBundlepartsdata($bundle){
+		$query=mysqli_query($this->connessione,"SELECT p.nome, p.categoria, p.descrizione, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'");
+		for($i=0;$i<mysqli_num_rows($query);$i++){
+			$result[$i]=mysqli_fetch_assoc($query);
+		}
+		return $result;
+	}
     public function aggiungiPB($nome,$id){
 	if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM bundleparts WHERE bundle='$nome' and pezzo='$id' "))!=0){return "prodotto gia' inserito";};
         $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";

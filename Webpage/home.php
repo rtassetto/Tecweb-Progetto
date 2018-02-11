@@ -57,17 +57,20 @@
     
    
 
-    
-    <section id="content1">
+    <div class="content">
+    <section id="Bestsellers">
         <h1>I prodotti piu' venduti</h1>
 		<?php
 		$bestsellers=$DB->getBestselling();
 		foreach ($bestsellers as $result){
 			
-			echo "<div><span>".$result["nome"]."</span>
-				<span>".$result["categoria"]."</span>
-				<span>".$result["valutazione"]."</span>
-				<span>".$result["prezzo"]."</span></div>";
+			echo "<div class='prodottobesteller'>
+				<div class='imgbestseller'><img  src='images/".$result["id"].".jpg'/></div>
+				<div class='nomebestseller'>".$result["nome"]."</div>
+				<div class='categoriabestseller'>".$result["categoria"]."</div>
+				<div class='votobestseller'>".$result["valutazione"]."/5</div>
+				<div class='prezzobestseller'>".$result["prezzo"]."€</div>
+				</div>";
 			}
 		?>  
     
@@ -83,7 +86,7 @@
 		?>  
 		</table>
     </section>
-    
+  </div> 
 
  <?php
 	require "general/Footer.php";
