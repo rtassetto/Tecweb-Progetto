@@ -150,7 +150,9 @@
     
     </section>
     
-    
+  <?php
+	require "general/Footer.php";
+?>  
 </body>
 
 </html>
