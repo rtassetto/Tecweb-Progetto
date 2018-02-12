@@ -272,7 +272,6 @@ nav a{
     font-size:12pt;
     top:0em;
     left:0em;
-    border:1px solid black;
 
 }
 
@@ -312,6 +311,10 @@ nav a{
     width:100%;
     margin:0;
     padding:0;
+}
+
+.bundle{
+    width:95%
 }
 
 .nomebundle{
