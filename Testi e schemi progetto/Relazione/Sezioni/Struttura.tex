@@ -1,2 +1,22 @@
 \section{Realizzazione}
 \subsection{Struttura}
+La pagina e' stata scritta in HTML 5.\newline
+Il sito e' composto da pagine php, che presentano dati e interazoni diversi a seconda del tipo di utente o delle interazioni svolte.
+La pagina home.php introduce gli utenti alle proposte del sito, mostrando i prodotti che sono stati più venduti nel sito, e i Bundle, insiemi di prodotti preparati dagli aministratori.
+La pagina prodotti.php mostra una lista dei prodotti che sono disponibili nel sito,
+mostrandone i vari dati; tali prodotti possono essere ordinati tramite alcune condizioni. A tale pagina si arriva anche usando la barra di ricerca in alto a destra, che porta i risultati della ricerca.
+Cliccando sul nome di un prodotto, si accede alla pagina productdetails.php, che ne mostra i dati in modo più dettagliato, e visualizza le recensioni lasciate dagli utenti. Inoltre contiene un pulsante per aggiungere il prodotto al carrello dell'utente (se anonimo, tale pulsante non compare).
+Nella pagina carrello.php vengono visualizzati i prodotti che un utente ha aggiunto al proprio carrello, e permette la conferma degli acquisti.
+La pagina account.php serve a mostrare i dati relativi ad un account, e contiene il link alla pagina purchasehistory.php.
+Tale pagina mostra tutti gli acquisti precedenti effettuati dall'utente, per un facile ricontrollo.
+Da tale pagina, e' possibile accedere a recensione.php, dove gli utenti possono inserire una recensione e valutazione di un prodotto che hanno giÃ  acquistato.
+La pagina bundledetails.php mostra i dettagli dei bundle presenti nella home, insieme alla lista dei prodotti di cui è composto. La pagina permette la facile aggiunta di tutti i prodotti del bundle dentro il carrello.
+La pagina register.php permette la creazione di un nuovo utente, con le i dati che vengono controllati da javascript e, eventualmente, da php.
+La pagina login permette agli utenti di connettersi al sito. Se si connette un amministratore, viene reindirizzato alla pagina adminmenu.php.
+Tale pagina presenta i link a tutte i tool di amministrazione. Questa e le pagine per gli admin, reindirizzano ad home qualora un utente non admin vi acceda.
+La pagina adminproducts.php permette la creazione di nuovi prodotti, o la modifica di esistenti, tramite la pagina modificaProd.php.
+La pagina adminaccounts.php permette un accesso alla lista di tutti gli utenti del sito, con la possibilitÃ  di promuovere o degradare gli altri utenti.
+Nella pagina adminbundle.php è possibile creare nuovi bundle o modificarne di esistenti, inserendo quali prodotti ne fanno parte.
+adminpurchasehist.php presenta una lista di tutti gli acquisti che sono stati effettuati da tutti gli utenti del sito, per aiutare in caso di problemi con le transazioni.
+La pagina 404.php serve a reindirizzare qualora si cerca di entrare in cartelle del sito, quale quella delle immagini:un index.php reindirizza l'utente a questa pagina.
+Ogni pagina presenta la barra di navigazione nella parte superiore. Tale barra risulta diversa qualora il sito lo visita un utente anonimo per il quale appare l'opzione di effettuare il login. Un utente registrato, che ha accesso ad account.php e veloce accesso al carrello, o un amministratore, che ottiene accesso alla gestione del sito (adminmenu.php), alla pagina del proprio account,e relativi servizi da utente, e qualunque utente ha accesso al link di Logout.

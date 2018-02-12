@@ -46,6 +46,26 @@ La gestione della connessione al database è affidata alla classe \emph{DBAccess
 	\item \textbf{getBundlepartsdata:} ritorna un array associativo contenente le informazioni di tutti i prodotti contenuti in un dato bundle;
 \end{itemize}
 
-\paragraph{Gestione utente} \mbox{}
-Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi chiudono il browser, grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account come lo storico degli acquisti.
+\paragraph{Gestione utente} \mbox{} \\
+Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi chiudono il browser, grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account come lo storico degli acquisti;
+inoltre l'utilizzo di questa variabile ha reso semplice il logout che viene effettuato attraverso i comandi \emph{session\_unset} e \emph{session\_destroy}.
 
+\subsubsection{Javascript}
+Javascript è stato utilizzato per controllare a lato client se gli input degli utenti sono corretti o meno.
+
+\subsubsection{Database MySQL}
+I dati relativi al nostro sito sono stati salvati in un database relazionale SQL, queste sono le tabelle che costituiscono il database:
+\begin{itemize}
+    \item \textbf{Account:} username,password,email,admin,datacreazione;
+    \item \textbf{Prodotto:} id,nome,categoria,descrizione,valutazione,prezzo;
+    \item \textbf{PurchaseHistory:} idordine,compratore,prodotto,data,quantità;
+    \item \textbf{Carrello:} username,prodotto,quantità;
+    \item \textbf{Recensione:} username,prodotto,review,voto,data;
+    \item \textbf{Bundles} nome,descrizione,data;
+    \item \textbf{Bundleparts:} bundle,pezzo.	
+\end{itemize}
+nel database sono inoltre presenti 2 \emph{Trigger}:
+\begin{itemize}
+	\item \textbf{AggiornaVoto:} questo \emph{Trigger} aggiorna il voto di un prodotto dopo che un utente inserisce la propria valutazione su di esso;
+	\item \textbf{AggiornaVotoEdit:} questo \emph{Trigger} aggiorna il voto di un prodotto dopo che un utente modifica la propria valutazione su di esso.
+\end{itemize}

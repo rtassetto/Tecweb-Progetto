@@ -2,11 +2,14 @@
 \select@language {italian}
 \contentsline {section}{\numberline {1}Informazioni}{2}
 \contentsline {section}{\numberline {2}Abstract}{3}
-\contentsline {section}{\numberline {3}Utenti destinatari}{4}
-\contentsline {section}{\numberline {4}Realizzazione}{5}
-\contentsline {subsection}{\numberline {4.1}Struttura}{5}
+\contentsline {section}{\numberline {3}Utenti destinatari}{3}
+\contentsline {section}{\numberline {4}Realizzazione}{4}
+\contentsline {subsection}{\numberline {4.1}Struttura}{4}
 \contentsline {subsection}{\numberline {4.2}Presentazione}{6}
 \contentsline {subsection}{\numberline {4.3}Comportamento}{7}
 \contentsline {subsubsection}{\numberline {4.3.1}PHP}{7}
-\contentsline {paragraph}{Gestione utente}{9}
-\contentsline {section}{\numberline {5}Ruoli}{10}
+\contentsline {paragraph}{\numberline {4.3.1.1}Gestione utente}{9}
+\contentsline {subsubsection}{\numberline {4.3.2}Javascript}{9}
+\contentsline {subsubsection}{\numberline {4.3.3}Database MySQL}{9}
+\contentsline {section}{\numberline {5}Validazione}{11}
+\contentsline {section}{\numberline {6}Ruoli}{12}
