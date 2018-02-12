@@ -87,13 +87,15 @@
     
     <div id="advSearch">
     <form method="get" action="prodotti.php" id="avdancedSearch" name="advancedSearch">
+        <div id="ordinaCat">
         <label for="categoria">Filtra per:</label>
         <select id="categoria" name="categoria" required>
             <option value='' selected>Scegli categoria</option>
             <option value="Monitor">Monitor</option>
             <option value="HDD">HDD</option>
         </select> 
-        
+        </div>
+        <div id="ordinaOrd">
         <label for="ordine">Filtra per ordine:</label>
         <select id="ordine" name="ordine" required size=''>
             <option value='' selected>Scegli ordine</option>
@@ -102,8 +104,8 @@
             <option value="valC">Valutazione crescente</option>
             <option value="valD">Valutazione decrescente</option>
         </select>
-        
         <input type="submit" name="advancedSubmit" value="Cerca"/>
+        </div>
     </form>
     </div>
     <?php

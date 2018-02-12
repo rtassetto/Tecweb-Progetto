@@ -47,7 +47,7 @@ include "general/Header.php";
     
     
     
-    <section id="content_prodotti">
+    <section id="prodottipurchase">
         <table id="purchase">
             <thead>
                 <tr>

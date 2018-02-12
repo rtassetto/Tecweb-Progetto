@@ -130,7 +130,6 @@ nav a:active{
     border:2px solid #232f3e;
     padding:0.5em;
     width:35em;
-    
 }
 
 section{
@@ -311,7 +310,9 @@ section{
 }
 
 
-
+#ordinaCat{
+    margin-bottom: 1em;
+}
 
 #recensioni{
     background-color:#becbda;
@@ -622,9 +623,10 @@ footer img{
 }
 #Bestsellers {
     max-height: 100%;
-    max-width: 45%;
+    width:45%;
     background-color: cadetblue;
     border:2px solid #232f3e;
+    height:auto;
 }
 .prodottobestseller{
     background-color:#becbda;
@@ -658,7 +660,7 @@ footer img{
 
 .prodottobestseller .categoriabestseller{
     position: relative;
-    top:2.1em;
+    top:2.3em;
     left:1em;
     
 
@@ -666,14 +668,20 @@ footer img{
 
 .prodottobestseller .votobestseller{
     position: relative;
-    top:1em;
+    top:1.1em;
     left:20em;
     
 }
 
 .prodottobestseller .prezzobestseller{
     position:relative;
-    top:2em;
+    top:0em;
     left:12em;
     
+}
+
+
+
+#purchase th{
+    color:#232f3e;
 }
