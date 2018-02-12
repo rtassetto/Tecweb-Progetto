@@ -1,7 +1,7 @@
 html {
     margin: 0;
     padding: 0;
-    width:100%;
+    width:480px;;
 }
 
 body{
@@ -32,7 +32,7 @@ header{
 }
 
 #footer{
-    width:100%x;
+    width:100%;
 }
 
 nav{
@@ -79,14 +79,16 @@ nav a{
 #advSearch{
     width:75%;
     height:4.5em;
+    overflow:hidden;
 }
 
 
-#filtroOrd{
-    margin-top:1em;
+#content{
+    width:100%;
 }
 
 #content_prodotti{
+    overflow:hidden;
     width:480px;
     margin:0;
     padding:0;
@@ -157,5 +159,73 @@ nav a{
 
 
 #prodotticarrello{
+    text-align:justify;
+    width:100%;
     overflow:scroll;
 }
+
+
+#prodottipurchase {
+    text-align:justify;
+    width:100%;
+    overflow:scroll;
+}
+
+#contenuto{
+    width:100%;
+}
+
+#Bestsellers{
+    width:100%;
+    margin:0;
+}
+
+
+
+.prodottobestseller .imgbestseller{
+    display:none;
+}
+
+
+.prodottobestseller .nomebestseller{
+    float:none;
+    position: relative;
+    left:1em;
+    top:0.5em;
+    font-size:12pt;
+    width:70%;
+    
+}
+
+.prodottobestseller .categoriabestseller{
+    clear:both;
+    
+
+}
+
+.prodottobestseller .votobestseller{
+    clear:both;
+}
+
+.prodottobestseller .prezzobestseller{
+    clear:both;
+    
+}
+
+
+
+#LatestBundles{
+    position:relative;
+    top:1em;
+    float:none;
+    margin:0;
+    width:100%;
+}
+
+
+
+
+
+
+
+
