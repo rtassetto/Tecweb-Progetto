@@ -109,14 +109,10 @@ require "general/Header.php";
             </tr>
         </table>  
         <form class="onclick" method="post" action="purchasehistory.php">
-        <input id='acquista' type="submit" onclick="acquisto()" name="compra" value="Acquista"/>
+        <input id='acquista' type="submit"  name="compra" value="Acquista"/>
 
         </form>
-        <script type="text/javascript">
-            function acquisto(){
-                window.alert("Acquisto effettuato con successo!");
-            }
-        </script>
+        
     </section>
     
     
