@@ -19,14 +19,13 @@ $product=$DB->getProddata($_GET['id']);
 	include "general/Meta.php";
 ?>
 
-        
+     <script type="text/javascript">
+            function aggcarrello(){
+                window.alert("Prodotto aggiunto correttamente al carrello!");
+            }
+        </script>   
     
-    <script>
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
+    
 </head>
 <body>
 <?php
@@ -44,7 +43,7 @@ function myFunction() {
     if(isset($_SESSION['login_user'])){
         echo "<form class='popup' method='post' action='prodotti.php'>
               <div id='aggiungiCarrello'>
-              <input type='submit' onclick='myFunction()' name=".$_GET['id']." value='Aggiungi al carrello'/>
+              <input type='submit' onclick='aggcarrello()' name=".$_GET['id']." value='Aggiungi al carrello'/>
               </div>
               </form></div>";
     }else{

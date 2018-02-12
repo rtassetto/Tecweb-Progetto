@@ -55,6 +55,8 @@ session_start();
 <?php
 	require "general/Meta.php";
 ?>
+    
+    
     <title>Recensione</title>
 </head>
     
@@ -82,8 +84,9 @@ session_start();
         <input type="radio" name="voto"  value="3" required><span>3</span>
         <input type="radio" name="voto"  value="4" required><span>4</span>
         <input type="radio" name="voto"  value="5" required><span>5</span> 
-        <input type="submit" name="<?php echo $id."1"; ?>" value="Aggiungi recensione"/>
+        <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>" onclick="window.alert('Recensione aggiunta')" value="Aggiungi recensione"/>
         </form>
+        
     </div>
     
     <?php
