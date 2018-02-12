@@ -150,7 +150,7 @@
 			"Error in modifyProductquery: " . mysqli_error($this->connessione));
     }
 	public function getBestselling(){
-		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id ORDER by sum(ph.quantita) desc LIMIT 6 ");
+		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN PurchaseHistory ph on (p.id= ph.prodotto) GROUP by p.id ORDER by sum(ph.quantita) desc LIMIT 3 ");
         $result=array();
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
