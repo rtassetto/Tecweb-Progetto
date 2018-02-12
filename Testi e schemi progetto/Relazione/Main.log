@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.5)  12 FEB 2018 01:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.5)  12 FEB 2018 09:28
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -528,28 +528,23 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ]
 \openout2 = `Sezioni/Struttura.aux'.
 
- (Sezioni/Struttura.tex) [4
+ (Sezioni/Struttura.tex [4
 
 
-] [5]
+]
+! Undefined control sequence.
+l.32 \itema
+            \textbf{adminbundle.php} in questa pagina è possibile creare nu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) [5]
 \openout2 = `Sezioni/Presentazione.aux'.
 
-
-(Sezioni/Presentazione.tex
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10 \end{itemize}\newline
-                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
+ (Sezioni/Presentazione.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 11--20
 
  []
@@ -587,7 +582,7 @@ m/it/12 https://jigsaw.w3.org/css-validator/
 Here is how much of TeX's memory you used:
  2895 strings out of 493312
  38611 string characters out of 3138896
- 111120 words of memory out of 3000000
+ 105120 words of memory out of 3000000
  6349 multiletter control sequences out of 15000+200000
  13373 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -602,9 +597,9 @@ pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Davide\AppData\Local\MiKTeX
 ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\David
 e\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Main.pdf (12 pages, 115124 bytes).
+Output written on Main.pdf (12 pages, 115978 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
+ 317 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
