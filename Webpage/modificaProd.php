@@ -57,7 +57,7 @@
     
     <a href="adminproducts.php">Torna indietro</a>
 
-<form id="modificaProd" method="post" action="../adminproducts.php">
+<form id="modificaProd" method="post" action="adminproducts.php">
 <label for="nome">Nome del Prodotto:</label> <input type="text" name="nome" value="<?php echo $y["nome"]?>"/>
 <label for="categoria">Categoria:</label>
 <select name="categoria" selected="<?php echo $y["categoria"];?>">
