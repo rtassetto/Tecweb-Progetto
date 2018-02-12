@@ -6,7 +6,12 @@ html {
 nav{
     display:none;
 }
-
-header img{
-    display:none;
+#menu{
+	display:none;
+}
+#advSearch{
+	display:none;
+}
+.aggiungiCarrello{
+	display:none;
 }
