@@ -223,7 +223,8 @@ nav a{
     left:0;
     float:none;
     margin:0!important;
-    width:100%;
+    width:480px;
+    padding:0;
 }
 
 .bundle{
@@ -302,8 +303,8 @@ nav a{
 
 #aggiungiCarrello{
     float:right;
-    left:20em;
-    top:27em;
+    left:10em;
+    top:19em;
 }
 
 
@@ -320,6 +321,10 @@ nav a{
 
 .descrizionebundle{
     width:90%;
-    font-size:12pt;s
+    font-size:12pt;
 }
 
+.form{
+    width:40%;
+    margin:auto;
+}
