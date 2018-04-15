@@ -59,26 +59,6 @@
    
 
     <div class="content">
-    <section id="Bestsellers">
-        <h1>I prodotti piu' venduti</h1>
-		<?php
-		$bestsellers=$DB->getBestselling();
-		foreach ($bestsellers as $result){
-			
-			echo "<div class='prodottobestseller'>";
-			echo "<div class='imgbestseller'><img  src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";
-            echo "<div class='nomebestseller'><a href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a></div>";
-			echo "<div class='categoriabestseller'>Categoria: ".$result["categoria"]."</div>";
-            echo "<div class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</div>";
-			echo "<div class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</div>";
-			echo "</div>";
-			}
-		?>  
-    
-    </section>
-    
-
-    
     <section id="LatestBundles">
         <h1>Gli ultimi Bundle che abbiamo creato</h1>
 		<?php
@@ -91,6 +71,24 @@
 				</div>";
 			}
 		?>  
+    </section>
+        
+    <section id="Bestsellers">
+    <h1>I prodotti piu' venduti</h1>
+    <?php
+    $bestsellers=$DB->getBestselling();
+    foreach ($bestsellers as $result){
+
+        echo "<div class='prodottobestseller'>";
+        echo "<div class='nomebestseller'><a href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a></div>";
+        echo "<div class='imgbestseller'><img  src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";        
+        echo "<div class='categoriabestseller'>Categoria: ".$result["categoria"]."</div>";
+        echo "<div class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</div>";
+        echo "<div class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</div>";
+        echo "</div>";
+        }
+    ?>  
+    
     </section>
   </div> 
 

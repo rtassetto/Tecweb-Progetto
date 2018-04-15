@@ -4,11 +4,34 @@
 	max-width: 10em;
 	min-width: 10em;
 }
+#avdancedSearch
+{
+	border: 1px solid black;
+	padding: 1%;
+	margin-bottom: 1%;
+}
+.prodotto
+{
+	border: 1px solid red;
+	margin-bottom: 1%;
+	padding: 1%;
+}
+.img
+{
+	border: 1px solid green;
+	width: 30%;
+}
 #menu
 {
 	width: 100%;
 	min-height: 4em;
 	border: 1px solid #000000;
+}
+.img IMG
+{
+	min-width: 80%;
+	height: auto;
+	border: 1px solid purple;
 }
 UL
 {
@@ -31,18 +54,10 @@ UL
 {
 	width: 100%;
 	border: 1px solid #E30E46;
-	height: 20em;
 	clear: both;
 }
 FOOTER
 {
-}
-#Bestsellers
-{
-	width: 49%;
-	border: 1px solid #23E30E;
-	float: left;
-	height: 20em;
 }
 #searchBar
 {
@@ -51,14 +66,17 @@ FOOTER
 	margin-top: 0%;
 	/*margin-left: 60%;*/
 	/*position: relative;*/
-	rigth:1em;
-	top: 0;
 }
 #LatestBundles
 {
+	float: left;
+	width: 50%;
+	border: 1px solid green;
+}
+#Bestsellers
+{
 	margin-left: 51%;
-	width: 30%;
-	height: 20em;
+	border: 1px solid black;
 }
 BODY
 {
