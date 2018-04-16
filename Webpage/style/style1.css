@@ -4,6 +4,12 @@
 	max-width: 10em;
 	min-width: 10em;
 }
+.info
+{
+	float: left;
+	width: 65%;
+	border: 1px solid orange;
+}
 #avdancedSearch
 {
 	border: 1px solid black;
@@ -19,7 +25,8 @@
 .img
 {
 	border: 1px solid green;
-	width: 30%;
+	width: 35%;
+	margin-left: 65%;
 }
 #menu
 {

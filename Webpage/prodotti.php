@@ -128,8 +128,7 @@
                 echo "<div class='nome'>";
                 echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
                 echo "</div>";
-                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
-                echo "</div>";
+                echo "<div class='info'>";
                 echo "<div class='categoria'>";
                 echo "Categoria: ".$x["categoria"];
                 echo "</div>";
@@ -137,10 +136,13 @@
                 echo substr($x["descrizione"], 0, 200)."...";
                 echo "</div>";
                 echo "<div class='valutazione'>";
-                echo "Valutazione: ".$x["valutazione"];
+                echo "Valutazione: ".$x["valutazione"]."/5";
                 echo "</div>";
                 echo "<div class='prezzo'>";
                 echo "Prezzo: ".$x["prezzo"]."€";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
                 echo "</div>";
                 echo "<div class='dettaglio'><p><a href='productdetails.php?id=".$x["id"]."'>Vai al dettaglio</a></p>";
                 echo "</div>";
