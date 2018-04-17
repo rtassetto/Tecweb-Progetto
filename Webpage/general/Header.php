@@ -2,13 +2,18 @@
         <img id="logo" src="images/logo.png" alt="Logo sito"/>        
         <nav>
             <ul>
-                <li class="voci"><a href="home.php">Home</a></li>
-                <li class="voci"><a href="prodotti.php">Prodotti</a></li>
-				<?php
+                <?php
+                echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
+                else {echo '<a href="home.php">Home</a></li>';}
+                echo '<li class="voci"><a href="prodotti.php">Prodotti</a></li>';
+				
+                
 				if(isset($_SESSION['login_user'])){
                 $isA=$_SESSION['admin'];   
                 if(!$isA){
-					echo '<li class="voci"><a href="account.php">Account</a></li>';
+					echo '<li class="voci">';
+                    if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/account.php")'<a>Account</a></li>';
+                    else{echo '<a href="account.php">Account</a></li>'; }
 				    echo '<li class="voci"><a href="carrello.php">Carrello</a></li>';
 
                 }
@@ -24,12 +29,14 @@
 				
 				}
 				?>
-            </ul>
-        </nav>
+            <!--</ul>-->
+        <!--</nav>-->
             <div id="searchBar">
             <form action="prodotti.php" method="get">
-                    <button id="searchButton" type="submit">Vai</button>
+                    <button id="searchButton" type="submit">Cerca</button>
                     <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?">
             </form> 
             </div>
+            </ul>
+        </nav>
     </div>
