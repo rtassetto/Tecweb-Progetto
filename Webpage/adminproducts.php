@@ -50,14 +50,23 @@ else{
 	<a href="adminmenu.php">Torna Indietro</a>
 <h2>Aggiunta Prodotto</h2>
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
-<label for="nome">Nome del Prodotto:</label> <input type="text" id="nome" name="nome"/>
+<div class="formslot">
+	<label for="nome">Nome del Prodotto:</label> 
+	<input type="text" id="nome" name="nome"/>
+</div>
+<div class="formslot">
 <label for="categoria">Categoria:</label>
 <select id=categoria name="categoria">
   <option value="monitor">Monitor</option>
   <option value="hdd">HDD</option>
 </select>
+</div>
+<div class="formslot">
 <label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7"></textarea>
+</div>
+<div class="formslot">
 <label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo"/>
+</div>
 <input type="submit" name="aggiungi" value="Crea"/>
 </form>
 
