@@ -70,6 +70,7 @@ else{
 <input type="submit" name="aggiungi" value="Crea"/>
 </form>
 
+
 <h2>Modifica Prodotto</h2>
         <table id="searchResult">
             <thead>
