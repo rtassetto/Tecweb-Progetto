@@ -11,6 +11,11 @@
 	width: 65%;
 	border: 1px solid orange;
 }
+.CSS
+{
+	width: 10%;
+	float: left;
+}
 #avdancedSearch
 {
 	border: 1px solid black;
@@ -22,6 +27,11 @@
 	border: 1px solid red;
 	margin-bottom: 1%;
 	padding: 1%;
+}
+.corsivo
+{
+	padding-left: 20%;
+	font-style: italic;
 }
 .img
 {
@@ -74,6 +84,7 @@ UL
 }
 FOOTER
 {
+	border: 1px solid #070808;
 }
 #searchBar
 {
