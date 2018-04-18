@@ -34,7 +34,7 @@
     
     
     <div id="breadcrumb"> 
-        <p> Ti trovi in: Home </p> 
+        <p class="trovi"> Ti trovi in: Home </p> 
     </div>
     <!--
     <form id="login" action="login.php" method="post">

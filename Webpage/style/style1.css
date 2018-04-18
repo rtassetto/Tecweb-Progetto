@@ -54,12 +54,17 @@ UL
 	padding: 1em;
 	text-align: center;
 	float: left;
+	height: 100%;
 }
 #breadcrumb
 {
-	margin: 1% 0 0;
-	width: 100%;
-	/*border: 1px solid #0E46E3;*/
+	margin: 0;
+	border: 1px solid #0E46E3;
+}
+#breadcrumb P
+{
+	margin: 0;
+	padding-left: 1em;
 }
 .content
 {
