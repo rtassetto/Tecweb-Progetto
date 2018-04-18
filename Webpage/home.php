@@ -81,7 +81,7 @@
 
         echo "<div class='prodottobestseller'>";
         echo "<div class='nomebestseller'><a href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a></div>";
-        echo "<div class='imgbestseller'><img  src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";        
+        echo "<div class='imgbestseller'><img class='imgbs' src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";    
         echo "<div class='categoriabestseller'>Categoria: ".$result["categoria"]."</div>";
         echo "<div class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</div>";
         echo "<div class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</div>";
