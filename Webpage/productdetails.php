@@ -40,7 +40,7 @@ $product=$DB->getProddata($_GET['id']);
 		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p></div>
 		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
         </div>
-        <div class='img'><img src='images/".$_GET['id'].".jpg'/></div>";
+        <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
         echo "<form class='popup' method='post' action='prodotti.php'>
@@ -50,12 +50,12 @@ $product=$DB->getProddata($_GET['id']);
               </form></div>";
     }else{
         
-        echo "</div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
+        echo "<div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
     echo "<div id='recensioni'><h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);
 	if(!$reviews){
-        echo "<span>Non ci sono recensioni per questo prodotto</span></div>";
+        echo "<span>Non ci sono recensioni per questo prodotto</span>";
     }else{
         foreach($reviews as $result){
             echo "<div class='dettRecensione'>
