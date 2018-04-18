@@ -5,7 +5,9 @@
                 <?php
                 echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
                 else {echo '<a href="home.php">Home</a></li>';}
-                echo '<li class="voci"><a href="prodotti.php">Prodotti</a></li>';
+                echo '<li class="voci">';
+                if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/prodotti.php"){echo '<a>Prodotti</a></li>';}
+                else {echo '<a href="prodotti.php">Prodotti</a></li>';}
 				
                 
 				if(isset($_SESSION['login_user'])){
@@ -35,7 +37,7 @@
                 else{echo '<a href="login.php">Login</a></li>'; }
                 echo '<li class="voci">';
                 if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/register.php"){echo '<a>Registrati</a></li>';}
-                else{echo '<a href="account.php">Registrati</a></li>'; }
+                else{echo '<a href="register.php">Registrati</a></li>'; }
 				
 				
 				}
