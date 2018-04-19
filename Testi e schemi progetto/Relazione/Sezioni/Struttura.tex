@@ -4,7 +4,18 @@ La pagina e' stata scritta in HTML 5.\newline
 Il sito e' composto da pagine php, che presentano dati e interazoni diversi a seconda del tipo di utente o delle interazioni svolte.
 Le nostre pagine sono:
 \begin{itemize}
- \item \textbf{home.php:} introduce gli utenti alle proposte del sito, mostrando i prodotti che sono stati più venduti nel sito, e i Bundle, insiemi di prodotti preparati dagli aministratori.
+	
+ \item \textbf{Header.php:} non è una pagina ma un parte comune a tutte le pagine del sito che è stata salvata in un file php che viene richiamato con un require da ogni pagina. Questo file contiene la struttura HTML del menù di navigazione, questo menù è costituito da un \emph{div} che contiene un tag \emph{img} e un tag \emph{nav}:
+ \begin{itemize}
+ 	\item \emph{img} contiene il logo del sito;
+ 	\item \emph{nav} contiene una lista (\emph{ul}) le cui voci (\emph{li}) contengono i link di navigazione del sito, inoltre l'ultimo tag \emph{li} contiene un \emph{form} utilizzato per la ricerca dei prodotti all'interno del sito, siamo consapevoli del fatto che non è corretto inserire un \emph{form} annidato in un tag \emph{nav} tuttavia abbiamo utilizzato questa struttura perché ci ha aiutati nella fase di presentazione.
+ \end{itemize}
+
+ \item \textbf{footer.php:} è una parte comune a tutte le pagine del sito salvata in un file php che viene richiamato con un require da ogni pagina.
+ Questo file contiene la struttura HTML del footer che è costituito semplicemente da un tag \emph{footer} dentro al quale è annidato un tag \emph{p} contenente i nomi degli sviluppatori del sito. 
+	
+ \item \textbf{home.php:} introduce gli utenti alle proposte del sito, mostrando i prodotti che sono stati più venduti nel sito e i Bundle, ovvero PC preassemblati divisi per fasce di prezzo forniti dagli amministratori per gli utenti meno preparati.
+ La pagina è costituita principalmente da un \emph{div} principale contenente due tag \emph{section}, uno contiene la lista dei bundle mentre l'altro contiene la lista dei prodotti più venduti. 
  
 \item \textbf{prodotti.php:} mostra la lista dei prodotti che sono disponibili nel sito dandone una descrizione parziale (i primi 200 caratteri), la categoria di appartenenza, la valutazione degli utenti che hanno già acquistato il prodotto ed il prezzo. Tali prodotti possono essere aggiunti al carrello solo se l'utente ha effettuato il login e quindi è permesso solo ad utenti registrati. A questa pagina si accede direttamente dalla voce 'Prodotti' nel menù, oppure usando la barra di ricerca in alto a destra, che appunto visualizza tutti i risultati.\newline Nella pagina è inoltre disponibile una ricerca avanzata che permette di filtrare i risultati.\newline Cliccando sul nome del prodotto o sull'apposito link 'Vai al dettaglio' è possibile raggiungere la pagina di dettaglio del relativo prodotto.
 
