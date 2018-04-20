@@ -12,6 +12,12 @@
 	border-collapse: collapse;
 	width: 90%;
 }
+#purchase
+{
+	margin: 2% auto;
+	border-collapse: collapse;
+	width: 90%;
+}
 #totale
 {
 	text-align: right;
@@ -32,6 +38,11 @@ TH, TD
 	float: left;
 	width: 65%;
 	border: 1px solid orange;
+}
+THEAD
+{
+	background: #4580E8;
+	color: white;
 }
 FOOTER
 {
