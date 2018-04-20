@@ -1,7 +1,7 @@
     <div id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>        
         <nav>
-            <ul>
+            <ul class="nodot">
                 <?php
                 echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
                 else {echo '<a href="home.php">Home</a></li>';}

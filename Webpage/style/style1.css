@@ -64,10 +64,10 @@ FOOTER
 	height: auto;
 	border: 1px solid purple;
 }
-UL
+.nodot
 {
-	margin: 0;
 	list-style-type: none;
+	margin: 0;
 	padding: 0;
 }
 .voci
@@ -101,7 +101,7 @@ FOOTER
 #searchBar
 {
 	float: right;
-	display: block;
+	/*display: block;*/
 	padding: 1em;
 }
 #LatestBundles
