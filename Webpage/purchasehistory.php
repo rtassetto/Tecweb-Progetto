@@ -72,7 +72,7 @@ include "general/Header.php";
                 echo $x["descrizione"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["valutazione"];
+                echo $x["valutazione"]."/5";
                 echo "</td>";
                 echo "<td>";
                 echo $x["data"];
