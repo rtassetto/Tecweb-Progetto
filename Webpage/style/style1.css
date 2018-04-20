@@ -181,3 +181,11 @@ FORM#aggiuntaProd
 {
 	padding-bottom: 1em;
 }
+P
+{
+	margin: 0;
+}
+.descrizionebundle
+{
+	margin-top: 1em;
+}

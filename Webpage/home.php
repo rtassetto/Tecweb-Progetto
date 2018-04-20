@@ -66,8 +66,8 @@
         foreach ($LB as $result){
 			
 			echo "<div class='bundle'>
-				<div class='nomebundle'><a href='bundledetails.php?bundle=".$result["nome"]."'>".$result["nome"]."</a></div>
-				<div class='descrizionebundle'>".$result["descrizione"]."</div>
+				<a class='nomebundle' href='bundledetails.php?bundle=".$result["nome"]."'>".$result["nome"]."</a>
+				<p class='descrizionebundle'>".$result["descrizione"]."</p>
 				</div>";
 			}
 		?>  
@@ -80,11 +80,11 @@
     foreach ($bestsellers as $result){
 
         echo "<div class='prodottobestseller'>";
-        echo "<div class='nomebestseller'><a href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a></div>";
+        echo "<a class='nomebestseller' href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a>";
         echo "<div class='imgbestseller'><img class='imgbs' src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";    
-        echo "<div class='categoriabestseller'>Categoria: ".$result["categoria"]."</div>";
-        echo "<div class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</div>";
-        echo "<div class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</div>";
+        echo "<p class='categoriabestseller'>Categoria: ".$result["categoria"]."</p>";
+        echo "<p class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</p>";
+        echo "<p class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</p>";
         echo "</div>";
         }
     ?>  
