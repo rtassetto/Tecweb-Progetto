@@ -51,11 +51,9 @@ require "general/Header.php";
             <thead>
                 <tr>
                     <th>Prodotto</th>
-                    <th>Tipo</th>
-                    <th>Descrizione</th>
-                    <th>Valutazione</th>
-                    <th>Prezzo</th>
+                    <th>Categoria</th>
                     <th>Quantità</th>
+                    <th>Prezzo</th>
                     <?php if(isset($_SESSION['login_user'])){echo "<th></th>";}?>
                 </tr>
             </thead>
@@ -71,16 +69,10 @@ require "general/Header.php";
                 echo $x["categoria"];
                 echo "</td>";
                 echo "<td>";
-                echo $x["descrizione"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["valutazione"];
+                echo $x["quantita"];
                 echo "</td>";
                 echo "<td>";
                 echo $x["prezzo"]*$x["quantita"]."€";
-                echo "</td>";
-                echo "<td>";
-                echo $x["quantita"];
                 echo "</td>";
                 if(isset($_SESSION['login_user'])){
                 $id=$x["id"];
@@ -95,7 +87,8 @@ require "general/Header.php";
             
             ?>
             <tr> 
-                <td id="totale" name="totale" colspan="5">
+                <td id="totale" name="totale" colspan="4">
+                    
                 <?php
                     $totale=0;
                     foreach($P as $y){
@@ -103,15 +96,14 @@ require "general/Header.php";
                     }    
                     echo "Totale : ".$totale." €";
                 ?>
-                
-                
+                </td>
+                <td>
+                    <form class="onclick" method="post" action="purchasehistory.php">
+                        <input id='acquista' type="submit"  name="compra" value="Acquista"/>
+                    </form>
                 </td>
             </tr>
-        </table>  
-        <form class="onclick" method="post" action="purchasehistory.php">
-        <input id='acquista' type="submit"  name="compra" value="Acquista"/>
-
-        </form>
+        </table>
         
     </section>
     
