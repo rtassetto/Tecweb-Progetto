@@ -65,9 +65,9 @@
         if(!$creazione){
             echo "<div id='creaBundle'>";
             echo "<form method='post' action='adminbundle.php'>";
-            echo "<label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'>";
-            echo "<label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea>";
-            echo "<input type='submit' name='crea' value='Crea bundle'/>";
+            echo "<div class='formslot'><label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'></div>";
+            echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea></div>";
+            echo "<div class='formslot'><input type='submit' name='crea' value='Crea bundle'/></div>";
             echo "</form>";
          echo '<table class="products">';
             echo '<thead>';
