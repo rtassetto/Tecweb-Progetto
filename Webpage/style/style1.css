@@ -5,15 +5,6 @@
 	max-height: 100%;
 	min-height: 100%;
 }
-#creaBundle LABEL
-{
-	display: block;
-	font-weight: bold;
-}
-#creaBundle
-{
-	text-align: center;
-}
 #products
 {
 	margin: 2% auto;
@@ -41,10 +32,6 @@ TH, TD
 	width: 20%;
 	padding: 1% 0;
 	text-align: center;
-}
-INPUT
-{
-	height: 1.5em;
 }
 .info
 {
@@ -126,8 +113,9 @@ UL
 }
 #breadcrumb
 {
-	margin: 0;
+	margin: 1% auto;
 	border: 1px solid #0E46E3;
+	width: 100%;
 }
 #breadcrumb P
 {
@@ -176,6 +164,8 @@ HTML
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	/*font-family:font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;;*/
 }
 #aggiuntaProd LABEL
 {
@@ -189,17 +179,6 @@ FORM#aggiuntaProd
 .formslot
 {
 	padding-bottom: 2em;
-}
-#nome
-{
-	width: 50%;
-	min-width: 20em;
-}
-#descrizione
-{
-	height: 8em;
-	width: 50%;
-	min-width: 20em;
 }
 .imgbestseller
 {
