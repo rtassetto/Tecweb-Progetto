@@ -1,0 +1,41 @@
+HTML
+{
+	margin: 0;
+	padding: 0;
+}
+BODY
+{
+	margin: 0;
+	padding: 0;
+}
+#logo
+{
+	width: 100%;
+}
+#menu NAV
+{
+	display: none;
+}
+.comp DIV
+{
+	width: 35px;
+	height: 5px;
+	background-color: white;
+	margin: 6px 0;
+}
+#mobile
+{
+	display: block;
+	margin-bottom: 10em;
+}
+.comp
+{
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.5em;
+}
+.area
+{
+	/*min-height: 100%;*/
+	/*min-width: 100%;*/
+}
