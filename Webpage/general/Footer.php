@@ -9,12 +9,15 @@
 
     </footer>
 <div name="mmenu" id="mobile">
-    <a name="pls"></a>     
+      
         <nav>
+            
             <ul class="nodot">
                 <?php
+                echo '<a name="pls"></a>';
                 echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
                 else {echo '<a href="home.php">Home</a></li>';}
+                
                 echo '<li class="voci">';
                 if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/prodotti.php"){echo '<a>Prodotti</a></li>';}
                 else {echo '<a href="prodotti.php">Prodotti</a></li>';}
