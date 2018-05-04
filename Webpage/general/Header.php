@@ -53,7 +53,7 @@
         <!--</nav>-->
             <li id="searchBar">
             <form action="prodotti.php" method="get">
-                    <button id="searchButton" type="submit">Cerca</button>
+                    <button id="searchButton" class="submit" type="submit">Cerca</button>
                     <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?">
             </form> 
             </li>

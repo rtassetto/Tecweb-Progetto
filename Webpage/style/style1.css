@@ -104,8 +104,8 @@ FOOTER
 #menu
 {
 	width: 100%;
-	border: 1px solid #000000;
-	background-color: #C3C3C3;
+	/*border: 1px solid #000000;*/
+	background-color: #CCCCCC;
 	overflow: hidden;
 }
 .img IMG
@@ -131,8 +131,53 @@ UL
 #breadcrumb
 {
 	margin: 1% auto;
-	border: 1px solid #0E46E3;
+	/*border: 1px solid #0E46E3;*/
 	width: 100%;
+	background-color: #CCCCCC;
+}
+.login-form
+{
+	width: 40%;
+	padding: 1em;
+	text-align: center;
+	border: 1px solid #004D66;
+	margin: 2em auto 0 auto;
+	background-color: #CCCCCC;
+}
+#user
+{
+	padding-bottom: 1em;
+}
+#psw
+{
+	padding-bottom: 1em;
+}
+.submit
+{
+	color: white;
+	background-color: #004D66;
+	border: 1px solid #004D66;
+	cursor: pointer;
+}
+#submit_form
+{
+	margin-bottom: 1em;
+}
+A:hover
+{
+	text-decoration: none;
+}
+A:link
+{
+	color: #004D66;
+}
+#pass
+{
+	max-width: 100%;
+}
+#nome_utente
+{
+	max-width: 100%;
 }
 #breadcrumb P
 {
@@ -148,6 +193,7 @@ UL
 FOOTER
 {
 	border: 1px solid #070808;
+	background-color: #C9C9C9;
 }
 #searchBar
 {

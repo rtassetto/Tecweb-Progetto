@@ -20,7 +20,7 @@ BODY
 {
 	width: 35px;
 	height: 5px;
-	background-color: white;
+	background-color: #004D66;
 	margin: 6px 0;
 }
 #mobile
@@ -35,6 +35,8 @@ BODY
 	float: right;
 	margin-right: 1em;
 	margin-top: 0.5em;
+	border: 2px solid #004D66;
+	padding: 0 0.3em;
 }
 .voci
 {
@@ -66,7 +68,7 @@ BODY
 }
 #mobile
 {
-	background-color: #21ACF4;
+	background-color: #CCCCCC;
 }
 #searchBar
 {
@@ -78,9 +80,10 @@ BODY
 }
 #searchButton
 {
-	/*margin-left: 25%;*/
-	/*margin-right: 0;*/
-	margin: 0;
+	color: white;
+	background-color: #004D66;
+	border: 1px solid #004D66;
+	cursor: pointer;
 }
 .imgbestseller
 {
