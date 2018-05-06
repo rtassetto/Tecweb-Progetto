@@ -43,11 +43,15 @@ $product=$DB->getProddata($_GET['id']);
         <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
-        echo "<form class='popup' method='post' action='prodotti.php'>
-              <div id='aggiungiCarrello'>
-              <input type='submit' onclick='aggcarrello()' name=".$_GET['id']." value='Aggiungi al carrello'/>
-              </div>
-              </form></div>";
+        if ($product['prezzo']==0){
+		echo"Prodotto non disponibile";}
+		else
+		{echo "<form class='popup' method='post' action='prodotti.php'>
+				<div id='aggiungiCarrello'>
+				<input type='submit' onclick='aggcarrello()' name=".$_GET['id']." value='Aggiungi al carrello'/>
+				</div>
+		</form></div>";}
+			  
     }else{
         
         echo "<div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
