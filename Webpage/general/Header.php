@@ -1,6 +1,6 @@
     <div id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>     
-        <a class="area" href="#pls">
+        <a class="area" href="#mm">
         <div class="comp">
         <div></div>
         <div></div>

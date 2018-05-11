@@ -5,14 +5,18 @@ Il sito e' composto da pagine php, che presentano dati e interazoni diversi a se
 Le nostre pagine sono:
 \begin{itemize}
 	
- \item \textbf{Header.php:} non è una pagina ma un parte comune a tutte le pagine del sito che è stata salvata in un file php che viene richiamato con un require da ogni pagina. Questo file contiene la struttura HTML del menù di navigazione, questo menù è costituito da un \emph{div} che contiene un tag \emph{img} e un tag \emph{nav}:
+ \item \textbf{Header.php:} non è una pagina ma un parte comune a tutte le pagine del sito che è stata salvata in un file php che viene richiamato con un require da ogni pagina. Questo file contiene la struttura HTML del menù di navigazione, questo menù è costituito da un \emph{div} che contiene un tag \emph{img}, un tag \emph{a} e un tag \emph{nav}:
  \begin{itemize}
  	\item \emph{img} contiene il logo del sito;
+ 	\item il tag \emph{a} contiene 3 \emph{div} vuoti e serve ad ottenere un'area cliccabile che rimanda al menu nella versione mobile del sito; 
  	\item \emph{nav} contiene una lista (\emph{ul}) le cui voci (\emph{li}) contengono i link di navigazione del sito, inoltre l'ultimo tag \emph{li} contiene un \emph{form} utilizzato per la ricerca dei prodotti all'interno del sito, siamo consapevoli del fatto che non è corretto inserire un \emph{form} annidato in un tag \emph{nav} tuttavia abbiamo utilizzato questa struttura perché ci ha aiutati nella fase di presentazione.
+ 	\item 
  \end{itemize}
+
 
  \item \textbf{footer.php:} è una parte comune a tutte le pagine del sito salvata in un file php che viene richiamato con un require da ogni pagina.
  Questo file contiene la struttura HTML del footer che è costituito semplicemente da un tag \emph{footer} dentro al quale è annidato un tag \emph{p} contenente i nomi degli sviluppatori del sito. 
+ inoltre contiene la struttura del menù visibile solamente nella versione mobile del sito che è posizionata a fondo pagina perché vi si può accedere cliccando sull'icona del menù contenuta in \emph{Header.php}.
 	
  \item \textbf{home.php:} introduce gli utenti alle proposte del sito, mostrando i prodotti che sono stati più venduti nel sito e i Bundle, ovvero PC preassemblati divisi per fasce di prezzo forniti dagli amministratori per gli utenti meno preparati.
  La pagina è costituita principalmente da un \emph{div} principale contenente due tag \emph{section}, uno contiene i bundle forniti dal sito mentre l'altro contiene i tre prodotti più venduti. 
