@@ -41,7 +41,7 @@ BODY
 {
 	float: none;
 	text-align: center;
-	align-content: center;
+	/*align-content: center;*/
 	margin: 0;
 	width: 100%;
 	padding-right: 0;

@@ -29,5 +29,13 @@ in questa sezione vengono descritti i comandi css usati per la presentazione del
 Inanzi tutto è stato dato \emph{margin 0} e \emph{padding: 0} ad HTML e BODY per azzerare eventuali posizionamenti non desiderati. 
 
 \paragraph{Header} \mbox{}
-Inanzi tutto viene dato all'id \emph{menu} il comando \emph{display:none} per non visualizzare i link di navigazione destinati al formato desktop, inoltre viene visualizzata l'icona del menu ottenuta dando ai 3 div vuoti a i comandi \emph{border:solid}, \emph{width: 2em} e \emph{margin: 6px 0}
+Inanzi tutto viene dato all'id \emph{menu} il comando \emph{display:none} per non visualizzare i link di navigazione destinati al formato desktop, inoltre viene visualizzata l'icona del menu ottenuta dando ai 3 div vuoti a i comandi \emph{border:solid}, \emph{width: 2em} e \emph{margin: 6px 0},questi tre div vuoti sono contenuti in un div di classe \emph{comp}, a questa classe viene dato il comando \emph{float: right} perchè rimanga sulla destra della barra superiore e le sono stati dati dei margini superiori e di destra per distanziare l'icona dai bordi.
+
+\paragraph{Footer} \mbox{}
+Nella versione mobile il footer contiene il menù di navigazione, per questo al l'intero div che ha \emph{mobile} come id viene dato il comando \emph{display: block} per sovrascrivere il comando \emph{display: none} dato in style.css inoltre vengondo dati dei margini per ottenere distanza dal resto della pagina.
+Al tag \emph{ul} contenuto in nel menù viene data una width del 100\% e ai tag \emph{li} annidati che hanno classe \emph{voci} viene dato il comando \emph{float: none} per sovrascrivere il comando float dato in style.css, e il comando \emph{text-align: center} per centrare le voci, in oltre viengono impostati margini e padding laterali a 0.
+
+\paragraph{Home} \mbox{}
+Le due sezioni principali vengono messe una sotto l'altra utilizzando il comando \emph{float:none} sulla sezione con id Latestbundles per sovrascrivere il float dato in style.css
+
 
