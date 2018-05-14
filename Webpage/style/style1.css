@@ -89,6 +89,8 @@ FOOTER
 }
 .bundle
 {
+	padding-bottom: 1em;
+	background-color: white;
 	margin-bottom: 1em;
 }
 .nomebundle
@@ -206,11 +208,17 @@ FOOTER
 	float: left;
 	width: 50%;
 	border: 1px solid green;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	background-color: #CCCCCC;
 }
 #Bestsellers
 {
 	margin-left: 51%;
 	border: 1px solid black;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	background-color: #CCCCCC;
 }
 BODY
 {
@@ -256,14 +264,18 @@ FORM#aggiuntaProd
 }
 .imgbestseller
 {
-	width: 70%;
+	width: 40%;
 	float: right;
-	height: 100%;
+	margin-top: 1em;
 }
 .imgbs
 {
-	float: right;
-	margin-right: 30%;
+	width: 35%;
+}
+.prodottobestseller
+{
+	background-color: white;
+	margin-bottom: 1em;
 }
 .prezzobestseller
 {
@@ -276,4 +288,8 @@ P
 .descrizionebundle
 {
 	margin-top: 1em;
+}
+.infobs
+{
+	width: 50%;
 }

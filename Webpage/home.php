@@ -80,11 +80,13 @@
     foreach ($bestsellers as $result){
 
         echo "<div class='prodottobestseller'>";
+        echo "<div class='imgbestseller'><img class='imgbs' src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>"; 
+        echo "<div class='infobs'>";
         echo "<a class='nomebestseller' href='productdetails.php?id=".$result["id"]."'>".$result["nome"]."</a>";
-        echo "<div class='imgbestseller'><img class='imgbs' src='images/".$result["id"].".jpg' alt='immagine del prodotto'/></div>";    
         echo "<p class='categoriabestseller'>Categoria: ".$result["categoria"]."</p>";
         echo "<p class='votobestseller'>Valutazione: ".$result["valutazione"]."/5</p>";
         echo "<p class='prezzobestseller'>Prezzo: ".$result["prezzo"]."€</p>";
+        echo "</div>";
         echo "</div>";
         }
     ?>  
