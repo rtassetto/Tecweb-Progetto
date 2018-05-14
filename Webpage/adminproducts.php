@@ -75,12 +75,12 @@ else{
         <table id="searchResult">
             <thead>
                 <tr>
-                    <th>Prodotto</th>
-                    <th>Tipo</th>
-                    <th>Descrizione</th>
-                    <th>Valutazione</th>
-                    <th>Prezzo</th>
-					<th></th>
+                    <th class='tablehead'>Prodotto</th>
+                    <th class='tablehead'>Tipo</th>
+                    <th class='tablehead'>Descrizione</th>
+                    <th class='tablehead'>Valutazione</th>
+                    <th class='tablehead'>Prezzo</th>
+					<th class='tablehead'></th>
                 </tr>
             </thead>
         <?php

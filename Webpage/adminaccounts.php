@@ -42,14 +42,15 @@ else{
 <?php
 	$accountab=$DB->getUserlist();
 	echo "<table>
-			<tr>
-				<th>Username</th>
-				<th>Password</th>
-				<th>Tipo</th>
-				<th>E-mail</th>
-				<th>Data Crezione</th>
-				<th></th>
-			</tr>";
+			<tbody>
+				<tr class='tablehead'>
+					<th class='tablehead'>Username</th>
+					<th class='tablehead'>Password</th>
+					<th class='tablehead'>Tipo</th>
+					<th class='tablehead'>E-mail</th>
+					<th class='tablehead'>Data Crezione</th>
+					<th class='tablehead'></th>
+				</tr>";
 	foreach($accountab as $result){
 		if($result["admin"]==false){$type="Utente";}
 		else{$type="Admin";}
@@ -67,7 +68,8 @@ else{
 		}
 		else{echo "<td></td>";}
 	}
-	echo "</table>";
+	echo "</tbody>
+		</table>";
 	
 	include "general/Footer.php";
 ?>

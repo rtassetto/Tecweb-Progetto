@@ -56,10 +56,16 @@ INPUT
 	width: 65%;
 	border: 1px solid orange;
 }
-THEAD
+THEAD, .tablehead
 {
 	background: #4580E8;
 	color: white;
+}
+.tablehead
+{
+	position: sticky;
+	top: 0;
+	//Aggiunto sui singoli th per problemi su Chrome;
 }
 FOOTER
 {
