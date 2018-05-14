@@ -37,10 +37,11 @@ $product=$DB->getProddata($_GET['id']);
         <div class='info'>
 		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
         <div class='descrizione'><p>".$product['descrizione']."</p></div>
-		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p></div>
+		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p>
+			<div  class='imgvalutazione' style='overflow:hidden;max-width:80px;'><img style='width:80px;' src='images/Stars.png' alt='valutazione del prodotto'></div></div>
 		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
-        </div>
-        <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>";
+        <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>
+		</div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
         if ($product['prezzo']==0){
