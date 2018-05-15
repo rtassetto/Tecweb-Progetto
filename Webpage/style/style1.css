@@ -80,6 +80,10 @@ THEAD, .tablehead
 	margin-top: 1em;
 	font-style: italic;
 }
+#dettaglioProdotto
+{
+	overflow: auto;
+}
 FOOTER
 {
 	margin-top: 2em;
