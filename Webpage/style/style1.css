@@ -1,10 +1,11 @@
 #logo
 {
 	float: left;
-	max-width: 10em;
 	max-height: 100%;
+	max-width: 10em;
 	min-height: 100%;
 	width: 20%;
+	border: 1px solid #CCCCCC;
 }
 #mobile
 {
@@ -121,11 +122,6 @@ FOOTER
 	width: 25%;
 	margin-left: 70%;
 }
-.imgc
-{
-	width: 15%;
-	margin-left: 80%;
-}
 #menu
 {
 	width: 100%;
@@ -139,10 +135,6 @@ FOOTER
 	height: auto;
 	width: 20%;
 	border: 1px solid #004D66;
-}
-.imgc IMG
-{
-	width: 100%;
 }
 .imgdettagli IMG
 {
@@ -337,10 +329,4 @@ P
 .infobs
 {
 	width: 50%;
-}
-.tot
-{
-	float: left;
-	margin-right: 0.5em;
-	margin-left: 0.5em;
 }
