@@ -123,6 +123,11 @@ FOOTER
 	width: 35%;
 	margin-left: 65%;
 }
+.imgc
+{
+	width: 15%;
+	margin-left: 80%;
+}
 #menu
 {
 	width: 100%;
@@ -136,6 +141,10 @@ FOOTER
 	height: auto;
 	border: 1px solid purple;
 	width: 20%;
+}
+.imgc IMG
+{
+	width: 100%;
 }
 .imgdettagli IMG
 {

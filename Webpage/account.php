@@ -40,7 +40,7 @@ echo "<a href='purchasehistory.php'>Storia degli Acquisti</a>
 
 
 <?php
-require "general/footer.php";
+require "general/Footer.php";
 ?>
 </body>
 

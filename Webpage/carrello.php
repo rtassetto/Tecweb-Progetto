@@ -47,47 +47,37 @@ require "general/Header.php";
     
     
     <section id="prodotticarrello">
-        <table id="products">
-            <thead>
-                <tr>
-                    <th>Prodotto</th>
-                    <th>Categoria</th>
-                    <th>Quantità</th>
-                    <th>Prezzo</th>
-                    <?php if(isset($_SESSION['login_user'])){echo "<th></th>";}?>
-                </tr>
-            </thead>
-        <?php
+        
+      <?php
             $username=$_SESSION["login_user"];
             $P=$DB->getCarrello($username);
             foreach($P as $x){
-                echo "<tr>";
-                echo "<td>";
-                echo $x["nome"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["categoria"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["quantita"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["prezzo"]*$x["quantita"]."€";
-                echo "</td>";
-                if(isset($_SESSION['login_user'])){
-                $id=$x["id"];
-                echo "<td>";
-                echo "<form method='post' action='carrello.php'>";
-                echo "<input type='submit' name='$id' value='Elimina dal carrello'/>";
-                }
-                echo "</form>";
-                echo "</td>";
-                echo "</tr>";
+                $id=$x['id'];
+                echo "<div class='prodotto'>";
+                echo "<div class='nome'>";
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
+                echo "</div>";
+                echo "<div class='info'>";
+                echo "<div class='categoria'>";
+                echo "Categoria: ".$x["categoria"];
+                echo "</div>";
+                echo "<div class='quantità'>";
+                echo "Quantità: ".$x["quantita"];
+                echo "</div>";
+                echo "<div class='prezzo'>";
+                echo "Prezzo: ".$x["prezzo"]*$x["quantita"]."€";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='imgc'><img src='images/$id.jpg' alt='immagine prodotto'/>";
+                echo "</div>";
+                echo "</div>";
             }
+        ?>   
+    
+    
+    
+    
             
-            ?>
-            <tr> 
-                <td id="totale" name="totale" colspan="4">
                     
                 <?php
                     $totale=0;
@@ -96,14 +86,10 @@ require "general/Header.php";
                     }    
                     echo "Totale : ".$totale." €";
                 ?>
-                </td>
-                <td>
                     <form class="onclick" method="post" action="purchasehistory.php">
                         <input id='acquista' type="submit"  name="compra" value="Acquista"/>
                     </form>
-                </td>
-            </tr>
-        </table>
+               
         
     </section>
     
