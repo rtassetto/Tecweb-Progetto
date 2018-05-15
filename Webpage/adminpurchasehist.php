@@ -31,12 +31,12 @@ if($_SESSION['admin']!=true)
 	<table>
 		<thead>
 			<tr>
-				<th>Compratore</th>
-				<th>Prodotto</th>
-				<th>Categoria</th>
-				<th>Valutazione</th>
-				<th>Id</th>
-				<th>Data</th>
+				<th class='tablehead'>Compratore</th>
+				<th class='tablehead'>Prodotto</th>
+				<th class='tablehead'>Categoria</th>
+				<th class='tablehead'>Valutazione</th>
+				<th class='tablehead'>Id</th>
+				<th class='tablehead'>Data</th>
 			<tr>
 		</thead>
 <?php	$query=$DB->getfullPH();

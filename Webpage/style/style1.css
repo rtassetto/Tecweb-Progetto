@@ -62,11 +62,23 @@ THEAD, .tablehead
 	background: #4580E8;
 	color: white;
 }
+.dettRecensione
+{
+	outline-style: outset;
+	outline: thin solid #0C4A99;
+	margin: 1em 0.5em;
+	display: block;
+}
 .tablehead
 {
 	position: sticky;
 	top: 0;
 	//Aggiunto sui singoli th per problemi su Chrome;
+}
+.dettRecensione P
+{
+	margin-top: 1em;
+	font-style: italic;
 }
 FOOTER
 {
@@ -123,6 +135,16 @@ FOOTER
 	height: auto;
 	border: 1px solid purple;
 	width: 20%;
+}
+.imgdettagli IMG
+{
+	float: left;
+	width: 40%;
+}
+#europrezzo
+{
+	font-size: 1.5em;
+	font-weight: bold;
 }
 UL
 {

@@ -35,13 +35,13 @@ $product=$DB->getProddata($_GET['id']);
 	echo "
         <div id='dettaglioProdotto'>
         <h1 class='nome'>".$product['nome']."</h1>
-        <div class='info'>
+        <div class='infoprodotto'>
+		<div class='imgdettagli'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>
 		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
         <div class='descrizione'><p>".$product['descrizione']."</p></div>
 		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p>
-			<div  class='imgdettagli' style='overflow:hidden;max-width:".$Stellevoto."px;'><img src='images/Stars.png' alt='valutazione del prodotto'></div></div>
-		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
-        <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>
+			<div style='overflow:hidden;max-width:".$Stellevoto."px;'><img src='images/Stars.png' alt='valutazione del prodotto'/></div></div>
+		<div class='prezzo'><p>Prezzo : <span id='europrezzo'>".$product['prezzo']."€</span></p></div>
 		</div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
@@ -64,10 +64,13 @@ $product=$DB->getProddata($_GET['id']);
         echo "<span>Non ci sono recensioni per questo prodotto</span>";
     }else{
         foreach($reviews as $result){
+			$Userevalue=$result['voto']*16;
             echo "<div class='dettRecensione'>
-                  <span>Autore: ".$result['username']."</span>
-                  <span>Data: ".$result['data']."</span>
-                  <span>Valutazione: ".$result['voto']."</span>
+                  <div>Autore: ".$result['username']."</div>
+                  <div>Data: ".$result['data']."</div>
+                  <div>Valutazione: ".$result['voto']."
+				  <div style='overflow:hidden;max-width:".$Userevalue."px;'><img src='images/Stars.png' alt='valutazione del prodotto'/></div>
+				  </div>
                   <p>".$result['review']."</p>
                   </div>";
         }
