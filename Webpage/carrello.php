@@ -84,7 +84,7 @@ require "general/Header.php";
                     foreach($P as $y){
                         $totale+=$y["prezzo"]*$y["quantita"];
                     }    
-                    echo "Totale : ".$totale." €";
+                    echo "<p class='tot'>Totale : ".$totale." €</p>";
                 ?>
                     <form class="onclick" method="post" action="purchasehistory.php">
                         <input id='acquista' type="submit"  name="compra" value="Acquista"/>

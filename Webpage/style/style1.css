@@ -338,3 +338,9 @@ P
 {
 	width: 50%;
 }
+.tot
+{
+	float: left;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
