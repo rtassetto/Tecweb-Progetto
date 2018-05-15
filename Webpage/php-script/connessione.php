@@ -58,7 +58,7 @@
 										 WHERE username='$username'");
 	}
 	public function getUserlist(){
-		$query=mysqli_query($this->connessione,"SELECT * FROM account");
+		$query=mysqli_query($this->connessione,"SELECT * FROM Account");
 		for($i=0;$i<mysqli_num_rows($query);$i++){
 			$result[$i]=mysqli_fetch_assoc($query);
 		}
@@ -160,7 +160,7 @@
 	
 	//PurchaseHistory
 	public function getfullPH(){
-		$query="SELECT compratore,nome,categoria,valutazione,idordine,data FROM PurchaseHistory JOIN prodotto WHERE prodotto=id ORDER BY idordine asc";
+		$query="SELECT compratore,nome,categoria,valutazione,idordine,data FROM PurchaseHistory JOIN Prodotto WHERE prodotto=id ORDER BY idordine asc";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
 		for($i=0;$i<mysqli_num_rows($qresult);$i++){
@@ -169,7 +169,7 @@
 		return $result;
 	}
 	public function getPH($name){
-        $query="SELECT nome,categoria,descrizione,valutazione,id,data FROM PurchaseHistory JOIN prodotto WHERE compratore='$name' AND prodotto=id";
+        $query="SELECT nome,categoria,descrizione,valutazione,id,data FROM PurchaseHistory JOIN Prodotto WHERE compratore='$name' AND prodotto=id";
         $qresult=mysqli_query($this->connessione, $query)or die (
 			"Error in getPH query: " . mysqli_error($this->connessione));
         $result=array();
@@ -193,9 +193,9 @@
 	
 	//Carrello
     public function eliminaC($id,$user){
-        $update="UPDATE carrello SET quantita=quantita-1 WHERE username='$user' AND prodotto='$id' ";
-        $query="SELECT * FROM carrello WHERE username='$user' AND prodotto='$id'AND quantita>1";
-        $delete="DELETE FROM `carrello` WHERE username='$user' AND prodotto='$id'";
+        $update="UPDATE Carrello SET quantita=quantita-1 WHERE username='$user' AND prodotto='$id' ";
+        $query="SELECT * FROM Carrello WHERE username='$user' AND prodotto='$id'AND quantita>1";
+        $delete="DELETE FROM `Carrello` WHERE username='$user' AND prodotto='$id'";
         $queryResult=mysqli_query($this->connessione, $query);
         if(mysqli_num_rows($queryResult)==0){
             mysqli_query($this->connessione, $delete);
@@ -218,7 +218,7 @@
         }
     }
     public function getCarrello($user){
-        $querySelect= "SELECT nome,categoria, descrizione, valutazione, prezzo, quantita, id FROM Prodotto JOIN carrello WHERE username='$user' AND prodotto=id";
+        $querySelect= "SELECT nome,categoria, descrizione, valutazione, prezzo, quantita, id FROM Prodotto JOIN Carrello WHERE username='$user' AND prodotto=id";
         
 		$queryResult= mysqli_query($this->connessione, $querySelect) or die (
 			"Error in getListCharacters query: " . mysqli_error($this->connessione));
@@ -262,9 +262,9 @@
 	//Bundles
 	public function createBundle($nome,$descrizione,$bundleparts){
 		$data=date("Y-m-d H:i:s");
-		mysqli_query($this->connessione,"INSERT INTO bundle(nome, descrizione,data) VALUES('$nome','$descrizione','$data')");
+		mysqli_query($this->connessione,"INSERT INTO Bundle(nome, descrizione,data) VALUES('$nome','$descrizione','$data')");
 		for($i=0;!$bundleparts[$i];$i++){
-				mysqli_query($this->connessione,"INSERT INTO Bundleparts(bundle, pezzo) VALUES('$nome','$bundleparts[$i]')");
+				mysqli_query($this->connessione,"INSERT INTO BundleParts(bundle, pezzo) VALUES('$nome','$bundleparts[$i]')");
 		}
 	}
 	public function getLatestBundles(){
@@ -306,7 +306,7 @@
 		return mysqli_fetch_assoc($query);
 	}
 	public function getBundlepartsdata($bundle){
-		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM prodotto p JOIN bundleparts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'") or die("errore richiesta bundle".mysqli_error($this->connessione));
+		$query=mysqli_query($this->connessione,"SELECT p.id, p.nome, p.categoria, p.valutazione, p.prezzo FROM Prodotto p JOIN BundleParts bp WHERE p.id=bp.pezzo and bp.bundle='$bundle'") or die("errore richiesta bundle".mysqli_error($this->connessione));
 		if(mysqli_num_rows($query)==0)
 			return "vuoto";
 		for($i=0;$i<mysqli_num_rows($query);$i++){
@@ -315,12 +315,12 @@
 		return $result;
 	}
     public function aggiungiPB($nome,$id){
-	if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM bundleparts WHERE bundle='$nome' and pezzo='$id' "))!=0){return "prodotto gia' inserito";};
+	if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM BundleParts WHERE bundle='$nome' and pezzo='$id' "))!=0){return "prodotto gia' inserito";};
         $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
         mysqli_query($this->connessione,$insert) or die("errore nell'inserimento nel bundle".mysqli_error($this->connessione));
     }
     public function rimuoviPB($nome,$id){
-		$delete="DELETE FROM BundleParts WHERE bundle='$nome' AND pezzo='$id'";
+		$delete="DELETE FROM BundleParts WHERE Bundle='$nome' AND pezzo='$id'";
 		mysqli_query($this->connessione,$delete) or die("errore nella rimozione del prodotto dal bundle".mysqli_error($this->connessione));
     }
     public function creaB($nome,$descrizione){

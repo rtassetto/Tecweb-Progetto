@@ -49,7 +49,7 @@ CREATE TABLE Bundles(
     PRIMARY KEY(nome)
 );
 
-CREATE TABLE Bundleparts(
+CREATE TABLE BundleParts(
 	bundle varchar(25) REFERENCES nome(Bundles),
 	pezzo int REFERENCES id(Prodotto),
     PRIMARY KEY(bundle, pezzo)
