@@ -55,11 +55,28 @@ BODY
 {
 	float: none;
 	width: 100%;
+	margin-bottom: 1em;
+	border: none;
+	overflow: auto;
+	padding: 0;
 }
 #Bestsellers
 {
 	margin: 0;
 	width: 100%;
+	padding: 0;
+	border: none;
+	overflow: auto;
+}
+.bundle
+{
+	width: 98%;
+	margin-left: 1%;
+}
+.prodottobestseller
+{
+	width: 98%;
+	margin-left: 1%;
 }
 .imgbs
 {
