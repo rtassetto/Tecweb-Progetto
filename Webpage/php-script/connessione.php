@@ -316,7 +316,7 @@
 	}
     public function aggiungiPB($nome,$id){
 	if(mysqli_num_rows(mysqli_query($this->connessione,"SELECT * FROM BundleParts WHERE bundle='$nome' and pezzo='$id' "))!=0){return "prodotto gia' inserito";};
-        $insert="INSERT INTO `bundleparts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
+        $insert="INSERT INTO `BundleParts`(`bundle`, `pezzo`) VALUES ('$nome','$id')";
         mysqli_query($this->connessione,$insert) or die("errore nell'inserimento nel bundle".mysqli_error($this->connessione));
     }
     public function rimuoviPB($nome,$id){

@@ -52,12 +52,13 @@ $product=$DB->getProddata($_GET['id']);
 				<div id='aggiungiCarrello'>
 				<input type='submit' onclick='aggcarrello()' name=".$_GET['id']." value='Aggiungi al carrello'/>
 				</div>
-		</form></div>";}
+		</form>";}
 			  
     }else{
         
-        echo "<div><p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
+        echo "<p>Effettua il <a href='login.php'>login</a> o <a href='register.php'>registrati</a> per acquistare questo prodotto.</p>";  
     }
+    echo "</div>";
     echo "<div id='recensioni'><h2>Recensioni</h2>";
     $reviews=$DB->getProdReview($_GET['id']);
 	if(!$reviews){

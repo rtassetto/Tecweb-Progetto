@@ -47,10 +47,6 @@ TH, TD
 	padding: 1% 0;
 	text-align: center;
 }
-INPUT
-{
-	height: 1.5em;
-}
 .info
 {
 	float: left;
@@ -104,6 +100,7 @@ FOOTER
 	border: 1px solid red;
 	margin-bottom: 1%;
 	padding: 1%;
+	overflow: auto;
 }
 .corsivo
 {
@@ -224,7 +221,7 @@ A:link
 {
 	width: 100%;
 	border: 1px solid #E30E46;
-	clear: both;
+	overflow: auto;
 }
 FOOTER
 {
@@ -240,18 +237,18 @@ FOOTER
 #LatestBundles
 {
 	float: left;
-	width: 50%;
+	width: 48%;
 	border: 1px solid green;
-	padding-left: 0.3em;
-	padding-right: 0.3em;
+	padding-left: 1%;
+	padding-right: 1%;
 	background-color: #CCCCCC;
 }
 #Bestsellers
 {
 	margin-left: 51%;
 	border: 1px solid black;
-	padding-left: 0.3em;
-	padding-right: 0.3em;
+	padding-left: 1%;
+	padding-right: 1%;
 	background-color: #CCCCCC;
 }
 BODY
@@ -304,12 +301,13 @@ FORM#aggiuntaProd
 }
 .imgbs
 {
-	width: 35%;
+	width: 50%;
 }
 .prodottobestseller
 {
 	background-color: white;
 	margin-bottom: 1em;
+	overflow: auto;
 }
 .prezzobestseller
 {
