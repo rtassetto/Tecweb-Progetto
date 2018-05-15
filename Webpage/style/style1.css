@@ -50,8 +50,7 @@ TH, TD
 .info
 {
 	float: left;
-	width: 65%;
-	border: 1px solid orange;
+	width: 60%;
 }
 THEAD, .tablehead
 {
@@ -69,7 +68,6 @@ THEAD, .tablehead
 {
 	position: sticky;
 	top: 0;
-	//Aggiunto sui singoli th per problemi su Chrome;
 }
 .dettRecensione P
 {
@@ -91,16 +89,17 @@ FOOTER
 }
 #avdancedSearch
 {
-	border: 1px solid black;
+	border: 1px solid #004D66;
 	padding: 1%;
 	margin-bottom: 1%;
 }
 .prodotto
 {
-	border: 1px solid red;
+	border: 1px solid #004D66;
 	margin-bottom: 1%;
 	padding: 1%;
 	overflow: auto;
+	background-color: #CCCCCC;
 }
 .corsivo
 {
@@ -119,9 +118,8 @@ FOOTER
 }
 .img
 {
-	border: 1px solid green;
-	width: 35%;
-	margin-left: 65%;
+	width: 25%;
+	margin-left: 70%;
 }
 .imgc
 {
@@ -139,8 +137,8 @@ FOOTER
 {
 	min-width: 80%;
 	height: auto;
-	border: 1px solid purple;
 	width: 20%;
+	border: 1px solid #004D66;
 }
 .imgc IMG
 {
@@ -186,13 +184,21 @@ UL
 	margin: 2em auto 0 auto;
 	background-color: #CCCCCC;
 }
-#user
+.user
 {
 	padding-bottom: 1em;
 }
-#psw
+.psw
 {
 	padding-bottom: 1em;
+}
+#mail
+{
+	padding-bottom: 1em;
+}
+#email
+{
+	max-width: 100%;
 }
 .submit
 {
@@ -229,12 +235,10 @@ A:link
 .content
 {
 	width: 100%;
-	border: 1px solid #E30E46;
 	overflow: auto;
 }
 FOOTER
 {
-	border: 1px solid #070808;
 	background-color: #C9C9C9;
 }
 #searchBar
@@ -247,15 +251,15 @@ FOOTER
 {
 	float: left;
 	width: 48%;
-	border: 1px solid green;
 	padding-left: 1%;
 	padding-right: 1%;
 	background-color: #CCCCCC;
+	border: 1px solid white;
 }
 #Bestsellers
 {
 	margin-left: 51%;
-	border: 1px solid black;
+	border: 1px solid white;
 	padding-left: 1%;
 	padding-right: 1%;
 	background-color: #CCCCCC;
@@ -264,7 +268,7 @@ BODY
 {
 	width: 100%;
 	padding: 0;
-	margin: 0;
+	margin: auto;
 }
 IMG
 {
@@ -272,11 +276,11 @@ IMG
 }
 HTML
 {
-	width: 100%;
 	padding: 0;
-	margin: 0;
+	max-width: 1024px;
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-	/*font-family:font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;;*/
+	font-size: 1em;
+	margin: auto;
 }
 #aggiuntaProd LABEL
 {

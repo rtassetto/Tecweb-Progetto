@@ -104,7 +104,7 @@
             <option value="valC">Valutazione crescente</option>
             <option value="valD">Valutazione decrescente</option>
         </select>
-        <input type="submit" name="advancedSubmit" value="Cerca"/>
+        <input type="submit" name="advancedSubmit" value="Cerca" class="submit"/>
         </div>
     </form>
     </div>
