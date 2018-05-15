@@ -72,55 +72,68 @@ $DB->openc();
         <div id="breadcrumb"> 
         <p> Ti trovi in: Home </p> 
         </div>
+    
+    
+        <div id="istruzioni">
+        <p>Attenzione!</p>
+		<ul>
+			<li>Il campo &ldquo;Username &rdquo; deve contenere tra i 6 e i 20 caratteri.</li>
+			<li>Il campo &ldquo;Password &rdquo; deve contenere tra i 6 e i 20 caratteri.</li>
+			<li>Il campo &ldquo;E-mail &rdquo; deve contenere un indirizzo e-mail valido.</li>
+		</ul>
+	</div>
+   <div class="form"> 
+    <form name="registration" class="login-form" action="register.php" method="POST" onsubmit="return validateForm()">
+        <div class="user">
+        <label for="username">Username:</label>
+        <input type="text" id='username' class="nome_utente" name="username" maxlength="20"/>
+        </div>
+        <div class="psw">
+        <label for="password">Password:</label>
+        <input type="password" id='password' class="pass" name="password" maxlength="20"/>
+        </div>
+
+        <div id="mail">
+        <label for="email">E-mail:</label>
+        <input type="email" id='email' name="email" maxlength="50"/>
+        </div>
+
+        <input type="submit" class="form_submit" name="submit" value="Registra"/>
+    </form>
+    </div>
 <?php
     if(isset($_POST["submit"])){
 	$username=$_POST["username"];
 	$password=$_POST["password"];
 	$email=$_POST["email"];
-	$result=$DB->createUser($username, $password, $email);
+	$result=0;
+    $result=$DB->createUser($username, $password, $email);
 	if ($result==0){
 		header("location: home.php");
 	}
 
 
 	switch ($result){
-		case 1 : echo "<p>Esiste gia\' un utente con username '".$username."'</p>";
+		case 1 : echo "<p>Esiste gi&agrave; un utente con username &ldquo;".$username." &rdquo;</p>";
 				 break;
-		case 2 : echo "<p>Vi e' stato un problema nella registrazione dell'utente. Riprovare piu' tardi</p>";
+		case 2 : echo "<p>C'&egrave; stato un problema nella registrazione dell'utente. Riprovare pi&uacute; tardi</p>";
 				 break;
-		case 3 : echo "<p>I dati sono scorretti. Assicurarsi che i dati siano nei limiti consentiti</p>";
+		case 3 : echo "<p>I dati non sono corretti. Assicurarsi che i dati siano nei limiti consentiti.</p>";
 				 break;
-		case 4 : echo "<p>L'indirizzo mail ".$email." e' gia' associato ad un utente</p>";
+		case 4 : echo "<p>L'indirizzo e-mail &ldquo;".$email." &rdquo; &egrave; gi&agrave; associato ad un utente.</p>";
 				 break;
 	}
 }
 ?>
 
-	<div id="istruzioni">
+
+    <div id="errori">
 		<ul>
-			<li>username deve essere tra  6 e 20 caratteri</li>
-			<li>password deve essere tra i 6 e 20 caratteri</li>
-			<li>email deve essere un valido indirizzo e-mail e non superare i 50 caratteri</li>
+			<li id="usernameerr"></li>
+			<li id="passworderr"></li>
+			<li id="emailerr"></li>
 		</ul>
 	</div>
-   <div class="form"> 
-    <form name="registration" class="login-form" action="register.php" method="POST" onsubmit="return validateForm()">
-        <label for="username">Username:</label>
-        <input type="text" id='username' name="username" maxlength="20"/>
-		<span id="usernameerr"></span>
-
-        <label for="password">Password:</label>
-        <input type="password" id='password' name="password" maxlength="20"/>
-		<span id="passworderr"></span>
-
-
-        <label for="email">E-mail:</label>
-        <input type="email" id='email' name="email" maxlength="50"/>
-		<span id="emailerr"></span>
-
-        <input type="submit" class="form_submit" name="submit" value="Registra"/>
-    </form>
-    </div>
 <?php
 	require "general/Footer.php";
 ?> 
