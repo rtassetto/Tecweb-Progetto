@@ -30,6 +30,7 @@ $product=$DB->getProddata($_GET['id']);
 <body>
 <?php
 	include "general/Header.php";
+	$Stellevoto=$product['valutazione']*16;
     echo "<div id='breadcrumb'><p> Ti trovi in: Home &#8594; Prodotti &#8594; ".$product['nome']."</p></div>";
 	echo "
         <div id='dettaglioProdotto'>
@@ -38,7 +39,7 @@ $product=$DB->getProddata($_GET['id']);
 		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
         <div class='descrizione'><p>".$product['descrizione']."</p></div>
 		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p>
-			<div  class='imgvalutazione' style='overflow:hidden;max-width:80px;'><img style='width:80px;' src='images/Stars.png' alt='valutazione del prodotto'></div></div>
+			<div  class='imgdettagli' style='overflow:hidden;max-width:".$Stellevoto."px;'><img src='images/Stars.png' alt='valutazione del prodotto'></div></div>
 		<div class='prezzo'><p>Prezzo : ".$product['prezzo']."€</p></div>
         <div class='img'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>
 		</div>";
