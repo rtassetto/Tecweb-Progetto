@@ -43,7 +43,7 @@
 }
 TH, TD
 {
-	border: 2px solid blue;
+	border: 2px solid black;
 	width: 20%;
 	padding: 1% 0;
 	text-align: center;
@@ -82,6 +82,7 @@ THEAD, .tablehead
 FOOTER
 {
 	margin-top: 2em;
+	margin-bottom: 1em;
 }
 .CSS
 {

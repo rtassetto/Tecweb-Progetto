@@ -62,3 +62,9 @@ UPDATE Prodotto SET Valutazione=(SELECT avg(voto) FROM Recensione WHERE prodotto
 CREATE TRIGGER AggiornaVotoEdit after Update on Recensione
 for each Row
 UPDATE Prodotto SET Valutazione=(SELECT avg(voto) FROM Recensione WHERE prodotto=new.prodotto) WHERE id=new.prodotto;
+
+CREATE TRIGGER deleteParts
+AFTER DELETE ON Bundles
+FOR EACH ROW
+DELETE FROM  BundleParts
+WHERE OLD.nome=bundle;

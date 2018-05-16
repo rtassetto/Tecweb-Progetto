@@ -18,6 +18,13 @@
     }
     foreach($B as $x){
         $n=$x['nome'];
+        if(isset($_POST[$n])){
+            $DB->deleteB($n);
+            header("location:adminbundle.php");
+        }
+    }
+    foreach($B as $x){
+        $n=$x['nome'];
         if(isset($_GET[$n])){
             $nome=$n;
             $creazione=true;
@@ -74,6 +81,7 @@
                 echo '<tr>';
                echo  '<th>Nome Bundle</th>';
                echo  '<th>        </th>';
+               echo  '<th>        </th>';
                echo '</tr>';
                echo '</thead>';
                foreach($B as $x){
@@ -85,6 +93,11 @@
                 echo "<td>";
                 echo "<form method='get' action='adminbundle.php'>";
                 echo "<input type='submit' name='$nome' value='Modifica bundle'/>";
+                echo "</form>";
+                echo "</td>";
+                echo "<td>";
+                echo "<form method='post' action='adminbundle.php'>";
+                echo "<input type='submit' name='$nome' value='Elimina bundle'/>";
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";

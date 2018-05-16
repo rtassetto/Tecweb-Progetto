@@ -36,7 +36,7 @@
 <?php
 include "general/Header.php";
 ?>
-    
+   
     
     <!--  Link per fissare menù "http://bigspotteddog.github.io/ScrollToFixed/" serve js!!!!-->
     
@@ -48,47 +48,35 @@ include "general/Header.php";
     
     
     <section id="prodottipurchase">
-        <table id="purchase">
-            <thead>
-                <tr>
-                    <th>Prodotto</th>
-                    <th>Tipo</th>
-                    <th>Descrizione</th>
-                    <th>Valutazione</th>
-                    <th>Data</th>
-                    <?php if(isset($_SESSION['login_user'])){echo "<th></th>";}?>
-                </tr>
-            </thead>
-        <?php
+       <?php
             foreach($P as $x){
-                echo "<tr>";
-                echo "<td>";
-                echo $x["nome"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["categoria"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["descrizione"];
-                echo "</td>";
-                echo "<td>";
-                echo $x["valutazione"]."/5";
-                echo "</td>";
-                echo "<td>";
-                echo $x["data"];
-                echo "</td>";
-                if(isset($_SESSION['login_user'])){
-                $id=$x["id"];
-                echo "<td>";
+                $id=$x['id'];
+                echo "<div class='prodotto'>";
+                echo "<div class='nome'>";
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
+                echo "</div>";
+                echo "<div class='info'>";
+                echo "<div class='categoria'>";
+                echo "Categoria: ".$x["categoria"];
+                echo "</div>";
+                echo "<div class='descrizione'>";
+                echo substr($x["descrizione"], 0, 200)."...";
+                echo "</div>";
+                echo "<div class='valutazione'>";
+                echo "Valutazione: ".$x["valutazione"]."/5";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
+                echo "</div>";
+                echo "<div class='button'>";
                 echo "<form method='post' action='recensione.php'>";
                 echo "<input type='submit' name='$id' value='Aggiungi Recensione'/>";
-                }
                 echo "</form>";
-                echo "</td>";
-                echo "</tr>";
+                echo "</div>";
+                echo "</div>";
             }
-        ?>
-        </table>    
+        ?>   
+    
     
     
     </section>
