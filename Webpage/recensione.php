@@ -13,6 +13,7 @@ session_start();
 		header("location: home.php");
 	}
      require "php-script/connessione.php";
+     require "php-script/controlli.php";
 	 $DB= new DBAccess();
 	 $DB->openc();
      $P=$DB->getP();
@@ -20,18 +21,11 @@ session_start();
      $errore=false;
      foreach($P as $x){         
          if(isset($_POST[$x['id']."1"])){
-              if (!preg_match("/^[a-zA-Z'èà,.; ]*$/",$_POST["recensione"])) {
-                  $erroreR = "solo lettere e spazi possono essere inseriti in questo campo";
-                  $errore=true;
-              }
+              $rec=$_POST["recensione"];
+              desc($rec,$erroreR,$errore); 
               if(!$errore){
                   $testo=htmlspecialchars($_POST["recensione"]);
-                  $testo=addslashes($testo);
-                  $testo = str_replace ("à", "&agrave", $testo);
-                  $testo = str_replace ("è", "&egrave", $testo);
-                  $testo = str_replace ("ì", "&igrave", $testo);
-                  $testo = str_replace ("ò", "&ograve", $testo);
-                  $testo = str_replace ("ù", "&ugrave", $testo);
+                  sostituzione($testo);
                   $valutazione=$_POST["voto"];
                   $prodotto=$x['id'];
                   $user=$_SESSION["login_user"];
@@ -84,7 +78,7 @@ session_start();
         <input type="radio" name="voto"  value="3" required><span>3</span>
         <input type="radio" name="voto"  value="4" required><span>4</span>
         <input type="radio" name="voto"  value="5" required><span>5</span> 
-        <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>" onclick="window.alert('Recensione aggiunta')" value="Aggiungi recensione"/>
+        <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>"  value="Aggiungi recensione"/>
         </form>
         
     </div>
