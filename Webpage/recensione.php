@@ -21,10 +21,10 @@ session_start();
      $errore=false;
      foreach($P as $x){         
          if(isset($_POST[$x['id']."1"])){
-              $rec=$_POST["recensione"];
+              $rec=$_POST["rec"];
               desc($rec,$erroreR,$errore); 
               if(!$errore){
-                  $testo=htmlspecialchars($_POST["recensione"]);
+                  $testo=htmlspecialchars($_POST["rec"]);
                   sostituzione($testo);
                   $valutazione=$_POST["voto"];
                   $prodotto=$x['id'];
@@ -69,9 +69,16 @@ session_start();
     </div>
     
     <div id="recensione">
+        <?php
+        $user=$_SESSION['login_user'];
+        $isPresent=$DB->checkR($id,$user); 
+        if($isPresent){
+            echo "<h2 class='red'>Hai già inserito una recensione per questo prodotto, se inserisci un'altra recensione la precedente verrà sostituita.</h2>";
+        }
+        ?>
         <h3>Scrivi una recensione per il prodotto <?php echo $nome;?></h3>
-        <form method="post" action="recensione.php">
-        <textarea id="recensione" name="recensione" rows="10" cols="50" required><?php if(isset($_POST["recensione"])) echo $_POST["recensione"]; ?></textarea><span><?php echo $erroreR;?></span>
+        <form class='login-form' method="post" action="recensione.php">
+        <textarea id="rec" name="rec" rows="10" cols="50" required><?php if(isset($_POST["rec"])) echo $_POST["rec"]; ?></textarea><span><?php echo $erroreR;?></span>
         <p>Immetti la tua valutazione</p>
         <input type="radio" name="voto"  value="1" required><span>1</span>
         <input type="radio" name="voto"  value="2" required><span>2</span>

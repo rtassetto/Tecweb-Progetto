@@ -7,6 +7,10 @@
 	width: 20%;
 	border: 1px solid #CCCCCC;
 }
+.red
+{
+	color: red;
+}
 #mobile
 {
 	display: none;
@@ -123,6 +127,11 @@ FOOTER
 	width: 25%;
 	margin-left: 70%;
 }
+.imgc
+{
+	width: 15%;
+	margin-left: 80%;
+}
 #menu
 {
 	width: 100%;
@@ -135,6 +144,11 @@ FOOTER
 	min-width: 80%;
 	height: auto;
 	width: 20%;
+	border: 1px solid #004D66;
+}
+.imgc IMG
+{
+	width: 100%;
 	border: 1px solid #004D66;
 }
 .imgdettagli IMG
@@ -330,4 +344,12 @@ P
 .infobs
 {
 	width: 50%;
+}
+#recensione
+{
+	text-align: center;
+}
+#rec
+{
+	margin-bottom: 1em;
 }

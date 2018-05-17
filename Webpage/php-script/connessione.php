@@ -331,6 +331,11 @@
         $insert="INSERT INTO Bundles (nome,descrizione,data) VALUES ('$nome','$descrizione',NOW())";
         mysqli_query($this->connessione,$insert) or die("errore nella creazione del bundle".mysqli_error($this->connessione));
     }
+    public function checkR($id,$user){
+        $select="SELECT username,prodotto FROM Recensione WHERE username='$user' AND prodotto='$id'";
+        if(mysqli_num_rows(mysqli_query($this->connessione,$select))==0){return false;}
+        return true;
+    }
 	}
 	
 ?>
