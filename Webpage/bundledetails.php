@@ -39,29 +39,35 @@ function myFunction() {
 		<div class='descrizione'><p>".$product['descrizione']."</p></div>";
 	$query=$DB->getBundlepartsdata($_GET['bundle']);
 	if($query!="vuoto"){
-	echo "<table>
-			<thead>
-				<th>Nome</th>
-				<th>Categoria</th>
-				<th>Valutazione</th>
-				<th>Prezzo</th>
-			</thead>";
-	foreach($query as $result){
-		echo"<tr>
-				<td><a href='productdetails.php?id=".$result['id']."'>".$result['nome']."</a></td>
-				<td>".$result['categoria']."</td>
-				<td>".$result['valutazione']."</td>
-				<td>".$result['prezzo']."</td>
-			</tr>";
-	}
-	echo "</table>";
+	foreach($query as $x){
+                $id=$x['id'];
+                echo "<div class='prodotto'>";
+                echo "<div class='nome'>";
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
+                echo "</div>";
+                echo "<div class='info'>";
+                echo "<div class='categoria'>";
+                echo "Categoria: ".$x["categoria"];
+                echo "</div>";
+                echo "<div class='valutazione'>";
+                echo "Valutazione: ".$x["valutazione"]."/5";
+                echo "</div>";
+                echo "<div class='prezzo'>";
+                echo "Prezzo: ".$x["prezzo"]."€";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='imgc'><img src='images/$id.jpg' alt='immagine prodotto'/>";
+                echo "</div>";
+                echo "<div class='dettaglio'><p><a href='productdetails.php?id=".$x["id"]."'>Vai al dettaglio</a></p>";
+                echo "</div>";
+                echo "</div>";
+            }
 	//$product[]
     if(isset($_SESSION['login_user'])){
         echo "<form class='popup' method='post' action='prodotti.php?bundle=".$_GET['bundle']."'>
               <div class='aggiungiCarrello'>
               <input type='submit' name='compraBundle' value='Aggiungi al carrello'/>
               </div>
-              <span class='popuptext' id='myPopup'>Bundle aggiunto al carrello</span>
               </form></div>";
     }else{
         
