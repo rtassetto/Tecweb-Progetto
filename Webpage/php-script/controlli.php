@@ -17,12 +17,27 @@ function sostituzione(&$testo){
                   $testo = str_replace ("ù", "&ugrave", $testo);
 }
 
-function prezzo(&$p){
-    if (!preg_match("/123456789/",$p)) {
+function prezzo($p){
+    if (!preg_match("/^[0-9]+$/",$p)) {
         return 'errore';
     }
     return 'ok';
 }
+
+function nomeProdotto($nome){
+    if (!preg_match("/^[a-zA-Z0-9]+$/",$nome)) {
+        return 'errore';
+    }
+    return 'ok';
+}
+
+function descProdotto($desc){
+    if (!preg_match("/^[(a-zA-Z)+(.,;!?-')?(a-zA-Z)*]+$/",$desc)) {
+        return 'errore';
+    }
+    return 'ok';
+}
+
 
 
     

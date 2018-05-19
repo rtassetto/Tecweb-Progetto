@@ -7,7 +7,9 @@ $DB=new DBAccess();
 $DB->openc();
 if (isset($_POST["aggiungi"])){
 	$nome=$_POST["nome"];
+    $errNome=nomeProdotto($nome);
 	$descrizione=$_POST["descrizione"];
+    $errDesc=descProdotto($descrizione);
 	$prezzo=$_POST["prezzo"];
     $errPrezzo=prezzo($prezzo);
 	$categoria=$_POST["categoria"];
@@ -57,6 +59,13 @@ else{
 <div class="formslot">
 	<label for="nome">Nome del Prodotto:</label> 
 	<input type="text" id="nome" name="nome" required/>
+    <?php
+   if (isset($_POST["aggiungi"])){
+       if($errNome=='errore'){
+           echo "<h5 class='red'>il nome può contenere solo lettere e valori numerici</h5>";
+       }    
+   }
+   ?>
 </div>
 <div class="formslot">
 <label for="categoria">Categoria:</label>
@@ -68,6 +77,13 @@ else{
 </div> 
 <div class="formslot">
 <label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" required></textarea>
+<?php
+   if (isset($_POST["aggiungi"])){
+       if($errDesc=='errore'){
+           echo "<h5 class='red'>la descrizione non è corretta</h5>";
+       }    
+   }
+   ?>
 </div>
 <div class="formslot">
 <label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" required/>
