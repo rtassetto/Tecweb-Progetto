@@ -2,14 +2,18 @@
 session_start();
 
 require "php-script/connessione.php";
+require "php-script/controlli.php";
 $DB=new DBAccess();
 $DB->openc();
 if (isset($_POST["aggiungi"])){
 	$nome=$_POST["nome"];
 	$descrizione=$_POST["descrizione"];
 	$prezzo=$_POST["prezzo"];
+    $errPrezzo=prezzo($prezzo);
 	$categoria=$_POST["categoria"];
+    if($errPrezzo=='ok'){
 	$DB->createProduct($nome, $categoria, $descrizione, $prezzo);
+    }
 }
     $P=$DB->getP();
         foreach($P as $x){
@@ -52,20 +56,28 @@ else{
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
 <div class="formslot">
 	<label for="nome">Nome del Prodotto:</label> 
-	<input type="text" id="nome" name="nome"/>
+	<input type="text" id="nome" name="nome" required/>
 </div>
 <div class="formslot">
 <label for="categoria">Categoria:</label>
-<select id=categoria name="categoria">
-  <option value="monitor">Monitor</option>
-  <option value="hdd">HDD</option>
+<select id=categoria name="categoria" required>
+  <option value="" selected></option>  
+  <option value="monitor" required>Monitor</option>
+  <option value="hdd" required>HDD</option>
 </select>
+</div> 
+<div class="formslot">
+<label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" required></textarea>
 </div>
 <div class="formslot">
-<label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7"></textarea>
-</div>
-<div class="formslot">
-<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo"/>
+<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" required/>
+<?php
+   if (isset($_POST["aggiungi"])){
+       if($errPrezzo=='errore'){
+           echo "<h5 class='red'>il prezzo dev'essere un valore numerico</h5>";
+       }    
+   }
+?>
 </div>
 <input type="submit" name="aggiungi" value="Crea"/>
 </form>

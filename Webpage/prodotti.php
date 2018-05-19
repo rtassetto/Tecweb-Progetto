@@ -2,6 +2,7 @@
 <?php 
     session_start();
     require "php-script/connessione.php";
+    require "php-script/controlli.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
     
@@ -23,8 +24,10 @@
         $a_nrisultati=count($P); 
         
     }else if(isset($_GET["testo"])){
-        $testo=$_GET["testo"];
-        $P=$DB->ricerca($testo);
+        $testo2=$_GET["testo"];
+        $testo=$testo2;
+        sostituzione($testo2);
+        $P=$DB->ricerca($testo2);
         $n_risultati=count($P);
         
     }else{

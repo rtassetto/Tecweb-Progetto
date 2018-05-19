@@ -64,6 +64,13 @@ if(isset($_POST["submit"])){
       <input type="submit" class="submit" id="submit_form" name="submit" value="Login"/>
       <p class="message">Non sei registrato? <a href="register.php">Crea un account</a></p>
     </form>
+    <?php
+    if(isset($_POST['submit'])){
+    if($result=='error'){
+        echo "<h3 class='red'>Il nome utente o la password che hai inserito sono errati</h3>";
+    }  
+    }
+    ?>
   </div>
   
     

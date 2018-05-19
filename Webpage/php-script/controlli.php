@@ -17,6 +17,13 @@ function sostituzione(&$testo){
                   $testo = str_replace ("ù", "&ugrave", $testo);
 }
 
+function prezzo(&$p){
+    if (!preg_match("/123456789/",$p)) {
+        return 'errore';
+    }
+    return 'ok';
+}
+
 
     
 
