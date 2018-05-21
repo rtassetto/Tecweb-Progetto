@@ -1,6 +1,7 @@
 <?php
 	session_start();
     require "php-script/connessione.php";
+    require "php-script/controlli.php";
 	$DB= new DBAccess();
 	$DB->openc();
     $P=$DB->getP();
@@ -12,9 +13,14 @@
     if(isset($_POST["crea"])){
         $creazione=true;
         $nome=$_POST['nome'];
+        $errNome=nomeBundle($nome);
         $descrizione=$_POST['descrizione'];
-        $DB->creaB($nome,$descrizione);
-        header("location:adminbundle.php?$nome=Modifica+bundle"); 
+        $errDesc=descProdotto($descrizione);
+        sostituzione($descrizione);
+        if($errDesc=='ok'&& $errNome='ok'){
+            $DB->creaB($nome,$descrizione);
+            header("location:adminbundle.php?$nome=Modifica+bundle"); 
+        }
     }
     foreach($B as $x){
         $n=$x['nome'];
@@ -72,7 +78,13 @@
         if(!$creazione){
             echo "<div id='creaBundle'>";
             echo "<form method='post' action='adminbundle.php'>";
-            echo "<div class='formslot'><label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'></div>";
+            echo "<div class='formslot'><label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'/>";
+            if (isset($_POST["crea"])){
+                if($errNome=='errore'){
+                    echo "<h5 class='red'>il nome può contenere solo lettere e non può avere spazi</h5>";
+                }
+            }
+            echo "</div>";
             echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea></div>";
             echo "<div class='formslot'><input type='submit' name='crea' value='Crea bundle'/></div>";
             echo "</form>";

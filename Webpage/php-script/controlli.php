@@ -40,6 +40,13 @@ function descProdotto($desc){
     return 'ok';
 }
 
+function nomeBundle($nome){
+    if (!preg_match("/^[a-zA-Z]+$/",$nome)) {
+        return 'errore';
+    }
+    return 'ok';
+}
+
 
 
     
