@@ -9,7 +9,6 @@ function desc($rec,&$erroreR,&$errore){
 }
 
 function sostituzione(&$testo){
-                  $testo=htmlspecialchars($testo);
                   $testo=addslashes($testo);
                   $testo = str_replace ("à", "&agrave", $testo);
                   $testo = str_replace ("è", "&egrave", $testo);
@@ -27,7 +26,7 @@ function prezzo($p){
 }
 
 function nomeProdotto($nome){
-    if (!preg_match("/^[a-zA-Z0-9]+$/",$nome)) {
+    if (!preg_match("/^[a-zA-Z0-9èòàì]+$/",$nome)) {
         return 'errore';
     }
     return 'ok';

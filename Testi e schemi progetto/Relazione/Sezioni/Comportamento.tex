@@ -16,6 +16,8 @@ Abbiamo raggruppato le parti ricorrenti in ogni pagina in dei file php contenuti
 	\item \textit{Footer.php.}
 \end{itemize}
 questi file vengono poi richiamati nelle varie pagine attraverso il comando \emph{require}.\newline
+
+\paragraph{Connessione al database} \Spazio
 La gestione della connessione al database è affidata alla classe \emph{DBAccess} contenuta in \textit{connessione.php}, questa classe oltre ad aprire la connessione al database contiene diverse funzioni che si occupano di interrogare con linguaggio SQL il database:
 \begin{itemize}
 	\item \textbf{createUser:} Serve per la registrazione degli utenti, controlla che i valori inseriti abbiano una definita lunghezza minima e massima, che il nome utente non sia già registrato e inserisce nel database il nuovo utente;
@@ -46,7 +48,29 @@ La gestione della connessione al database è affidata alla classe \emph{DBAccess
 	\item \textbf{getBundlepartsdata:} ritorna un array associativo contenente le informazioni di tutti i prodotti contenuti in un dato bundle;
 \end{itemize}
 
-\paragraph{Gestione utente} \mbox{} \\
+\paragraph{Controllo degli input} \Spazio
+Le funzioni che si occupano di controllare gli input dati dagli utilizzatori del sito sono raggruppate nel file \textit{controlli.php},le funzioni presenti sono:
+
+\begin{itemize}
+    \item \textbf{desc():} questa funzione controlla che il testo inserito come recensione sia conforme alle attese. Grazie all'utilizzo di una espressione regolare vengono accettati tutti i testi con punteggiatura la quale deve essere per forza preceduta da un testo.\newline
+    Questa funzione utilizza il passaggio di parametri per riferimento per cui avrà side effect sulle variabili utilizzate come parametri;
+    
+    
+    \item \textbf{sostituzione():} questa funzione per prima cosa utilizza la funzione php \emph{addslashes()} che restituisce una stringa con il carattere di backslash '\' anteposto ai caratteri che richiedono il quoting nelle query dei database.
+    Successivamente vengono sostituite le lettere accentate del testo con le loro codifiche utf-8 per facilitare la lettura del testo anche all'interno del database.
+    La funzione utilizza il passaggio dei parametri per riferimento per ottenere dei side effect sul parametro in entrata.
+    
+    \item \textbf{prezzo():} questa funzione controlla che la stringa in entrata sia un possibile prezzo utilizzando un'espressione regolare.
+    
+    \item \textbf{nomeProdotto():} questa funzione controlla che la stringa in entrata possa essere il nome di un prodotto utilizzando un'espressione regolare.
+    
+    \item \textbf{descProdotto():} questa funzione controlla che la stringa in entrata sia conforme ad essere la descrizione di un prodotto utilizzando un'espressione regolare.
+    
+    \item \textbf{nomeBundle():} questa funzione controlla che la stringa in entrata sia conforme ad essere il nome di un bundle attraverso un'espressione regolare.
+
+\end{itemize}
+
+\paragraph{Gestione utente} \Spazio
 Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi chiudono il browser, grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account come lo storico degli acquisti;
 inoltre l'utilizzo di questa variabile ha reso semplice il logout che viene effettuato attraverso i comandi \emph{session\_unset} e \emph{session\_destroy}.
 

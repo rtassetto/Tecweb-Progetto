@@ -8,6 +8,7 @@ $DB->openc();
 if (isset($_POST["aggiungi"])){
 	$nome=$_POST["nome"];
     $errNome=nomeProdotto($nome);
+    sostituzione($nome);
 	$descrizione=$_POST["descrizione"];
     $errDesc=descProdotto($descrizione);
     sostituzione($descrizione);
