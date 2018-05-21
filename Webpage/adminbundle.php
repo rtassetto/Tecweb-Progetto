@@ -21,6 +21,9 @@
             $DB->creaB($nome,$descrizione);
             header("location:adminbundle.php?$nome=Modifica+bundle"); 
         }
+        if($errDesc=='errore'|| errNome=='errore'){
+            $creazione=false;
+        }
     }
     foreach($B as $x){
         $n=$x['nome'];
@@ -85,7 +88,13 @@
                 }
             }
             echo "</div>";
-            echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea></div>";
+            echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea>";
+            if (isset($_POST["crea"])){
+                if($errDesc=='errore'){
+                    echo "<h5 class='red'>la descrizione non è formata correttamente</h5>";
+                }
+            }
+            echo "</div>";
             echo "<div class='formslot'><input type='submit' name='crea' value='Crea bundle'/></div>";
             echo "</form>";
          echo '<table class="products">';
