@@ -10,10 +10,11 @@ if (isset($_POST["aggiungi"])){
     $errNome=nomeProdotto($nome);
 	$descrizione=$_POST["descrizione"];
     $errDesc=descProdotto($descrizione);
+    sostituzione($descrizione);
 	$prezzo=$_POST["prezzo"];
     $errPrezzo=prezzo($prezzo);
 	$categoria=$_POST["categoria"];
-    if($errPrezzo=='ok'){
+    if($errPrezzo=='ok'&& $errNome=='ok'&& $errDesc=='ok'){
 	$DB->createProduct($nome, $categoria, $descrizione, $prezzo);
     }
 }
@@ -86,7 +87,7 @@ else{
    ?>
 </div>
 <div class="formslot">
-<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" required/>
+<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo"  required/>
 <?php
    if (isset($_POST["aggiungi"])){
        if($errPrezzo=='errore'){

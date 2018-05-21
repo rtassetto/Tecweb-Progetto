@@ -21,10 +21,9 @@ session_start();
      $errore=false;
      foreach($P as $x){         
          if(isset($_POST[$x['id']."1"])){
-              $rec=$_POST["rec"];
-              desc($rec,$erroreR,$errore); 
+              $testo=$_POST["rec"];
+              desc($testo,$erroreR,$errore); 
               if(!$errore){
-                  $testo=htmlspecialchars($_POST["rec"]);
                   sostituzione($testo);
                   $valutazione=$_POST["voto"];
                   $prodotto=$x['id'];
