@@ -56,17 +56,25 @@ Le funzioni che si occupano di controllare gli input dati dagli utilizzatori del
     Questa funzione utilizza il passaggio di parametri per riferimento per cui avrà side effect sulle variabili utilizzate come parametri;
     
     
-    \item \textbf{sostituzione():} questa funzione per prima cosa utilizza la funzione php \emph{addslashes()} che restituisce una stringa con il carattere di backslash '\' anteposto ai caratteri che richiedono il quoting nelle query dei database.
+    \item \textbf{sostituzione():} questa funzione per prima cosa utilizza la funzione php \emph{addslashes()} che restituisce una stringa con il carattere di backslash '\textbackslash' anteposto ai caratteri che richiedono il quoting nelle query dei database.
     Successivamente vengono sostituite le lettere accentate del testo con le loro codifiche utf-8 per facilitare la lettura del testo anche all'interno del database.
-    La funzione utilizza il passaggio dei parametri per riferimento per ottenere dei side effect sul parametro in entrata.
+    La funzione utilizza il passaggio dei parametri per riferimento per ottenere dei side effect sul parametro in entrata;
     
-    \item \textbf{prezzo():} questa funzione controlla che la stringa in entrata sia un possibile prezzo utilizzando un'espressione regolare.
+    \item \textbf{prezzo():} questa funzione controlla che la stringa in entrata sia un possibile prezzo utilizzando un'espressione regolare;
     
-    \item \textbf{nomeProdotto():} questa funzione controlla che la stringa in entrata possa essere il nome di un prodotto utilizzando un'espressione regolare.
+    \item \textbf{nomeProdotto():} questa funzione controlla che la stringa in entrata possa essere il nome di un prodotto utilizzando un'espressione regolare;
     
-    \item \textbf{descProdotto():} questa funzione controlla che la stringa in entrata sia conforme ad essere la descrizione di un prodotto utilizzando un'espressione regolare.
+    \item \textbf{descProdotto():} questa funzione controlla che la stringa in entrata sia conforme ad essere la descrizione di un prodotto utilizzando un'espressione regolare;
     
-    \item \textbf{nomeBundle():} questa funzione controlla che la stringa in entrata sia conforme ad essere il nome di un bundle attraverso un'espressione regolare.
+    \item \textbf{nomeBundle():} questa funzione controlla che la stringa in entrata sia conforme ad essere il nome di un bundle attraverso un'espressione regolare;
+    
+    \item \textbf{checkLength():} questa funzione controlla che la stringa passata sia di lunghezza compresa tra 6 e 20 caratteri,
+    se non è così ritorna il valore booleano true che verrà inserito in una variabile che segnala l'errore.
+    Questa funzione viene utilizzata per il controllo degli input dati dall'utente nella pagina di registrazione;
+    
+    \item \textbf{checkUsername():} questa funzione controlla che la stringa inserita sia conforme ad essere utilizzata come username di un utente attraverso l'utilizzo di una espressione regolare;
+
+   \item \textbf{checkPassword():} questa funzione controlla che la stringa passata come parametro sia conforme ad essere utilizzata come password di un utente attraverso l'utilizzo di una espressione regolare.
 
 \end{itemize}
 
