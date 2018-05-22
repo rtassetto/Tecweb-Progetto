@@ -1,16 +1,23 @@
 <?php 
 require "php-script/connessione.php";
+require "php-script/controlli.php";
 $DB=new DBAccess();
 $DB->openc();
+$errUser=false;
+$errPass=false;
 if(isset($_POST["submit"])){
 	   $username=$_POST["username"];
 	   $password=$_POST["password"];
 	   $email=$_POST["email"];
-	   $result=0;
+       $errUser=(checkLength($username) || checkUsername($username));
+       $errPass=(checkLength($password) || checkPassword($password));
+       $result=0;
+       if(!$errUser && !$errPass){
        $result=$DB->createUser($username, $password, $email);
-	   if ($result==0){
-		header("location: home.php");
-	}
+	       if ($result==0){
+               header("location: home.php");
+	       }
+       }
 }
 ?>
 <!DOCTYPE html>
@@ -62,6 +69,18 @@ if(isset($_POST["submit"])){
         <input type="submit" class="form_submit" name="submit" value="Registra"/>
     </form>
     </div>
+    <?php
+        if (isset($_POST["submit"])){
+            if($errUser){
+                echo "<h5 class='red'>l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri</h5>";
+            }    
+        }
+        if (isset($_POST["submit"])){
+            if($errPass){
+                echo "<h5 class='red'>la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi</h5>";
+            }    
+        }
+   ?>
 <?php
     
 

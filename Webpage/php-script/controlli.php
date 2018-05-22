@@ -46,6 +46,28 @@ function nomeBundle($nome){
     return 'ok';
 }
 
+function checkLength($str){
+    $l=strlen($str);
+    if($l<6 || $l>20){
+        return true;
+    }
+    return false;
+}
+
+function checkUsername($user){
+    if(!preg_match("/^[a-zA-Z0-9èàéòù]+$/",$user)) {
+        return true;
+    }
+    return false;
+}
+
+function checkPassword($pass){
+    if(!preg_match("/^[a-zA-Z0-9èàéòù@#\$\%\&\-]+$/",$pass)) {
+        return true;
+    }
+    return false;
+}
+
 
 
     
