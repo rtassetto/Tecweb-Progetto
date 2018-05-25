@@ -1,9 +1,10 @@
 \subsection{Presentazione}
 Nel realizzare l'interfaccia grafica del sito è stato usato lo standard CSS3.\newline
-I diversi file .css utilizzati ci permettono di realizzare una formattazione adatta per la visione del sito da un desktop, un mobile e per un layout di stampa, nelle seguenti sezioni descriveremo le scelte adottate per la presentazione CSS di ogni pagina.
+I diversi file .css utilizzati ci permettono di realizzare una formattazione adatta per la visione del sito da un desktop, da un dispositivo mobile e per un layout di stampa. \newline 
+Nelle seguenti sezioni descriveremo le scelte adottate per la presentazione CSS di ogni pagina.
 
 \subsubsection{style.css}
-in questa sezione vengono descritti i comandi css usati per la presentazione del sito in formato desktop.
+In questa sezione vengono descritti i comandi css usati per la presentazione del sito in formato desktop.
 
 \paragraph{Header} \Spazio
 L'header è una parte comune a tutte le pagine del sito e contiene il menù di navigazione. \newline Per la sua presentazione abbiamo utilizzato il comando \emph{float:left} per tenere a sinistra il logo all'interno del div principale, inoltre gli è stato data una \emph{max-width} di 10em per limitare la sua dimensione. all' UL di classe \emph{nodot} è stato dato il comando \emph{list-style-type:none} per rimuovere i punti dell'elenco e i comandi \emph{margin:0} e \emph{padding:0} per mantenere il menù della dimensione corretta, all'ultimo tag \emph{li} che contiene la barra di ricerca è stato dato il comando \emph{float:right} per ottenere una divisione spaziale tra i link di navigazione e la ricerca.
@@ -11,7 +12,7 @@ A tutti i tag \emph{li} del menù è stato dato il comando \emph{display:block} 
 Infine al div principale è stato dato il comando \emph{width:100\%} per ottenere un menù di navigazione che occupa sempre tutto lo schermo in larghezza.
 
 \paragraph{Footer} \Spazio
-
+Per il Footer, comune a tutte le pagine, si è utilizzato uno sfondo dello stesso colore del menù (#CCCCCC), mentre lo stile del testo è il corsivo. La larghezza del Footer è settata a \emph{width:100\%}.
 
 
 \paragraph{Home} \Spazio
@@ -24,19 +25,22 @@ La pagina è presentata come una lista di \emph{div} all'interno di un tag \emph
 
 
 \subsubsection{small.css}
-in questa sezione vengono descritti i comandi css usati per la presentazione del sito in formato mobile.
+In questa sezione vengono descritti i comandi css usati per la presentazione del sito in formato mobile.
 
 \paragraph{Generale} \Spazio
-Inanzi tutto è stato dato \emph{margin 0} e \emph{padding: 0} ad HTML e BODY per azzerare eventuali posizionamenti non desiderati. 
+Innanzitutto è stato dato \emph{margin 0} e \emph{padding: 0} ad HTML e BODY per azzerare eventuali posizionamenti non desiderati. 
 
 \paragraph{Header} \Spazio
-Inanzi tutto viene dato all'id \emph{menu} il comando \emph{display:none} per non visualizzare i link di navigazione destinati al formato desktop, inoltre viene visualizzata l'icona del menu ottenuta dando ai 3 div vuoti a i comandi \emph{border:solid}, \emph{width: 2em} e \emph{margin: 6px 0},questi tre div vuoti sono contenuti in un div di classe \emph{comp}, a questa classe viene dato il comando \emph{float: right} perchè rimanga sulla destra della barra superiore e le sono stati dati dei margini superiori e di destra per distanziare l'icona dai bordi.
+Inizialmente viene dato al div dall'id \emph{menu} il comando \emph{display:none} per non visualizzare i link di navigazione destinati al formato desktop, inoltre viene visualizzata l'icona del menu ottenuta dando ai 3 div vuoti i comandi \emph{border:solid}, \emph{width: 2em} e \emph{margin: 6px 0}. Questi tre div vuoti sono contenuti in un div di classe \emph{comp} e a questa classe viene dato il comando \emph{float: right} perchè rimanga sulla destra della barra superiore; inoltre le sono stati dati dei margini superiori e di destra per distanziare l'icona dai bordi.
 
 \paragraph{Footer} \Spazio
-Nella versione mobile il footer contiene il menù di navigazione, per questo al l'intero div che ha \emph{mobile} come id viene dato il comando \emph{display: block} per sovrascrivere il comando \emph{display: none} dato in style.css inoltre vengondo dati dei margini per ottenere distanza dal resto della pagina.
-Al tag \emph{ul} contenuto in nel menù viene data una width del 100\% e ai tag \emph{li} annidati che hanno classe \emph{voci} viene dato il comando \emph{float: none} per sovrascrivere il comando float dato in style.css, e il comando \emph{text-align: center} per centrare le voci, in oltre viengono impostati margini e padding laterali a 0.
+Nella versione mobile il footer contiene il menù di navigazione, per questo all'intero div che ha \emph{mobile} come id, viene dato il comando \emph{display: block} per sovrascrivere il comando \emph{display: none} dato in \emph{style.css}. Inoltre vengondo dati dei margini per ottenere una certa distanza dal resto della pagina.\newline
+Al tag \emph{ul} contenuto nel menù viene data una \emph{width:100\%} e ai tag \emph{li} annidati che hanno classe \emph{voci} vengono dati il comando \emph{float: none} per sovrascrivere il comando float dato in style.css e il comando \emph{text-align: center} per centrare le voci.
+Vengono inoltre impostati margini e padding laterali a 0.
 
 \paragraph{Home} \Spazio
-Le due sezioni principali vengono messe una sotto l'altra utilizzando il comando \emph{float:none} sulla sezione con id Latestbundles per sovrascrivere il float dato in style.css
+Le due sezioni principali vengono messe una sotto l'altra utilizzando il comando \emph{float:none} sulla sezione con id \emph{Latestbundles} in modo da sovrascrivere il float dato in style.css.
 
 
+\subsubsection{print.css}
+In questa sezione vengono descritti i comandi css utilizzati per il layout di stampa.
