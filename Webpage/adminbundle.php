@@ -180,8 +180,10 @@
                 echo "</td>";
                 $id=$x["id"];
                 echo "<td>";
-                echo "<form method='post' action='adminbundle.php?$nome=Modifica+bundle'>";
-                echo "<input type='submit' name='$id' value='aggiungi al bundle'/>";
+				if($x["prezzo"]>0){
+					echo "<form method='post' action='adminbundle.php?$nome=Modifica+bundle'>";
+					echo "<input type='submit' name='$id' value='aggiungi al bundle'/>";
+				}
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";

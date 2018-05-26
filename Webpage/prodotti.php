@@ -141,9 +141,12 @@
                 echo "<div class='valutazione'>";
                 echo "Valutazione: ".$x["valutazione"]."/5";
                 echo "</div>";
-                echo "<div class='prezzo'>";
-                echo "Prezzo: ".$x["prezzo"]."€";
-                echo "</div>";
+				echo "<div class='prezzo'>";
+				if ($x['prezzo']<=0){
+					echo"Prodotto non disponibile";}
+				else{
+					echo "Prezzo: ".$x["prezzo"]."€";}
+				echo "</div>";
                 echo "</div>";
                 echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
                 echo "</div>";
