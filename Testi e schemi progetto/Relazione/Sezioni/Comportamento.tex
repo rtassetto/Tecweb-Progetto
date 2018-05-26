@@ -9,7 +9,7 @@ PHP è stato utilizzato per la gestione del sito lato server, è stato utile per
     \item l'inserimento e il controllo di input di utenti all'interno del database;
     \item l'inserimento di dati nel database da parte degli admin.
 \end{itemize}
-Abbiamo raggruppato le parti ricorrenti in ogni pagina in dei file php contenuti nella cartella general chiamati:
+Abbiamo raggruppato le parti ricorrenti in ogni pagina in file php contenuti nella cartella \emph{general} chiamati:
 \begin{itemize}
 	\item \textit{Header.php;}
 	\item \textit{Meta.php;}
@@ -18,15 +18,16 @@ Abbiamo raggruppato le parti ricorrenti in ogni pagina in dei file php contenuti
 questi file vengono poi richiamati nelle varie pagine attraverso il comando \emph{require}.\newline
 
 \paragraph{Connessione al database} \Spazio
-La gestione della connessione al database è affidata alla classe \emph{DBAccess} contenuta in \textit{connessione.php}, questa classe oltre ad aprire la connessione al database contiene diverse funzioni che si occupano di interrogare con linguaggio SQL il database:
+La gestione della connessione al database è affidata alla classe \emph{DBAccess} contenuta in \textit{connessione.php}, che oltre ad aprire la connessione al database contiene diverse funzioni che si occupano di interrogare attraverso il linguaggio SQL il database. \newline
+Le funzioni usate sono le seguenti:
 \begin{itemize}
-	\item \textbf{createUser:} Serve per la registrazione degli utenti, controlla che i valori inseriti abbiano una definita lunghezza minima e massima, che il nome utente non sia già registrato e inserisce nel database il nuovo utente;
-	\item \textbf{checkUser:} Se l'utente inserito è registrato permette la login,controlla anche se l'utente è un admin o meno;
+	\item \textbf{createUser:} Serve per la registrazione degli utenti, controlla che i valori inseriti abbiano una lunghezza predefinita, che il nome utente non sia già registrato e inserisce nel database il nuovo utente;
+	\item \textbf{checkUser:} Se l'utente inserito è registrato permette la login, controlla anche se l'utente è un admin o meno;
 	\item \textbf{alterAdminright:} toglie i privilegi di amministratore ad un admin;
-	\item \textbf{getUserlist:} ritorna una array associativo contenente i dati di tutti gli utenti;
+	\item \textbf{getUserlist:} ritorna un array associativo contenente i dati di tutti gli utenti nel database;
 	\item \textbf{getP:} ritorna un array associativo contenente i dati di tutti i prodotti nel database;
 	\item \textbf{ricerca:} questa funzione ritorna un array associativo contenente tutti i prodotti che in almeno uno dei campi nome,categoria o descrizione contiene una stringa data; 
-	\item \textbf{ricercaAvanzata:} ritorna un array associativo contenente i dati di tutti i prodotti di uno specifico tipo in ordine di prezzo;
+	\item \textbf{ricercaAvanzata:} ritorna un array associativo contenente i dati di tutti i prodotti di uno specifico tipo in ordine di prezzo o valutazione (crescenti o decrescenti);
 	\item \textbf{createProduct:} inserisce nel database un nuovo prodotto con i parametri dati;
 	\item \textbf{getProddata:} ritorna una array associativo contenente i dati di uno specifico prodotto;
 	\item \textbf{modifyProduct:} permette di modificare le informazioni riguardanti uno specifico prodotto contenuto nel database;
@@ -49,11 +50,12 @@ La gestione della connessione al database è affidata alla classe \emph{DBAccess
 \end{itemize}
 
 \paragraph{Controllo degli input} \Spazio
-Le funzioni che si occupano di controllare gli input dati dagli utilizzatori del sito sono raggruppate nel file \textit{controlli.php},le funzioni presenti sono:
+Le funzioni che si occupano di controllare gli input dati dagli utilizzatori del sito sono raggruppate nel file \textit{controlli.php}.\newline
+Le funzioni presenti sono:
 
 \begin{itemize}
-    \item \textbf{desc():} questa funzione controlla che il testo inserito come recensione sia conforme alle attese. Grazie all'utilizzo di una espressione regolare vengono accettati tutti i testi con punteggiatura la quale deve essere per forza preceduta da un testo.\newline
-    Questa funzione utilizza il passaggio di parametri per riferimento per cui avrà side effect sulle variabili utilizzate come parametri;
+    \item \textbf{desc():} questa funzione controlla che il testo inserito come recensione sia conforme alle attese. Grazie all'utilizzo di un' espressione regolare vengono accettati tutti i testi con punteggiatura solo se è preceduta da un testo.\newline
+    Questa funzione utilizza il passaggio di parametri per riferimento, per cui avrà side effect sulle variabili utilizzate come parametri;
     
     
     \item \textbf{sostituzione():} questa funzione per prima cosa utilizza la funzione php \emph{addslashes()} che restituisce una stringa con il carattere di backslash '\textbackslash' anteposto ai caratteri che richiedono il quoting nelle query dei database.
@@ -72,14 +74,15 @@ Le funzioni che si occupano di controllare gli input dati dagli utilizzatori del
     se non è così ritorna il valore booleano true che verrà inserito in una variabile che segnala l'errore.
     Questa funzione viene utilizzata per il controllo degli input dati dall'utente nella pagina di registrazione;
     
-    \item \textbf{checkUsername():} questa funzione controlla che la stringa inserita sia conforme ad essere utilizzata come username di un utente attraverso l'utilizzo di una espressione regolare;
+    \item \textbf{checkUsername():} questa funzione controlla che la stringa inserita sia conforme ad essere utilizzata come username di un utente attraverso l'utilizzo di un'espressione regolare;
 
-   \item \textbf{checkPassword():} questa funzione controlla che la stringa passata come parametro sia conforme ad essere utilizzata come password di un utente attraverso l'utilizzo di una espressione regolare.
+   \item \textbf{checkPassword():} questa funzione controlla che la stringa passata come parametro sia conforme ad essere utilizzata come password di un utente attraverso l'utilizzo di un' espressione regolare.
 
 \end{itemize}
 
 \paragraph{Gestione utente} \Spazio
-Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi chiudono il browser, grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account come lo storico degli acquisti;
+Per gestire gli utenti abbiamo utilizzato la variabile \$\_SESSION\{login\_user\} nella quale viene mantenuto l'username degli utenti che effettuano il login fino a quando questi non chiudono il browser.\newline
+Grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci è dunque possibile mostrare a ognuno il proprio carrello e le informazioni sul proprio account, come lo storico degli acquisti;
 inoltre l'utilizzo di questa variabile ha reso semplice il logout che viene effettuato attraverso i comandi \emph{session\_unset} e \emph{session\_destroy}.
 
 \subsubsection{Javascript}
