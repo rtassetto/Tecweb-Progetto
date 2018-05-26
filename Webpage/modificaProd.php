@@ -55,22 +55,37 @@
     </table>
     
     
-    <a href="adminproducts.php">Torna indietro</a>
 
 <form id="modificaProd" method="post" action="adminproducts.php">
-<label for="nome">Nome del Prodotto:</label> <input type="text" name="nome" value="<?php echo $y["nome"]?>"/>
+<div class="formslot">
+	<label for="nome">Nome del Prodotto:</label> 
+	<input type="text" id="nome" name="nome" value="<?php echo $y["nome"]?>"/>
+</div>
+<div class="formslot">
 <label for="categoria">Categoria:</label>
-<select name="categoria" selected="<?php echo $y["categoria"];?>">
+<select name="categoria" id="categoria" selected="<?php echo $y["categoria"];?>">
   <option value="monitor"  <?php if($y["categoria"]=="Monitor")echo "selected"; ?> >Monitor</option>
   <option value="hdd"  <?php if($y["categoria"]=="HDD")echo "selected"; ?> >HDD</option>
 </select>
-<label for="descrizione">Descrizione del Prodotto:</label> <textarea id="descarea" name="descrizione" rows="7" value="<?php echo $y["descrizione"];?>"></textarea>
-<label for="prezzo">Prezzo:</label><input type="text" name="prezzo" value="<?php echo $y["prezzo"]?>"/>
+</div>
+<div class="formslot">
+<label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" value="<?php echo $y["descrizione"];?>"></textarea>
+</div>
+<div class="formslot">
+<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" value="<?php echo $y["prezzo"]?>"/>
+</div>
+<div class="formslot">
 <input type="submit" name='<?php echo $y['id'];?>' value="Modifica"/>
+</div>
 </form>
+
+<a href="adminproducts.php">Torna indietro</a>
+
 <script>
-document.getElementById("descarea").value = "<?php echo $y["descrizione"]?>";
+document.getElementById("descrizione").value = "<?php echo $y["descrizione"]?>";
 </script>
+
+
 
 <?php
 	include "general/Footer.php";

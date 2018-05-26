@@ -290,14 +290,18 @@ HTML
 	font-size: 1em;
 	margin: auto;
 }
-#aggiuntaProd LABEL
+#aggiuntaProd LABEL, #modificaProd LABEL
 {
 	font-weight: bold;
 	display: block;
 }
-FORM#aggiuntaProd
+FORM#aggiuntaProd, #modificaProd
 {
 	text-align: center;
+}
+#searchResult
+{
+	margin-bottom:2em;
 }
 #nome
 {

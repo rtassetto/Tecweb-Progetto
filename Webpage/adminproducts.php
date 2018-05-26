@@ -56,6 +56,7 @@ else{
         <p> Ti trovi in: Home &#8594; Gestione sito &#8594; Aggiunta/Modifica prodotti </p> 
     </div>
 	<a href="adminmenu.php">Torna Indietro</a>
+	
 <h2>Aggiunta Prodotto</h2>
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
 <div class="formslot">
@@ -71,7 +72,7 @@ else{
 </div>
 <div class="formslot">
 <label for="categoria">Categoria:</label>
-<select id=categoria name="categoria" required>
+<select id="categoria" name="categoria" required>
   <option value="" selected></option>  
   <option value="monitor" required>Monitor</option>
   <option value="hdd" required>HDD</option>
