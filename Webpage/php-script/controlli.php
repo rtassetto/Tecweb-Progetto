@@ -20,30 +20,30 @@ function sostituzione(&$testo){
 
 function prezzo($p){
     if (!preg_match("/^[0-9]+$/",$p)) {
-        return 'errore';
+        return true;
     }
-    return 'ok';
+    return false;
 }
 
 function nomeProdotto($nome){
     if (!preg_match("/^[a-zA-Z0-9èòàì]+$/",$nome)) {
-        return 'errore';
+        return true;
     }
-    return 'ok';
+    return false;
 }
 
 function descProdotto($desc){
     if(!preg_match("/^([a-zA-Zèàéòù]+[ \.;,:!\-\?']*)+$/",$desc)) {
-        return 'errore';
+        return true;
     }
-    return 'ok';
+    return false;
 }
 
 function nomeBundle($nome){
     if (!preg_match("/^[a-zA-Z]+$/",$nome)) {
-        return 'errore';
+        return true;
     }
-    return 'ok';
+    return false;
 }
 
 function checkLength($str){

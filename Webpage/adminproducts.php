@@ -15,7 +15,7 @@ if (isset($_POST["aggiungi"])){
 	$prezzo=$_POST["prezzo"];
     $errPrezzo=prezzo($prezzo);
 	$categoria=$_POST["categoria"];
-    if($errPrezzo=='ok'&& $errNome=='ok'&& $errDesc=='ok'){
+    if($errPrezzo==false && $errNome==false && $errDesc==false){
 	$DB->createProduct($nome, $categoria, $descrizione, $prezzo);
     }
 }
@@ -64,7 +64,7 @@ else{
 	<input type="text" id="nome" name="nome" required/>
     <?php
    if (isset($_POST["aggiungi"])){
-       if($errNome=='errore'){
+       if($errNome==true){
            echo "<h5 class='red'>il nome può contenere solo lettere e valori numerici</h5>";
        }    
    }
@@ -82,7 +82,7 @@ else{
 <label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" required></textarea>
 <?php
    if (isset($_POST["aggiungi"])){
-       if($errDesc=='errore'){
+       if($errDesc==true){
            echo "<h5 class='red'>la descrizione non è corretta</h5>";
        }    
    }
@@ -92,7 +92,7 @@ else{
 <label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo"  required/>
 <?php
    if (isset($_POST["aggiungi"])){
-       if($errPrezzo=='errore'){
+       if($errPrezzo==true){
            echo "<h5 class='red'>il prezzo dev'essere un valore numerico</h5>";
        }    
    }

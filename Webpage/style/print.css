@@ -1,17 +1,15 @@
-html {
-    margin: 0;
-    padding: 0;
+footer {display: none;}
+img {display: none;}
+#menu {display: none;}
+#breadcrumb{display: none;}
+#advSearch {display: none;}
+#aggiungiCarrello {display: none;}
+a {
+    text-decoration: none;
+    color: black;
 }
+.dettaglio{display: none;}
+#acquista {display: none;}
+.button {display: none;}
+.infobs{width: 100%;}
 
-nav{
-    display:none;
-}
-#menu{
-	display:none;
-}
-#advSearch{
-	display:none;
-}
-.aggiungiCarrello{
-	display:none;
-}

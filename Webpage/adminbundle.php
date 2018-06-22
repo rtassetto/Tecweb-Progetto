@@ -17,11 +17,11 @@
         $descrizione=$_POST['descrizione'];
         $errDesc=descProdotto($descrizione);
         sostituzione($descrizione);
-        if($errDesc=='ok'&& $errNome='ok'){
+        if($errDesc==false && $errNome==false){
             $DB->creaB($nome,$descrizione);
             header("location:adminbundle.php?$nome=Modifica+bundle"); 
         }
-        if($errDesc=='errore'|| errNome=='errore'){
+        if($errDesc==true || errNome==true){
             $creazione=false;
         }
     }
@@ -83,14 +83,14 @@
             echo "<form method='post' action='adminbundle.php'>";
             echo "<div class='formslot'><label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'/>";
             if (isset($_POST["crea"])){
-                if($errNome=='errore'){
+                if($errNome==true){
                     echo "<h5 class='red'>il nome può contenere solo lettere e non può avere spazi</h5>";
                 }
             }
             echo "</div>";
             echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea>";
             if (isset($_POST["crea"])){
-                if($errDesc=='errore'){
+                if($errDesc==true){
                     echo "<h5 class='red'>la descrizione non è formata correttamente</h5>";
                 }
             }
