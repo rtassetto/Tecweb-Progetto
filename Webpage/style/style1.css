@@ -10,7 +10,23 @@
 .red
 {
 	color: red;
-    text-align: center;
+	text-align: center;
+}
+.dettRecensione
+{
+	background-color: #CCCCCC;
+	padding: 1%;
+}
+#author
+{
+	width: 48%;
+	float: left;
+}
+#timestamp
+{
+	width: 49%;
+	float: none;
+	margin-left: 50%;
 }
 #mobile
 {
@@ -155,12 +171,20 @@ FOOTER
 .imgdettagli IMG
 {
 	float: left;
-	width: 40%;
+	width: 35%;
+    border:1px solid #004D66;
+    margin-right:1%;
 }
 #europrezzo
 {
 	font-size: 1.5em;
 	font-weight: bold;
+}
+.dettInfo
+{
+	margin-left: 35%;
+    margin-bottom:1em;
+	
 }
 UL
 {
@@ -179,7 +203,6 @@ UL
 #breadcrumb
 {
 	margin: 1% auto;
-	/*border: 1px solid #0E46E3;*/
 	width: 100%;
 	background-color: #CCCCCC;
 }
@@ -301,7 +324,7 @@ FORM#aggiuntaProd, #modificaProd
 }
 #searchResult
 {
-	margin-bottom:2em;
+	margin-bottom: 2em;
 }
 #nome
 {
