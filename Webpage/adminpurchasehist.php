@@ -34,9 +34,9 @@ if($_SESSION['admin']!=true)
 				<th class='tablehead'>Compratore</th>
 				<th class='tablehead'>Prodotto</th>
 				<th class='tablehead'>Categoria</th>
-				<th class='tablehead'>Valutazione</th>
-				<th class='tablehead'>Id</th>
 				<th class='tablehead'>Data</th>
+                <th class='tablehead'>Valutazione</th>
+				<th class='tablehead'>Id</th>
 			<tr>
 		</thead>
 <?php	$query=$DB->getfullPH();
@@ -45,9 +45,9 @@ if($_SESSION['admin']!=true)
 				<td>".$result["compratore"]."</td>
 				<td>".$result["nome"]."</td>
 				<td>".$result["categoria"]."</td>
+                <td>".$result["data"]."</td>
 				<td>".$result["valutazione"]."</td>
 				<td>".$result["idordine"]."</td>
-				<td>".$result["data"]."</td>
 			  </tr>";
 	}
 	echo "</table>";

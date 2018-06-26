@@ -74,11 +74,23 @@ TH, TD
 	float: left;
 	width: 60%;
 }
+table
+{
+	margin:0 auto 2em auto;
+    border-collapse:collapse;
+}
 THEAD, .tablehead
 {
-	background: #4580E8;
-	color: white;
+	background: #CCCCCC;
+    border-color:#004D66;
 }
+table tr td,th {
+    border-color:#004D66;
+}
+table td{
+    padding:0.5em 1em;
+}
+
 .dettRecensione
 {
 	outline-style: outset;
@@ -322,10 +334,7 @@ FORM#aggiuntaProd, #modificaProd
 {
 	text-align: center;
 }
-#searchResult
-{
-	margin-bottom: 2em;
-}
+
 #nome
 {
 	width: 50%;

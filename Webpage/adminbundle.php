@@ -182,7 +182,7 @@
                 echo "<td>";
 				if($x["prezzo"]>0){
 					echo "<form method='post' action='adminbundle.php?$nome=Modifica+bundle'>";
-					echo "<input type='submit' name='$id' value='aggiungi al bundle'/>";
+					echo "<input type='submit' name='$id' value='Aggiungi al bundle'/>";
 				}
                 echo "</form>";
                 echo "</td>";
