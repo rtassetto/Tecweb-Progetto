@@ -1,0 +1,71 @@
+\section{Realizzazione}
+\subsection{Gerarchia dei File}
+nella cartella principale \textit{Webpage} sono contenuti i file php che contengono la struttura del sito e 4 cartelle:
+\begin{itemize}
+	\item \textbf{general:} contiene parti della strutturo del sito che sono presenti in più pagine;
+	\item \textbf{images:} contiene tutte le immagini presenti nel sito;
+	\item \textbf{php-script} contiene tutti i file che contengono varie funzioni utili al funzionamento del sito;
+	\item \textbf{style:} contiene tutti i file css che modellano la presentazione del sito.
+\end{itemize}
+\subsection{Struttura}
+La pagina e' stata scritta in HTML 5, la struttura del sito con questo standard non è moto diversa da come sarebbe stata con XHTML ma introduce dei tag semantici che abbiamo utilizzato come \emph{section}.\newline
+Il sito e' composto da pagine php, che presentano dati e interazioni diversi a seconda del tipo di utente o delle azioni svolte.
+Le nostre pagine sono:
+
+	
+ \subsubsection{Header.php:}\Spazio Non è una pagina ma un parte comune a tutte le pagine del sito che è stata salvata in un file php che viene richiamato con un require da ogni pagina. Questo file contiene la struttura HTML del menù di navigazione, che è costituito da un \emph{div} contenente un tag \emph{img}, un tag \emph{a} e un tag \emph{nav}:
+ \begin{itemize}
+ 	\item \emph{img} contiene il logo del sito;
+ 	\item il tag \emph{a} contiene 3 \emph{div} vuoti e serve ad ottenere un'area cliccabile che rimanda al menu nella versione mobile del sito; 
+ 	\item \emph{nav} contiene una lista (\emph{ul}) le cui voci (\emph{li}) contengono i link di navigazione del sito, inoltre l'ultimo tag \emph{li} contiene un \emph{form} utilizzato per la ricerca dei prodotti all'interno del sito. \newline
+ 	Siamo consapevoli del fatto che non è corretto inserire un \emph{form} annidato in un tag \emph{nav} tuttavia abbiamo utilizzato questa struttura perché ci ha aiutati nella fase di presentazione.
+ 	
+ \end{itemize}
+
+
+ \subsubsection{footer.php:} \Spazio è una parte comune a tutte le pagine del sito salvata in un file php che viene richiamato con un require da ogni pagina.
+ Questo file contiene la struttura HTML del footer che è costituito semplicemente da un tag \emph{footer} dentro al quale è annidato un tag \emph{p} contenente i nomi degli sviluppatori del sito. 
+ inoltre contiene la struttura del menù visibile solamente nella versione mobile del sito che è posizionata a fondo pagina perché vi si può accedere cliccando sull'icona del menù contenuta in \emph{Header.php}.
+	
+ \subsubsection{home.php:} \Spazio introduce gli utenti alle proposte del sito, mostrando i prodotti che sono stati più venduti nel sito e i Bundle, ovvero PC preassemblati divisi per fasce di prezzo forniti dagli amministratori per gli utenti meno preparati. \newline
+ La pagina è costituita da un \emph{div} principale contenente due tag \emph{section}, uno contiene i bundle forniti dal sito mentre l'altro contiene i tre prodotti più venduti. \newline
+ La \emph{section} che contiene i bundle è costituita a sua volta di tre \emph{div} che contengono tre diversi bundle, ognuno di questi \emph{div} contiene un tag \emph{a} per il nome, il link alla pagina del bundle e un \emph{div} per la descrizione.\newline
+ Invece la \emph{section} che contiene i prodotti più venduti ha al suo interno tre \emph{div} che contengono tre diversi prodotti, ognuno di questi \emph{div} contiene un tag \emph{div} di classe \emph{infobs} che a sua volta contiene un tag\emph{a} per il nome e il link alla pagina del prodotto, tre tag \emph{p}, uno per la categoria, uno per la valutazione e uno per il prezzo, inoltre allo stesso livello di annidamento di infobs vi è un tag \emph{div} in cui è contenuta l'immagine del prodotto.
+ 
+\subsubsection{prodotti.php:} \Spazio mostra la lista dei prodotti che sono disponibili nel sito dandone una descrizione parziale (i primi 200 caratteri), la categoria di appartenenza, la valutazione degli utenti che hanno già acquistato il prodotto ed il prezzo.\newline La pagina è costituita da una \emph{section} dove a sua volta sono contenuti dei \emph{div} "prodotto", ognuno dei quali contiene i vari \emph{div} che corrispondono alle informazioni relative al prodotto (Descrizione, Categoria, Prezzo e Valutazione) ed un'immagine del pezzo venduto. A questa pagina si accede direttamente dalla voce 'Prodotti' nel menù, oppure usando la barra di ricerca in alto a destra, che appunto visualizza tutti i risultati.\newline Nella pagina è inoltre disponibile una ricerca avanzata che permette di filtrare i risultati per prezzo o valutazione.\newline Cliccando sul nome del prodotto o sull'apposito link 'Vai al dettaglio' è possibile raggiungere la pagina di dettaglio del relativo prodotto.
+
+\subsubsection{productdetails.php:} \Spazio si accede a questa pagina cliccando sul nome di un prodotto oppure attraverso il link 'Vai al dettaglio'.\newline La pagina mostra la descrizione completa del prodotto e tutti gli altri dati già visti precedentemente in 'Prodotti'; visualizza inoltre le recensioni lasciate dagli utenti che hanno già acquistato tale prodotto.\newline La pagina contiene un pulsante che permette l'aggiunta del prodotto al carrello dell'utente. Se l'utente attuale è un'anonimo (quindi non è registrato o non ha effettuato il login) il pulsante non viene mostrato ed al suo posto compare un messaggio che invita ad effettuare il login o registrarsi per fare un'acquisto. 
+
+\subsubsection{carrello.php:} \Spazio in questa pagina vengono visualizzati i prodotti che un utente ha aggiunto al proprio carrello, e permette la conferma degli acquisti. La pagina come \emph{prodotti.php} si presenta come una lista di prodotti ed è costituita da una \emph{section} dove a sua volta sono contenuti dei \emph{div} "prodotto", ognuno dei quali contiene i vari \emph{div} che corrispondono alle informazioni relative al prodotto (Categoria, Prezzo e Quantità) ed un'immagine del pezzo venduto.
+
+\subsubsection{purchaseHistory.php:} \Spazio
+in questa pagina ogni utente può visualizzare gli acquisti fatti in passato, La pagina come \emph{prodotti.php} si presenta come una lista di prodotti ed è costituita da una \emph{section} dove a sua volta sono contenuti dei \emph{div} "prodotto", ognuno dei quali contiene i vari \emph{div} che corrispondono alle informazioni relative al prodotto (Categoria, Descrizione e Valutazione) ed un'immagine del pezzo acquistato.
+
+\subsubsection{account.php:} \Spazio serve a mostrare i dati relativi ad un account, e contiene il link alla pagina \textit{purchasehistory.php}.
+Tale pagina mostra tutti gli acquisti precedenti effettuati dall'utente, per un facile ricontrollo.
+
+\subsubsection{recensione.php:} \Spazio è possibile accedere a questa pagina da \textit{purchasehistory.php}. Da qui gli utenti possono inserire una recensione e una valutazione di un prodotto che hanno già acquistato.
+
+\subsubsection{bundledetails.php:} \Spazio 
+La pagina come \emph{prodotti.php} si presenta come una lista di prodotti ed è costituita da una \emph{section} dove a sua volta sono contenuti dei \emph{div} "prodotto", ognuno dei quali contiene i vari \emph{div} che corrispondono alle informazioni relative al prodotto (Categoria, Descrizione e Valutazione) ed un'immagine dei pezzi presenti all'interno del bundle.
+
+\subsubsection{register.php:} \Spazio pagina contenente un form con tre campi richiesti (Username, Password ed E-mail) che permette la creazione di un nuovo utente.
+
+\subsubsection{login.php:} \Spazio pagina contenente un form che permette agli utenti registrati di connettersi al sito. Se si connette un amministratore, viene reindirizzato alla pagina \textit{adminmenu.php}.
+
+\subsubsection{adminmenu.php:} \Spazio questa pagina presenta i link a tutti i tool di amministrazione. Questa e le pagine per gli admin, reindirizzano ad home qualora un utente non admin vi acceda.
+
+\subsubsection{adminproducts.php:} \Spazio permette la creazione di nuovi prodotti, o la modifica di esistenti, tramite la pagina \textit{modificaProd.php}.
+
+\subsubsection{adminaccounts.php:} \Spazio permette un accesso alla lista di tutti gli utenti del sito, con la possibilità  di promuovere o degradare gli altri utenti.
+
+\subsubsection{adminbundle.php}\Spazio in questa pagina è possibile creare nuovi bundle o modificarne di esistenti, inserendo quali prodotti ne fanno parte.
+
+\subsubsection{adminpurchasehist.php:} \Spazio presenta una lista di tutti gli acquisti che sono stati effettuati da tutti gli utenti del sito, per aiutare in caso di problemi con le transazioni.
+
+\subsubsection{404.php} \Spazio
+La pagina 404.php serve a reindirizzare qualora si cerchi di entrare in cartelle del sito, ad esempio quella delle immagini:un index.php reindirizza l'utente a questa pagina.
+
+
+Ogni pagina presenta la barra di navigazione nella parte superiore. Tale barra risulta diversa qualora il sito lo visiti un utente anonimo (per il quale appare l'opzione di effettuare il login), piuttosto che un utente registrato (che ha accesso ad account.php e veloce accesso al carrello) o un amministratore (che ottiene accesso alla gestione del sito (adminmenu.php), alla pagina del proprio account e relativi servizi da utente). Qualsiasi utente che ha effettuato il login (admin o meno) ha accesso alla voce Logout.
+

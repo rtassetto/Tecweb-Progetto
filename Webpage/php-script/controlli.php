@@ -10,12 +10,12 @@ function desc($rec,&$erroreR,&$errore){
 
 function sostituzione(&$testo){
                   $testo=addslashes($testo);
-                  $testo = str_replace ("à", "&agrave", $testo);
-                  $testo = str_replace ("è", "&egrave", $testo);
-                  $testo = str_replace ("è", "&eacute", $testo);
-                  $testo = str_replace ("ì", "&igrave", $testo);
-                  $testo = str_replace ("ò", "&ograve", $testo);
-                  $testo = str_replace ("ù", "&ugrave", $testo);
+                  $testo = str_replace ("à", "&agrave;", $testo);
+                  $testo = str_replace ("è", "&egrave;", $testo);
+                  $testo = str_replace ("è", "&eacute;", $testo);
+                  $testo = str_replace ("ì", "&igrave;", $testo);
+                  $testo = str_replace ("ò", "&ograve;", $testo);
+                  $testo = str_replace ("ù", "&ugrave;", $testo);
 }
 
 function prezzo($p){

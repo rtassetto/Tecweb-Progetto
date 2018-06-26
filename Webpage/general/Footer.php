@@ -2,13 +2,12 @@
         <p class="corsivo"> Developed by Lotto Matteo, Tassetto Riccardo, Zago Davide</p>
 
     </footer>
-<div name="mmenu" id="mobile">
-      
+<div id="mobile">
+      <a name="mm"></a>
         <nav>
-            
             <ul class="nodot">
                 <?php
-                echo '<a name="mm"></a>';
+                
                 echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
                 else {echo '<a href="home.php">Home</a></li>';}
                 
@@ -51,10 +50,10 @@
 				?>
             <!--</ul>-->
         <!--</nav>-->
-            <li id="searchBar">
+            <li class="searchBar">
             <form action="prodotti.php" method="get">
-                    <button id="searchButton" type="submit">Cerca</button>
-                    <input id="search" type="text" name="testo" placeholder="Cosa stai cercando?">
+                    <button class="submit" type="submit">Cerca</button>
+                    <input class="search" type="text" name="testo" placeholder="Cosa stai cercando?">
             </form> 
             </li>
             </ul>

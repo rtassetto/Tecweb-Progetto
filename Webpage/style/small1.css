@@ -86,7 +86,7 @@ BODY
 {
 	background-color: #CCCCCC;
 }
-#searchBar
+.searchBar
 {
 	float: none;
 	width: 100%;
@@ -94,7 +94,7 @@ BODY
 	padding-right: 0;
 	text-align: center;
 }
-#searchButton
+.submit
 {
 	color: white;
 	background-color: #004D66;
