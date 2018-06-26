@@ -37,9 +37,11 @@ $product=$DB->getProddata($_GET['id']);
         <h1 class='nome'>".$product['nome']."</h1>
         <div class='infoprodotto'>
 		<div class='imgdettagli'><img src='images/".$_GET['id'].".jpg' alt='immagine del prodotto'></div>
+        <div class='dettInfo'>
 		<div class='categoria'><p>Categoria di prodotto:".$product['categoria']."</p></div>
         <div class='descrizione'><p>".$product['descrizione']."</p></div>
 		<div class='valutazione'><p>Valutazione : ".$product['valutazione']."/5</p></div>
+        </div>
 		</div>";
 	//$product[]
     if(isset($_SESSION['login_user'])){
@@ -66,11 +68,11 @@ $product=$DB->getProddata($_GET['id']);
         foreach($reviews as $result){
 			$Userevalue=$result['voto']*16;
             echo "<div class='dettRecensione'>
-                  <div>Autore: ".$result['username']."</div>
-                  <div>Data: ".$result['data']."</div>
+                  <div id='author'>Autore: ".$result['username']."</div>
+                  <div id='timestamp'>Data: ".$result['data']."</div>
                   <div>Valutazione: ".$result['voto']."
 				  </div>
-                  <p>".$result['review']."</p>
+                  <p>'".$result['review']."'</p>
                   </div>";
         }
 	}
