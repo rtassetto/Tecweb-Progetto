@@ -17,10 +17,10 @@
         <nav>
             <ul class="nodot">
                 <?php
-                echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/home.php"){echo '<a>Home</a></li>';}
+                echo '<li class="voci">';if($_SERVER["PHP_SELF"]=="/dzago/home.php"){echo '<a>Home</a></li>';}
                 else {echo '<a href="home.php">Home</a></li>';}
                 echo '<li class="voci">';
-                if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/prodotti.php"){echo '<a>Prodotti</a></li>';}
+                if($_SERVER["PHP_SELF"]=="/dzago/prodotti.php"){echo '<a>Prodotti</a></li>';}
                 else {echo '<a href="prodotti.php">Prodotti</a></li>';}
 				
                 
@@ -28,29 +28,29 @@
                 $isA=$_SESSION['admin'];   
                 if(!$isA){
 					echo '<li class="voci">';
-                    if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/account.php"){echo '<a>Account</a></li>';}
+                    if($_SERVER["PHP_SELF"]=="/dzago/account.php"){echo '<a>Account</a></li>';}
                     else{echo '<a href="account.php">Account</a></li>'; }
 				    echo '<li class="voci">';
-                    if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/carrello.php"){echo '<a>Carrello</a></li>';}
+                    if($_SERVER["PHP_SELF"]=="/dzago/carrello.php"){echo '<a>Carrello</a></li>';}
                     else{echo '<a href="carrello.php">Carrello</a></li>';}
 
                 }
                 else{
                     echo '<li class="voci">';
-                    if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/account.php"){echo '<a>Account</a></li>';}
+                    if($_SERVER["PHP_SELF"]=="/dzago/account.php"){echo '<a>Account</a></li>';}
                     else{echo '<a href="account.php">Account</a></li>'; }
                     echo '<li class="voci">';
-                    if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/adminmenu.php"){echo '<a>Gestione sito</a></li>';}
+                    if($_SERVER["PHP_SELF"]=="/dzago/adminmenu.php"){echo '<a>Gestione sito</a></li>';}
                     else{echo '<a href="adminmenu.php">Gestione sito</a></li>';} 
                 }
                 echo '<li class="voci"><a href="php-script/logout.php">Logout</a></li>';
 				}
 				else{
                 echo '<li class="voci">';
-                if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/login.php"){echo '<a>Login</a></li>';}
+                if($_SERVER["PHP_SELF"]=="/dzago/login.php"){echo '<a>Login</a></li>';}
                 else{echo '<a href="login.php">Login</a></li>'; }
                 echo '<li class="voci">';
-                if($_SERVER["PHP_SELF"]=="/Tecweb-Progetto/Webpage/register.php"){echo '<a>Registrati</a></li>';}
+                if($_SERVER["PHP_SELF"]=="/dzago/register.php"){echo '<a>Registrati</a></li>';}
                 else{echo '<a href="register.php">Registrati</a></li>'; }
 				
 				
