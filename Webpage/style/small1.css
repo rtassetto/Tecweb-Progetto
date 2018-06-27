@@ -31,8 +31,9 @@ BODY
 {
 	display: block;
 	margin-top: 5em;
-	padding-bottom: 20em;
 	padding-top: 2em;
+    height: 100vh;
+    background-color: #CCCCCC;
 }
 .comp
 {
@@ -87,11 +88,6 @@ BODY
 {
 	width: 50%;
     margin-left: 30%;
-}
-#mobile
-{
-	background-color: #CCCCCC;
-	height: 50vh;
 }
 .searchBar
 {
