@@ -28,7 +28,8 @@ if($_SESSION['admin']!=true)
     </div>
 	<a href="adminmenu.php">Torna Indietro</a>
 	<h1>Storia degli Acquisti</h1>
-	<table>
+	<div class="tabelle">
+    <table>
 		<thead>
 			<tr>
 				<th class='tablehead'>Compratore</th>
@@ -50,7 +51,7 @@ if($_SESSION['admin']!=true)
 				<td>".$result["idordine"]."</td>
 			  </tr>";
 	}
-	echo "</table>";
+	echo "</table></div>";
 ?>
 
 

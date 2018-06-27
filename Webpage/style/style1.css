@@ -76,6 +76,7 @@ TH, TD
 }
 TABLE
 {
+	overflow-x: auto;
 	margin: 0 auto 2em auto;
 	border-collapse: collapse;
 }
@@ -169,18 +170,17 @@ FOOTER
 	background-color: #CCCCCC;
 	overflow: hidden;
 }
-
-#aiuto{
-    position:fixed;
-    top:90%;
-    left:90%;
-    display:block;
+#aiuto
+{
+	position: fixed;
+	top: 90%;
+	left: 90%;
+	display: block;
 }
-
-#torna{
-    width:3.5em;
+#torna
+{
+	width: 3.5em;
 }
-
 .img IMG
 {
 	min-width: 80%;
@@ -219,7 +219,7 @@ UL
 .voci
 {
 	display: block;
-	padding: 1em;
+	padding: 1em 3%;
 	text-align: center;
 	float: left;
 	height: 100%;

@@ -97,7 +97,7 @@
             echo "</div>";
             echo "<div class='formslot'><input type='submit' name='crea' value='Crea bundle'/></div>";
             echo "</form>";
-         echo '<table class="products">';
+         echo '<div class="tabelle"><table class="products">';
             echo '<thead>';
                 echo '<tr>';
                echo  '<th>Nome Bundle</th>';
@@ -123,7 +123,7 @@
                 echo "</td>";
                 echo "</tr>";
                }
-            echo "</table>";
+            echo "</table></div>";
             echo "</div>";
         }
          if($creazione){

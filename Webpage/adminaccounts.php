@@ -41,7 +41,8 @@ else{
 	<h1>Gestione Accounts</h1>
 <?php
 	$accountab=$DB->getUserlist();
-	echo "<table>
+	echo "<div class='tabelle'>
+            <table>
 			<tbody>
 				<tr class='tablehead'>
 					<th class='tablehead'>Username</th>
@@ -69,7 +70,7 @@ else{
 		else{echo "<td></td>";}
 	}
 	echo "</tbody>
-		</table>";
+		</table></div>";
 	
 	include "general/Footer.php";
 ?>

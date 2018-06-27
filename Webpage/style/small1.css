@@ -57,6 +57,11 @@ BODY
 {
 	width: 100%;
 }
+
+.tabelle{
+    overflow: auto;
+}
+
 #LatestBundles
 {
 	float: none;
