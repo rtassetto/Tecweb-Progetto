@@ -76,6 +76,12 @@ else{
   <option value="" selected></option>  
   <option value="monitor" required>Monitor</option>
   <option value="hdd" required>HDD</option>
+  <option value="ssd" required>SSD</option>
+  <option value="ram" required>RAM</option>
+  <option value="motherboard" required>Motherboard</option>
+  <option value="cpu" required>CPU</option>
+  <option value="gpu" required>GPU</option>
+  <option value="mouse" required>Mouse</option>
 </select>
 </div> 
 <div class="formslot">

@@ -66,6 +66,12 @@
 <select name="categoria" id="categoria" selected="<?php echo $y["categoria"];?>">
   <option value="monitor"  <?php if($y["categoria"]=="Monitor")echo "selected"; ?> >Monitor</option>
   <option value="hdd"  <?php if($y["categoria"]=="HDD")echo "selected"; ?> >HDD</option>
+    <option value="ssd"  <?php if($y["categoria"]=="SSD")echo "selected"; ?> >SSD</option>
+    <option value="ram"  <?php if($y["categoria"]=="RAM")echo "selected"; ?> >RAM</option>
+    <option value="motherboard"  <?php if($y["categoria"]=="Motherboard")echo "selected"; ?> >Motherboard</option>
+    <option value="cpu"  <?php if($y["categoria"]=="CPU")echo "selected"; ?> >CPU</option>
+    <option value="gpu"  <?php if($y["categoria"]=="GPU")echo "selected"; ?> >GPU</option>
+    <option value="mouse"  <?php if($y["categoria"]=="Mouse")echo "selected"; ?> >Mouse</option>
 </select>
 </div>
 <div class="formslot">

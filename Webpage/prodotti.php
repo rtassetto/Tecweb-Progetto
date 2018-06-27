@@ -96,6 +96,12 @@
             <option value='' selected>Scegli categoria</option>
             <option value="Monitor">Monitor</option>
             <option value="HDD">HDD</option>
+            <option value="HDD">SSD</option>
+            <option value="HDD">RAM</option>
+            <option value="HDD">Motherboard</option>
+            <option value="HDD">CPU</option>
+            <option value="HDD">GPU</option>
+            <option value="HDD">Mouse</option>
         </select> 
         </div>
         <div id="ordinaOrd">

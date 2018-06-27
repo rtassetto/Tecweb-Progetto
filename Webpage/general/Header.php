@@ -2,7 +2,7 @@
 </div>
 <div id="aiuto">
     <a href="#top">
-        <img id="torna" src="images/torna_su.png" alt="Torna su">     
+        <img id="torna" src="images/su.png" alt="Torna su">     
     </a>
 </div>
 <div id="menu">
