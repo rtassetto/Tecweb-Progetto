@@ -16,6 +16,10 @@ BODY
 {
 	display: none;
 }
+#aiuto
+{
+	left: 45%;
+}
 .comp DIV
 {
 	width: 2em;
@@ -85,6 +89,7 @@ BODY
 #mobile
 {
 	background-color: #CCCCCC;
+	padding-bottom: 10em;
 }
 .searchBar
 {

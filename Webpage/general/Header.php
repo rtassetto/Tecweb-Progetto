@@ -1,4 +1,11 @@
-    <div id="menu">
+<div id="top">
+</div>
+<div id="aiuto">
+    <a href="#top">
+        <img id="torna" src="images/torna_su.png" alt="Torna su">     
+    </a>
+</div>
+<div id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>     
         <a class="area" href="#mm">
         <div class="comp">
