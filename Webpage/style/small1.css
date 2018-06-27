@@ -6,7 +6,8 @@ HTML
 BODY
 {
 	margin: 0;
-	padding: 0;
+	padding: 0 1%;
+    width: 98%;
 }
 #logo
 {
@@ -30,7 +31,7 @@ BODY
 {
 	display: block;
 	margin-top: 5em;
-	padding-bottom: 5em;
+	padding-bottom: 20em;
 	padding-top: 2em;
 }
 .comp
@@ -85,11 +86,12 @@ BODY
 .imgbs
 {
 	width: 50%;
+    margin-left: 30%;
 }
 #mobile
 {
 	background-color: #CCCCCC;
-	padding-bottom: 10em;
+	height: 50vh;
 }
 .searchBar
 {
