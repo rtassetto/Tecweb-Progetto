@@ -70,6 +70,9 @@ require "general/Header.php";
                 echo "</div>";
                 echo "<div class='imgc'><img src='images/$id.jpg' alt='immagine prodotto'/>";
                 echo "</div>";
+                echo "<form method='post' action='carrello.php'>";
+                echo "<input type='submit' name='$id' value='Rimuovi dal carrello'/>";
+                echo "</form>";
                 echo "</div>";
             }
         ?>   

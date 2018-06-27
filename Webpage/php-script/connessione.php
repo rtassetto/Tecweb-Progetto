@@ -250,7 +250,8 @@
 	public function getProdReview($id){
 		$query = mysqli_query($this->connessione,"SELECT username,review,voto,data
 												  FROM Recensione
-												  WHERE prodotto='$id'");
+												  WHERE prodotto='$id'
+                                                  ORDER BY data");
 		if(mysqli_num_rows($query)==0)
 			return false;
 		for($i=0;$i<mysqli_num_rows($query);$i++){
