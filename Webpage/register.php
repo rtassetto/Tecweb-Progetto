@@ -11,8 +11,9 @@ if(isset($_POST["submit"])){
 	   $email=$_POST["email"];
        $errUser=(checkLength($username) || checkUsername($username));
        $errPass=(checkLength($password) || checkPassword($password));
+       $errmail=checkMail($email);
        $result=0;
-       if(!$errUser && !$errPass){
+       if(!$errUser && !$errPass && !$errmail){
        $result=$DB->createUser($username, $password, $email);
 	       if ($result==0){
                header("location: home.php");
@@ -51,10 +52,10 @@ if(isset($_POST["submit"])){
 		</ul>
 	</div>
    <div class="form"> 
-    <form name="registration" class="login-form" action="register.php" method="POST" onsubmit="return validateForm()">
+    <form name="registration" class="login-form" action="register.php" method="POST">
         <div class="user">
         <label for="username">Username:</label>
-        <input type="text" id='username' class="nome_utente" name="username" maxlength="20"/>
+        <input type="text" id='username' class="nome_utente" name="username" maxlength="20" onblur="checkUser()"/>
         </div>
         <div class="psw">
         <label for="password">Password:</label>
@@ -69,42 +70,33 @@ if(isset($_POST["submit"])){
         <input type="submit" class="form_submit" name="submit" value="Registra"/>
     </form>
     </div>
+    <div id="errori">
     <?php
         if (isset($_POST["submit"])){
             if($errUser){
-                echo "<h5 class='red'>l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri</h5>";
+                echo "<h5 id='usernameerr' class='red'>l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri</h5>";
             }    
+            else{
+                echo "<h5 id='usernameerr' class='red'></h5>";
+            }
         }
         if (isset($_POST["submit"])){
             if($errPass){
-                echo "<h5 class='red'>la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi</h5>";
+                echo "<h5 id='passerr' class='red'>la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi</h5>";
+            }   
+            else{
+                echo "<h5 id='passerr' class='red'></h5>";
+            }
+        }
+        if (isset($_POST["submit"])){
+            if($errmail){
+                echo "<h5 id='emailerr' class='red'>inserisci una email corretta</h5>";
             }    
+            else{
+                echo "<h5 id='emailerr' class='red'></h5>";
+            }
         }
    ?>
-<?php
-    
-
- if(isset($_POST["submit"])){
-	switch ($result){
-		case 1 : echo "<p>Esiste gi&agrave; un utente con username &ldquo;".$username." &rdquo;</p>";
-				 break;
-		case 2 : echo "<p>C'&egrave; stato un problema nella registrazione dell'utente. Riprovare pi&uacute; tardi</p>";
-				 break;
-		case 3 : echo "<p>I dati non sono corretti. Assicurarsi che i dati siano nei limiti consentiti.</p>";
-				 break;
-		case 4 : echo "<p>L'indirizzo e-mail &ldquo;".$email." &rdquo; &egrave; gi&agrave; associato ad un utente.</p>";
-				 break;
-	}
- }
-?>
-
-
-    <div id="errori">
-		<ul>
-			<li id="usernameerr"></li>
-			<li id="passworderr"></li>
-			<li id="emailerr"></li>
-		</ul>
 	</div>
 <?php
 	require "general/Footer.php";

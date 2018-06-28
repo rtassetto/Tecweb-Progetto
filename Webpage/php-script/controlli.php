@@ -55,14 +55,21 @@ function checkLength($str){
 }
 
 function checkUsername($user){
-    if(!preg_match("/^[a-zA-Z0-9èàéòù]+$/",$user)) {
+    if(!preg_match("/^[a-zA-Z0-9]*$/",$user)) {
         return true;
     }
     return false;
 }
 
 function checkPassword($pass){
-    if(!preg_match("/^[a-zA-Z0-9èàéòù@#\$\%\&\-]+$/",$pass)) {
+    if(!preg_match("/^[a-zA-Z0-9@#\$\%\&\-]+$/",$pass)) {
+        return true;
+    }
+    return false;
+}
+
+function checkMail($mail){
+    if(!preg_match("/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]{2,3}$/",$mail)) {
         return true;
     }
     return false;
