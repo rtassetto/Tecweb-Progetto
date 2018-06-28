@@ -1,8 +1,8 @@
 <?php
 
 function desc($rec,&$erroreR,&$errore){
-    if (!preg_match("/^([a-zA-Zèàéòù]+[ \.;,:!\-\?'&#]*)+$/",$rec)) {
-                  $erroreR = "solo lettere e spazi possono essere inseriti in questo campo";
+    if (!preg_match("/[a-zA-Zèàéòù]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$rec)) {
+                  $erroreR = "Scrivi una recensione sensata";
                   $errore=true;
                   
               }

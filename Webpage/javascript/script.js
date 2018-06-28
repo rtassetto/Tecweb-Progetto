@@ -43,4 +43,13 @@ function checkMail(){
     else{document.getElementById("emailerr").innerHTML="";}
 }
 
+function checkRec(){
+    var rec = document.getElementById("rec").value;
+    var pattern = new RegExp("^([a-zA-Zèàéòù]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$");
+    if(!pattern.test(rec)){
+        document.getElementById("descerr").innerHTML="Scrivi una recensione sensata";
+    }
+    else{document.getElementById("descerr").innerHTML="";}
+}
+
 

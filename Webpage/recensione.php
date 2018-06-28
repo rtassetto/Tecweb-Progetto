@@ -77,7 +77,7 @@ session_start();
         ?>
         <h3>Scrivi una recensione per il prodotto <?php echo $nome;?></h3>
         <form class='login-form' method="post" action="recensione.php">
-        <textarea id="rec" name="rec" rows="10" cols="50" required><?php if(isset($_POST["rec"])) echo $_POST["rec"]; ?></textarea><span><?php echo $erroreR;?></span>
+        <textarea id="rec" name="rec" rows="10" cols="50" oninput="checkRec()" required><?php if(isset($_POST["rec"])) echo $_POST["rec"]; ?></textarea>
         <p>Immetti la tua valutazione</p>
         <input type="radio" name="voto"  value="1" required><span>1</span>
         <input type="radio" name="voto"  value="2" required><span>2</span>
@@ -86,6 +86,10 @@ session_start();
         <input type="radio" name="voto"  value="5" required><span>5</span> 
         <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>"  value="Aggiungi recensione"/>
         </form>
+        <div class="errori">
+            <h5 id="descerr" class="red"><?php echo $erroreR;?></h5>
+        </div>
+        
         
     </div>
     
