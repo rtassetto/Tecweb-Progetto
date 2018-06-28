@@ -55,47 +55,44 @@ if(isset($_POST["submit"])){
     <form name="registration" class="login-form" action="register.php" method="POST">
         <div class="user">
         <label for="username">Username:</label>
-        <input type="text" id='username' class="nome_utente" name="username" maxlength="20" onblur="checkUser()"/>
+        <input type="text" id='username' class="nome_utente" name="username" maxlength="20" oninput="checkUser()"/>
         </div>
         <div class="psw">
         <label for="password">Password:</label>
-        <input type="password" id='password' class="pass" name="password" maxlength="20"/>
+        <input type="password" id='password' class="pass" name="password" maxlength="20" oninput="checkPass()"/>
         </div>
 
         <div id="mail">
         <label for="email">E-mail:</label>
-        <input type="email" id='email' name="email" maxlength="50"/>
+        <input type="email" id='email' name="email" maxlength="50" oninput="checkMail()"/>
         </div>
 
         <input type="submit" class="form_submit" name="submit" value="Registra"/>
     </form>
     </div>
-    <div id="errori">
+    <div class="errori">
     <?php
+        echo "<h5 id='usernameerr' class='red'>";
         if (isset($_POST["submit"])){
             if($errUser){
-                echo "<h5 id='usernameerr' class='red'>l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri</h5>";
+                echo "l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri";
             }    
-            else{
-                echo "<h5 id='usernameerr' class='red'></h5>";
-            }
         }
+        echo "</h5>";
+        echo "<h5 id='passerr' class='red'>";
         if (isset($_POST["submit"])){
             if($errPass){
-                echo "<h5 id='passerr' class='red'>la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi</h5>";
+                echo "la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi";
             }   
-            else{
-                echo "<h5 id='passerr' class='red'></h5>";
-            }
         }
+        echo "</h5>";
+        echo "<h5 id='emailerr' class='red'>";
         if (isset($_POST["submit"])){
             if($errmail){
-                echo "<h5 id='emailerr' class='red'>inserisci una email corretta</h5>";
+                echo "inserisci una email corretta";
             }    
-            else{
-                echo "<h5 id='emailerr' class='red'></h5>";
-            }
         }
+        echo "</h5>";
    ?>
 	</div>
 <?php
