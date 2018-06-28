@@ -29,7 +29,7 @@ function checkPass(){
     var pass = document.getElementById("password").value;
     var pattern = new RegExp("^[a-zA-Z0-9@#\$\%\&\-]+$");
     if(!pattern.test(pass)|| pass.length<6 || pass.length>20){
-        document.getElementById("passerr").innerHTML="l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri";
+        document.getElementById("passerr").innerHTML="la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi";
     }
     else{document.getElementById("passerr").innerHTML="";}
 }
@@ -38,9 +38,9 @@ function checkMail(){
     var mail = document.getElementById("email").value;
     var pattern = new RegExp("^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]{2,3}$")
     if(!pattern.test(mail)){
-        document.getElementById("passerr").innerHTML="inserisci una email corretta";
+        document.getElementById("emailerr").innerHTML="inserisci una email corretta";
     }
-    else{document.getElementById("passerr").innerHTML="";}
+    else{document.getElementById("emailerr").innerHTML="";}
 }
 
 
