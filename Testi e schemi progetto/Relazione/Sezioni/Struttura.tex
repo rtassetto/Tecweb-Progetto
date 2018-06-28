@@ -10,6 +10,7 @@ nella cartella principale \textit{Webpage} sono contenuti i file php che conteng
 \subsection{Struttura}
 La pagina e' stata scritta in HTML 5, la struttura del sito con questo standard non è moto diversa da come sarebbe stata con XHTML ma introduce dei tag semantici che abbiamo utilizzato come \emph{section}.\newline
 Il sito e' composto da pagine php che hanno la funzione di produrre dinamicamente il codice html che verrà letto dai browser.\newline
+In questa sezione sono inserite alcune immagini di parti del sito che abbiamo ritenuto fondamentali per l'esperienza dell'utente, alcune immagini non sono state inserite perché ritenute troppo simili ad altre già inserite. 
 
 
 \subsubsection{Barra di navigazione} 
@@ -20,6 +21,12 @@ Ogni pagina ha una barra di navigazione, le voci presenti in questa barra varian
 \item se l'utente è un admin vedrà le voci home, prodotti , account, gestione sito e logout.
 \end{itemize}
 grazie a questa barra di navigazione è possibile accedere a tutte le pagine che servono all'utente per navigare nel sito e all'amministratore per gestirlo. Oltre alle voci in questa barra è presente una barra di ricerca, inserendo una parola chiave questa viene cercata all'interno del nome del tipo e della descrizione dei prodotti presenti nel sito e l'utente viene indirizzato alla pagina dei prodotti contenente solamente i prodotti cercati.
+\begin{figure}[h]
+	\label{navbarz} 
+	\centering 
+	\includegraphics[width=1\textwidth]{immagini/navbar.png}
+	\caption{Esempio di barra di navigazione per utenti non autenticati} 
+\end{figure}
 
 \subsubsection{Home}
 La home è composta da due sezioni:
@@ -27,19 +34,57 @@ La home è composta da due sezioni:
 	\item La sezione dei bundle proposti dal sito che sono tre(High,Medium,Low) divisi per fasce di prezzo, ognuno di questi è un insieme di pezzi che compongono un pc, nella schermata home però ne viene visualizzato solo una breve descrizione e il nome dal quale si potrà accedere alla pagina del bundle specifico.
 	\item La sezione best sellers mostra i tre pezzi più venduti, per ciascuno di questi prodotti vengono visualizzati nome, categoria, valutazione, prezzo e un'immagine, cliccando sul nome è possibile raggiungere la pagina di dettaglio del prodotto.
 \end{itemize}
+\begin{figure}[h!]
+	\label{bundle} 
+	\centering 
+	\includegraphics[width=0.6\textwidth]{immagini/Bundle.png}
+	\caption{Sezione bundle nella schermata home} 
+	\mbox{} \\
+\end{figure}
+\begin{figure}[h!]
+	\label{bs} 
+	\centering 
+	\includegraphics[width=0.6\textwidth]{immagini/bs.png}
+	\caption{Sezione best seller nella schermata home} 
+\end{figure}
+\mbox{} \\
 
 \subsubsection{Prodotti}
 La pagina dei prodotti mostra tutti i prodotti presenti nel sito sotto forma di lista, è stata scelta una lista piuttosto che una tabella per una questione di accessibilità infatti i contenuti sono più leggibili e lo rimangono su schermi più piccoli come quelli degli smartphone.\newline
 Per ogni prodotto viene visualizzato nome, categoria, descrizione parziale(i primi 200 caratteri), valutazione, prezzo e una immagine, da questa pagina viene inoltre fornita la possibilità di andare alla pagina di dettaglio del prodotto cliccando su vai al dettaglio oppure sul nome del prodotto.\newline
-In questa pagina inoltre è possibile effettuare una ricerca avanzata selezionando la categoria del prodotto e il tipo di ordinamento che si vuole per la lista.
+In questa pagina inoltre è possibile effettuare una ricerca avanzata selezionando la categoria del prodotto e il tipo di ordinamento che si vuole per la lista. \mbox{} \\ \mbox{} \\ \Spazio
+
+\begin{figure}[h!]
+	\label{prodotti} 
+	\centering 
+	\includegraphics[width=0.9\textwidth]{immagini/prodotti.png}
+	\caption{pagina dei prodotti} 
+\end{figure}
+\mbox{} \\
 
 \subsubsection{Dettaglio Prodotto}
 La pagina di dettaglio del prodotto mostra il nome, categoria, descrizione completa, valutazione, prezzo e l'immagine di un prodotto specifico.\newline
 Attraverso il pulsante \emph{Aggiungi al carrello} è possibile aggiungere il prodotto visualizzato al proprio carrello per poi procedere al suo acquisto.\newline
 In questa pagina è inoltre possibile visualizzare le recensioni date da chi ha già comprato il prodotto.
 
+\begin{figure}[h!]
+	\label{dettaglio} 
+	\centering 
+	\includegraphics[width=0.9\textwidth]{immagini/dettaglio.png}
+	\caption{pagina di dettaglio di un prodotto con una recensione annessa} 
+\end{figure}
+\mbox{} \\
+
 \subsubsection{Login}
 La pagina di login permette agli utenti non autenticati di autenticarsi e in caso non abbiano una account da la possibilità di passare alla pagina di registrazione.
+
+\begin{figure}[h!]
+	\label{login} 
+	\centering 
+	\includegraphics[width=0.6\textwidth]{immagini/login.png}
+	\caption{form per la login} 
+\end{figure}
+\mbox{} \\
 
 \subsubsection{Registrazione}
 La pagina di registrazione da la possibilità ad un utente non registrato di registrarsi e mette in chiaro i vari vincoli sui campi da riempire.

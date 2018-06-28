@@ -116,6 +116,7 @@ TABLE TD
 }
 FOOTER
 {
+    background-color: #CCCCCC;
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
@@ -291,10 +292,6 @@ A:link
 {
 	width: 100%;
 	overflow: auto;
-}
-FOOTER
-{
-	background-color: #CCCCCC;
 }
 .searchBar
 {
