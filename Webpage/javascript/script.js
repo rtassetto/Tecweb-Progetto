@@ -63,7 +63,7 @@ function checkDesc(){
 
 function checkNome(){
     var nome = document.getElementById("nome").value;
-    var pattern = new RegExp("^[a-zA-Z0-9èòàì]+$");
+    var pattern = new RegExp("^[a-zA-Z0-9èòàì ]+$");
     if(!pattern.test(nome)){
         document.getElementById("nomeerr").innerHTML="Il nome può contenere solo lettere e valori numerici";
     }
@@ -79,4 +79,11 @@ function checkPrezzo(){
     else{document.getElementById("prezzoerr").innerHTML="";}
 }
 
-
+function checkBundle(){
+    var nome = document.getElementById("nome").value;
+    var pattern = new RegExp("^[a-zA-Z]+$");
+    if(!pattern.test(nome)){
+        document.getElementById("nomeerr").innerHTML="il nome può contenere solo lettere e non può avere spazi";
+    }
+    else{document.getElementById("nomeerr").innerHTML="";}
+}

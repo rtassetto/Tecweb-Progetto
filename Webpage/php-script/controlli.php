@@ -26,7 +26,7 @@ function prezzo($p){
 }
 
 function nomeProdotto($nome){
-    if (!preg_match("/^[a-zA-Z0-9èòàì]+$/",$nome)) {
+    if (!preg_match("/^[a-zA-Z0-9èòàì ]+$/",$nome)) {
         return true;
     }
     return false;

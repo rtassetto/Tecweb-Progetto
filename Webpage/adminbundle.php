@@ -81,21 +81,28 @@
         if(!$creazione){
             echo "<div id='creaBundle'>";
             echo "<form method='post' action='adminbundle.php'>";
-            echo "<div class='formslot'><label for='nome'>Nome Bundle:</label><input type='text' id='nome' name='nome'/>";
+            echo "<div class='formslot'><label for='nome'>Nome Bundle:</label>
+            <input type='text' id='nome' name='nome' oninput='checkBundle()' />";
+            echo "<h5 id='nomeerr' class='red'>";
             if (isset($_POST["crea"])){
                 if($errNome==true){
-                    echo "<h5 class='red'>il nome può contenere solo lettere e non può avere spazi</h5>";
+                    echo "il nome può contenere solo lettere e non può avere spazi";
                 }
             }
+            echo '</h5>';
             echo "</div>";
-            echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label><textarea id='descrizione' name='descrizione'></textarea>";
+            echo "<div class='formslot'><label for='descrizione'>Descrizione Bundle:</label>
+            <textarea id='descrizione' name='descrizione' oninput='checkDesc()'></textarea>";
+            echo "<h5 id='descerr' class='red'>";
             if (isset($_POST["crea"])){
                 if($errDesc==true){
-                    echo "<h5 class='red'>la descrizione non è formata correttamente</h5>";
+                    echo "la descrizione non è formata correttamente";
                 }
             }
+            echo "</h5>";
             echo "</div>";
-            echo "<div class='formslot'><input type='submit' name='crea' value='Crea bundle'/></div>";
+            echo "<div class='formslot'>
+            <input type='submit' name='crea' value='Crea bundle'/></div>";
             echo "</form>";
          echo '<div class="tabelle"><table class="products">';
             echo '<thead>';

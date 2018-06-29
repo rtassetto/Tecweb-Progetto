@@ -2,6 +2,7 @@
 <?php 
     session_start();
     require "php-script/connessione.php";
+    require "php-script/controlli.php";
     $DB=new DBAccess();
     $conn=$DB->openc();
     if($_SESSION['admin']!=true){
@@ -11,6 +12,25 @@
         foreach($P as $x){
             $z=$x['id'];
             if(isset($_POST[$z])){
+                $y=$x;
+            }
+        }
+        foreach($P as $x){
+            $w=$x['id'];
+            if(isset($_POST[$w.'mod'])){
+                $nome=$_POST["nome"];
+                $errNome=nomeProdotto($nome);
+                sostituzione($nome);
+	            $descrizione=$_POST["descrizione"];
+                $errDesc=descProdotto($descrizione);
+                sostituzione($descrizione);
+	            $prezzo=$_POST["prezzo"];
+                $errPrezzo=prezzo($prezzo);
+	            $categoria=$_POST["categoria"];
+                if($errPrezzo==false && $errNome==false && $errDesc==false){
+                    $DB->modifyProduct($w,$nome,$categoria,$descrizione,$prezzo);
+                    header("location: adminproducts.php");
+                }
                 $y=$x;
             }
         }
@@ -55,10 +75,19 @@
     
     
 
-<form id="modificaProd" method="post" action="adminproducts.php">
+<form id="modificaProd" method="post" action="modificaProd.php">
 <div class="formslot">
 	<label for="nome">Nome del Prodotto:</label> 
-	<input type="text" id="nome" name="nome" value="<?php echo $y["nome"]?>"/>
+	<input type="text" id="nome" name="nome" oninput="checkNome()" value="<?php echo $y["nome"]?>"/>
+    <?php
+    echo "<h5 id='nomeerr' class='red'>";
+   if (isset($_POST[$y['id'].'mod'])){
+       if($errNome==true){
+           echo "Il nome può contenere solo lettere e valori numerici";
+       }  
+    echo "</h5>";
+   }
+   ?>
 </div>
 <div class="formslot">
 <label for="categoria">Categoria:</label>
@@ -74,13 +103,33 @@
 </select>
 </div>
 <div class="formslot">
-<label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" value="<?php echo $y["descrizione"];?>"></textarea>
+<label for="descrizione">Descrizione del Prodotto:</label> 
+<textarea id='descrizione' name="descrizione" rows="7" oninput="checkDesc()" value="<?php echo $y["descrizione"];?>"></textarea>
+<?php
+   echo "<h5 id='descerr' class='red'>";
+   if (isset($_POST[$y['id'].'mod'])){
+       if($errDesc==true){
+           echo "La descrizione non è corretta";
+       }    
+   }
+    echo "</h5>";
+?>
 </div>
 <div class="formslot">
-<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" value="<?php echo $y["prezzo"]?>"/>
+<label for="prezzo">Prezzo:</label>
+<input type="text" id='prezzo' name="prezzo" oninput="checkPrezzo()" value="<?php echo $y["prezzo"]?>"/>
+<?php
+     echo "<h5 id='prezzoerr' class='red'>";
+   if (isset($_POST[$y['id'].'mod'])){
+       if($errPrezzo==true){
+           echo "Il prezzo dev'essere un valore numerico";
+       }    
+   }
+   echo "</h5>";
+?>
 </div>
 <div class="formslot">
-<input type="submit" name='<?php echo $y['id'];?>' value="Modifica"/>
+<input type="submit" name='<?php echo $y['id'].'mod'; ?>' value="Modifica"/>
 </div>
 </form>
 
