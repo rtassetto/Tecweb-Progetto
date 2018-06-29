@@ -86,8 +86,8 @@ Grazie a questa variabile l'username dei vari utenti è noto in ogni pagina e ci
 inoltre l'utilizzo di questa variabile ha reso semplice il logout che viene effettuato attraverso i comandi \emph{session\_unset} e \emph{session\_destroy}.
 
 \subsubsection{Javascript}
-Javascript è stato utilizzato per controllare a lato client se gli input degli utenti sono corretti o meno e per notificare all'utente la riuscita di operazioni come 
-\emph{Acquista}, \emph{Aggiungi al carrello} e \emph{Inserimento recensioni}.
+Javascript è stato utilizzato per effettuare controlli sugli input degli utenti senza che intervenga il server, infatti tutti i controlli dell'input fatti su php vengono rifatti da javascript e tramite l'evento JS \emph{oninput} viene controllato a tempo reale se l'input è corretto o meno.\newline
+Questi controlli permettono di ridurre le chiamate al server.
 
 \subsubsection{Database MySQL}
 I dati relativi al nostro sito sono stati salvati in un database relazionale SQL, queste sono le tabelle che costituiscono il database:

@@ -1,7 +1,7 @@
 <?php
 
 function desc($rec,&$erroreR,&$errore){
-    if (!preg_match("/[a-zA-Zèàéòù0-9]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$rec)) {
+    if (!preg_match("/([a-zA-Zèàéòù0-9]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$rec)) {
                   $erroreR = "Scrivi una recensione sensata";
                   $errore=true;
                   
