@@ -64,7 +64,7 @@
 }
 TH, TD
 {
-	border: 2px solid black;
+	border: 2px solid #004D66;
 	width: 20%;
 	padding: 1% 0;
 	text-align: center;
@@ -85,7 +85,7 @@ THEAD, .tablehead
 	background: #CCCCCC;
 	border-color: #004D66;
 }
-TABLE TR TD, TH
+TABLE TD, TH
 {
 	border-color: #004D66;
 }

@@ -42,7 +42,6 @@
                     <th>Descrizione</th>
                     <th>Valutazione</th>
                     <th>Prezzo</th>
-					<th></th>
                 </tr>
             </thead>
             <tr>
