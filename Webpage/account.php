@@ -32,9 +32,9 @@ echo "<p>Benvenuto, ".$_SESSION['login_user']." !</p>";
 $Dati=$DB->getUser($_SESSION['login_user']);
 echo "<p>Email utente: ".$Dati['email']."</p>
 	  <p>Creato il: ".$Dati['datacreazione']."</p>";
-echo "<a href='purchasehistory.php'>Storia degli Acquisti</a>
+echo "<div id='options'><a href='purchasehistory.php'>Storia degli Acquisti</a>
 	  <a href='carrello.php'>Carrello</a>
-	  <a href='logout.php'>Logout</a>";
+	  <a href='logout.php'>Logout</a></div>";
 
 ?>
 
