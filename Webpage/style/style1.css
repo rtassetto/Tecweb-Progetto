@@ -116,7 +116,7 @@ TABLE TD
 }
 FOOTER
 {
-    background-color: #CCCCCC;
+	background-color: #CCCCCC;
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
@@ -274,6 +274,12 @@ A:hover
 A:link
 {
 	color: #004D66;
+}
+#options A
+{
+	display: block;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
 }
 #pass
 {
