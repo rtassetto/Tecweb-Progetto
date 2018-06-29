@@ -1,10 +1,5 @@
 <div id="top">
 </div>
-<div id="aiuto">
-    <a href="#top">
-        <img id="torna" src="images/su.png" alt="Torna su">     
-    </a>
-</div>
 <div id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>     
         <div class="area">    

@@ -154,7 +154,7 @@
 					echo "Prezzo: ".$x["prezzo"]."€";}
 				echo "</div>";
                 echo "</div>";
-                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
+                echo "<div class='img'><img src='images/$id.jpg' alt='".$x["nome"]."'/>";
                 echo "</div>";
                 echo "<div class='dettaglio'><p><a href='productdetails.php?id=".$x["id"]."'>Vai al dettaglio</a></p>";
                 echo "</div>";

@@ -2,6 +2,11 @@
         <p class="corsivo"> Developed by Lotto Matteo, Tassetto Riccardo, Zago Davide</p>
 
     </footer>
+<div id="aiuto">
+    <a href="#top">
+        <img id="torna" src="images/su.png" alt="Torna su">     
+    </a>
+</div>
 <div id="mobile">
       <a name="mm"></a>
         <nav>
