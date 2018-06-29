@@ -1,7 +1,7 @@
 <?php
 
 function desc($rec,&$erroreR,&$errore){
-    if (!preg_match("/[a-zA-Zèàéòù]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$rec)) {
+    if (!preg_match("/[a-zA-Zèàéòù0-9]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$rec)) {
                   $erroreR = "Scrivi una recensione sensata";
                   $errore=true;
                   
@@ -33,7 +33,7 @@ function nomeProdotto($nome){
 }
 
 function descProdotto($desc){
-    if(!preg_match("/^([a-zA-Zèàéòù]+[ \.;,:!\-\?']*)+$/",$desc)) {
+    if(!preg_match("/^([a-zA-Zèàéòù]+[ ]*[ \.;,:!\-\?'&#]{0,1}[ ]*)+$/",$desc)) {
         return true;
     }
     return false;

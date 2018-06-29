@@ -61,12 +61,14 @@ else{
 <form id="aggiuntaProd" method="post" action="adminproducts.php">
 <div class="formslot">
 	<label for="nome">Nome del Prodotto:</label> 
-	<input type="text" id="nome" name="nome" required/>
+	<input type="text" id="nome" name="nome" oninput="checkNome()" required/>
     <?php
+    echo "<h5 id='nomeerr' class='red'>";
    if (isset($_POST["aggiungi"])){
        if($errNome==true){
-           echo "<h5 class='red'>il nome può contenere solo lettere e valori numerici</h5>";
-       }    
+           echo "Il nome può contenere solo lettere e valori numerici";
+       }  
+    echo "</h5>";
    }
    ?>
 </div>
@@ -76,26 +78,38 @@ else{
   <option value="" selected></option>  
   <option value="monitor" required>Monitor</option>
   <option value="hdd" required>HDD</option>
+  <option value="ssd" required>SSD</option>
+  <option value="ram" required>RAM</option> 
+  <option value="motherboard" required>Motherboard</option> 
+  <option value="cpu" required>CPU</option> 
+  <option value="gpu" required>GPU</option> 
+  <option value="mouse" required>Mouse</option>
+     
 </select>
 </div> 
 <div class="formslot">
-<label for="descrizione">Descrizione del Prodotto:</label> <textarea id='descrizione' name="descrizione" rows="7" required></textarea>
+<label for="descrizione">Descrizione del Prodotto:</label> 
+<textarea id='descrizione' name="descrizione" rows="7" oninput="checkDesc()" required></textarea>
 <?php
+   echo "<h5 id='descerr' class='red'>";
    if (isset($_POST["aggiungi"])){
        if($errDesc==true){
-           echo "<h5 class='red'>la descrizione non è corretta</h5>";
+           echo "La descrizione non è corretta";
        }    
    }
+    echo "</h5>";
    ?>
 </div>
 <div class="formslot">
-<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo"  required/>
+<label for="prezzo">Prezzo:</label><input type="text" id='prezzo' name="prezzo" oninput="checkPrezzo()" required/>
 <?php
+     echo "<h5 id='prezzoerr' class='red'>";
    if (isset($_POST["aggiungi"])){
        if($errPrezzo==true){
-           echo "<h5 class='red'>il prezzo dev'essere un valore numerico</h5>";
+           echo "Il prezzo dev'essere un valore numerico";
        }    
    }
+   echo "</h5>";
 ?>
 </div>
 <input type="submit" name="aggiungi" value="Crea"/>
