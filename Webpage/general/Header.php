@@ -7,13 +7,15 @@
 </div>
 <div id="menu">
         <img id="logo" src="images/logo.png" alt="Logo sito"/>     
-        <a class="area" href="#mm">
-        <div class="comp">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="area">    
+            <a href="#mm">
+            <div class="comp">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            </a>
         </div>
-        </a>
         <nav>
             <ul class="nodot">
                 <?php

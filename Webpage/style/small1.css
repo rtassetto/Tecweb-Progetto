@@ -30,6 +30,10 @@ BODY
 {
 	display: none;
 }
+.area
+{
+	display: block;
+}
 #aiuto
 {
 	left: 45%;

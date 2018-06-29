@@ -171,6 +171,10 @@ FOOTER
 	background-color: #CCCCCC;
 	overflow: hidden;
 }
+.area
+{
+	display: none;
+}
 #aiuto
 {
 	position: fixed;
