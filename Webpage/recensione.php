@@ -72,20 +72,22 @@ session_start();
         $user=$_SESSION['login_user'];
         $isPresent=$DB->checkR($id,$user); 
         if($isPresent){
-            echo "<h2 class='red'>Hai già inserito una recensione per questo prodotto, se inserisci un'altra recensione la precedente verrà sostituita.</h2>";
+            echo "<p class='red'>Hai già inserito una recensione per questo prodotto, se inserisci un'altra recensione la precedente verrà sostituita.</p>";
         }
         ?>
-        <h3>Scrivi una recensione per il prodotto <?php echo $nome;?></h3>
+        <h1>Scrivi una recensione per il prodotto <?php echo $nome;?></h1>
         <form class='login-form' method="post" action="recensione.php">
         <textarea id="rec" name="rec" rows="10" cols="50" oninput="checkRec()" required><?php if(isset($_POST["rec"])) echo $_POST["rec"]; ?></textarea>
-        <p>Immetti la tua valutazione</p>
-        <input type="radio" name="voto"  value="1" required><span>1</span>
-        <input type="radio" name="voto"  value="2" required><span>2</span>
-        <input type="radio" name="voto"  value="3" required><span>3</span>
-        <input type="radio" name="voto"  value="4" required><span>4</span>
-        <input type="radio" name="voto"  value="5" required><span>5</span> 
+        <fieldset>
+		<legend>Immetti la tua valutazione</legend>
+        <input type="radio" name="voto"  id="scoreone" value="1" required><label for="scoreone">1</label>
+        <input type="radio" name="voto"  id="scoretwo" value="2" required><label for="scoretwo">2</label>
+        <input type="radio" name="voto"  id="scorethree" value="3" required><label for="scorethree">3</label>
+        <input type="radio" name="voto"  id="scorefour" value="4" required><label for="scorefour">4</label>
+        <input type="radio" name="voto"  id="scorefive" value="5" required><label for="scorefive">5</label>
         <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>"  value="Aggiungi recensione"/>
-        </form>
+        </fieldset>
+		</form>
         <div class="errori">
             <h5 id="descerr" class="red"><?php echo $erroreR;?></h5>
         </div>

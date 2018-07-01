@@ -3,6 +3,11 @@ HTML
 	margin: 0;
 	padding: 0;
 }
+.login-form
+{
+	width: 80%;
+	min-width: auto;
+}
 .imgdettagli IMG
 {
 	width: 75%;

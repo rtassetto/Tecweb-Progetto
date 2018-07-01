@@ -7,6 +7,11 @@
 	width: 20%;
 	border: 1px solid #CCCCCC;
 }
+TEXTAREA
+{
+	resize: none;
+	max-width: 100%;
+}
 .red
 {
 	color: red;
@@ -243,6 +248,7 @@ UL
 	border: 1px solid #004D66;
 	margin: 2em auto 0 auto;
 	background-color: #CCCCCC;
+	min-width: 20em;
 }
 .user
 {
