@@ -8,9 +8,9 @@ nella cartella principale \textit{Webpage} sono contenuti i file php che conteng
 	\item \textbf{style:} contiene tutti i file css che modellano la presentazione del sito.
 \end{itemize}
 \subsection{Struttura}
-La pagina e' stata scritta in HTML 5, la struttura del sito con questo standard non è moto diversa da come sarebbe stata con XHTML ma introduce dei tag semantici che abbiamo utilizzato come \emph{section}.\newline
+La pagina e' stata scritta in HTML 5, la struttura del sito con questo standard non è moto diversa da come sarebbe stata con XHTML ma introduce dei tag semantici che abbiamo utilizzato, come \emph{section}.\newline
 Il sito e' composto da pagine php che hanno la funzione di produrre dinamicamente il codice html che verrà letto dai browser.\newline
-In questa sezione sono inserite alcune immagini di parti del sito che abbiamo ritenuto fondamentali per l'esperienza dell'utente, alcune immagini non sono state inserite perché ritenute troppo simili ad altre già inserite. 
+In questa sezione sono inserite alcune immagini di parti del sito che abbiamo ritenuto fondamentali per l'esperienza dell'utente, alcune immagini non sono state inserite perché ritenute troppo simili ad altre già presenti. 
 
 
 \subsubsection{Barra di navigazione} 
@@ -20,7 +20,7 @@ Ogni pagina ha una barra di navigazione, le voci presenti in questa barra varian
 \item Se l'utente è registrato vedrà le voci home, prodotti, account, carrello e logout;
 \item se l'utente è un admin vedrà le voci home, prodotti , account, gestione sito e logout.
 \end{itemize}
-grazie a questa barra di navigazione è possibile accedere a tutte le pagine che servono all'utente per navigare nel sito e all'amministratore per gestirlo. Oltre alle voci in questa barra è presente una barra di ricerca, inserendo una parola chiave questa viene cercata all'interno del nome del tipo e della descrizione dei prodotti presenti nel sito e l'utente viene indirizzato alla pagina dei prodotti contenente solamente i prodotti cercati.
+grazie a questa barra di navigazione è possibile accedere a tutte le pagine che servono all'utente per navigare nel sito e all'amministratore per gestirlo. Oltre alle voci in questa barra è presente una barra di ricerca, inserendo una parola chiave questa viene cercata all'interno del nome della categoria e della descrizione dei prodotti presenti nel sito e l'utente viene indirizzato alla pagina dei prodotti contenente solamente i prodotti cercati.
 \begin{figure}[h]
 	\label{navbarz} 
 	\centering 
@@ -50,9 +50,10 @@ La home è composta da due sezioni:
 \mbox{} \\
 
 \subsubsection{Prodotti}
-La pagina dei prodotti mostra tutti i prodotti presenti nel sito sotto forma di lista, è stata scelta una lista piuttosto che una tabella per una questione di accessibilità infatti i contenuti sono più leggibili e lo rimangono su schermi più piccoli come quelli degli smartphone.\newline
-Per ogni prodotto viene visualizzato nome, categoria, descrizione parziale(i primi 200 caratteri), valutazione, prezzo e una immagine, da questa pagina viene inoltre fornita la possibilità di andare alla pagina di dettaglio del prodotto cliccando su \emph{Vai al dettaglio} oppure sul nome del prodotto.\newline
-In questa pagina inoltre è possibile effettuare una ricerca avanzata selezionando la categoria del prodotto e il tipo di ordinamento che si vuole per la lista. \mbox{} \\ \mbox{} \\ \Spazio
+La pagina dei prodotti mostra tutti i prodotti presenti nel sito sotto forma di lista, è stata scelta una lista piuttosto che una tabella per una questione di accessibilità, infatti i contenuti sono più leggibili e lo rimangono su schermi più piccoli come quelli degli smartphone.\newline
+Per ogni prodotto viene visualizzato nome, categoria, descrizione parziale(i primi 200 caratteri), valutazione, prezzo e una immagine.\newline
+ Da questa pagina viene inoltre fornita la possibilità di andare alla pagina di dettaglio del prodotto cliccando su \emph{Vai al dettaglio} oppure sul nome del prodotto.\newline
+ Inoltre è possibile effettuare una ricerca avanzata selezionando la categoria del prodotto e il tipo di ordinamento che si vuole per la lista. \mbox{} \\ \mbox{} \\ \Spazio
 
 \begin{figure}[h!]
 	\label{prodotti} 
@@ -65,7 +66,7 @@ In questa pagina inoltre è possibile effettuare una ricerca avanzata selezionan
 \subsubsection{Dettaglio Prodotto}
 La pagina di dettaglio del prodotto mostra il nome, categoria, descrizione completa, valutazione, prezzo e l'immagine di un prodotto specifico.\newline
 Attraverso il pulsante \emph{Aggiungi al carrello} è possibile aggiungere il prodotto visualizzato al proprio carrello per poi procedere al suo acquisto.\newline
-In questa pagina è inoltre possibile visualizzare le recensioni date da chi ha già comprato il prodotto.
+In questa pagina è inoltre possibile visualizzare le recensioni date da chi ha già acquistato il prodotto.
 
 \begin{figure}[h!]
 	\label{dettaglio} 
@@ -76,7 +77,7 @@ In questa pagina è inoltre possibile visualizzare le recensioni date da chi ha 
 \mbox{} \\
 
 \subsubsection{Login}
-La pagina di login permette agli utenti non autenticati di autenticarsi e in caso non abbiano una account da la possibilità di passare alla pagina di registrazione.
+La pagina di login permette agli utenti non autenticati di autenticarsi e in caso non abbiano un account, dà la possibilità di passare alla pagina di registrazione tramite l'apposito link.
 
 \begin{figure}[h!]
 	\label{login} 
@@ -87,23 +88,26 @@ La pagina di login permette agli utenti non autenticati di autenticarsi e in cas
 \mbox{} \\
 
 \subsubsection{Registrazione}
-La pagina di registrazione da la possibilità ad un utente non registrato di registrarsi e mette in chiaro i vari vincoli sui campi da riempire.
+La pagina di registrazione dà la possibilità ad un utente non registrato di registrarsi e mette in chiaro i vari vincoli sui campi da riempire.
 
 \subsubsection{Account}
-La pagina di gestione dell'account permette all'utente di visualizzare informazioni sul suo account ovvero nome utente, e-mail e data di creazione dell'account e permette di accedere allo storico degli acquisti e al carrello, permette inoltre di effettuare il logout.
+La pagina di gestione dell'account permette all'utente di visualizzare informazioni sul suo account ovvero nome utente, e-mail e data di creazione dell'account e permette di accedere allo storico degli acquisti e al carrello.\newline
+Permette inoltre di effettuare il logout.
 
 \subsubsection{Carrello}
-Nella pagina \emph{Carrello} vengono visualizzati tutti i prodotti che sono stati selezionati dall'utente durante la sua navigazione, per ogni prodotto viene mostrato il nome, la quantità, una valutazione e il prezzo, è inoltre possibile rimuovere il prodotto dal carrello.\newline
-Alla fine della lista dei prodotti del carrello viene visualizzato il prezzo totale ed è presente il tasto per acquistare il contenuto del carrello, visto che questo è un progetto didattico la gestione del pagamento non viene fatta e tutti gli articoli passano direttamente nello storico degli acquisti.
+Nella pagina \emph{Carrello} vengono visualizzati tutti i prodotti che sono stati inseriti dall'utente durante la sua navigazione, per ogni prodotto viene mostrato il nome, la quantità, la valutazione e il prezzo; è possibile rimuovere il prodotto dal carrello.\newline
+Alla fine della lista dei prodotti del carrello viene visualizzato il prezzo totale ed è presente il tasto per acquistare il contenuto del carrello.\newline
+ Visto che questo è un progetto didattico la gestione del pagamento non viene fatta e tutti gli articoli passano direttamente nello storico degli acquisti.
 
 \subsubsection{Storico acquisti}
 Nella pagina \emph{Storico acquisti} vengono visualizzati in una lista tutti i prodotti acquistati dall'utente, per ogni prodotto viene visualizzato il nome, la categoria, una breve descrizione, la valutazione e un'immagine, inoltre cliccando sul pulsante aggiungi recensione l'utente viene indirizzato alla pagina per aggiungere una recensione al prodotto.
 
 \subsubsection{Aggiunta recensione}
-La pagina di aggiunta recensione da la possibilità di inserire una recensione di un prodotto che l'utente ha acquistato inserendo la valutazione e un testo valido che descriva l'esperienza con il prodotto.
+La pagina di aggiunta recensione dà la possibilità di inserire una recensione di un prodotto che l'utente ha acquistato inserendo la valutazione e un testo valido che descriva l'esperienza con il prodotto.
 
 \subsubsection{Gestione Sito}
-Questa pagina è visibile solo agli admin ed ha la funzionalità di indirizzare gli admin alle pagine per apportare modifiche al sito, la pagina è composta da una lista di quattro voci:
+Questa pagina è visibile solo agli admin ed ha la funzionalità di indirizzare gli admin alle pagine per apportare modifiche al sito.\newline
+ La pagina è composta da una lista di quattro voci:
 \begin{itemize}
 	\item aggiunta/modifica prodotti;
 	\item gestione account;
@@ -113,18 +117,21 @@ Questa pagina è visibile solo agli admin ed ha la funzionalità di indirizzare 
 
 \subsubsection{aggiunta/modifica prodotti}
 Questa pagina è visibile solo agli admin e serve ad aggiungere al database dei prodotti oppure a modificare quelli già esistenti.\newline
-L'aggiunta viene fatta tramite un form dove vanno inseriti nome,categoria, descrizione e prezzo del prodotto, l'immagine invece va inserita nella cartella images del sito con nome [id].png dove [id] è il numero identificativo del prodotto, visto che gli id sono un campo \emph{AutoIncrement} nel database basterà aggiungere uno all'id più grande.\newline
-per la modifica invece bisogna cliccare il tasto modifica prodotto sulla riga della tabella del prodotto che si vuole modificare e modificare i campi del form che verrà caricato.\newline
-I prodotti in questa pagina vengono visualizzati in una tabella, abbiamo fatto ciò perché secondo noi risulta più sintetica, la sua visualizzazione su mobile però non è facile da consultare comunque un admin userà il sito sempre tramite desktop e per questo abbiamo deciso di lasciare la visualizzazione dei prodotti in forma tabellare.
+L'aggiunta viene fatta tramite un form dove vanno inseriti nome,categoria, descrizione e prezzo del prodotto, l'immagine invece va inserita nella cartella images del sito con nome [id].png dove [id] è il numero identificativo del prodotto. Visto che gli id sono un campo \emph{AutoIncrement} nel database, basterà incrementare il nuovo valore di 1 rispetto all'id più grande presente.\newline
+Per la modifica invece bisogna cliccare il tasto Modifica prodotto sulla riga della tabella del prodotto che si vuole modificare e modificare i campi del form che verrà caricato.\newline
+I prodotti in questa pagina vengono visualizzati in una tabella; abbiamo fatto ciò perché risulta tutto più sintetico e leggibile.\newline
+Siamo consapevoli che la visualizzazione da mobile ne può risentire ma essendo una parte del sito alla quale hanno accesso solo gli admin, un qualsiasi admin che intende apportare modifiche lo farà tramite desktop.
+Questa scelta non influisce in alcun modo con l'esperienza di un utente.
 
 \subsubsection{gestione account}
 In questa pagina vengono visualizzati tutti gli account presenti nel database del sito sotto forma di tabella e cliccando il tasto "cambia privilegi" è possibile far diventare un utente comune un admin e vice versa.
 
 \subsubsection{aggiunta/modifica bundle}
 Questa pagina è visibile solo agli admin e serve ad aggiungere dei bundle al database oppure a modificarli o rimuoverli.
-Per aggiungere bundle è presente un form nel quale va inserito il nome e la descrizione e una volta premuto il tasto crea viene data la possibilità di aggiungere i prodotti al bundle cliccando il pulsante aggiungi della riga del prodotto che si vuole aggiungere.\newline
-Per modificare un bundle invece bisogna premere il tasto modifica bundle delle riga del bundle che si vuole modificare, verranno così mostrate due tabelle una per i prodotti presenti nel bundle e una per i prodotti presenti nel sito, premendo su aggiungi prodotto, i prodotti vengono aggiunti alla tabella del bundle mentre cliccando su \emph{rimuovi} questo viene tolto dal bundle.\newline
-Per rimuovere un bundle basta cliccare \emph{elimina bundle} sulla tabella iniziale che mostra i nomi dei vari bundle.
+Per aggiungere bundle è presente un form nel quale va inserito il nome e la descrizione e una volta premuto il tasto Crea viene data la possibilità di aggiungere i prodotti al bundle cliccando il pulsante Aggiungi corrispondente alla riga del prodotto che si vuole aggiungere.\newline
+Per modificare un bundle invece bisogna premere il tasto Modifica bundle corrispondente alla riga del bundle che si vuole modificare; verranno così mostrate due tabelle, una per i prodotti presenti nel bundle e una per i prodotti presenti nel sito.\newline
+ Premendo su Aggiungi prodotto, i prodotti vengono aggiunti alla tabella del bundle mentre cliccando su Rimuovi questo viene tolto dal bundle.\newline
+Per rimuovere un bundle basta cliccare Elimina bundle sulla tabella iniziale che mostra i nomi dei vari bundle.
 
 \subsubsection{Storico acquisti globale}
 Questa pagina è visibile solo agli admin e mostra tutti gli acquisti effettuati sul sito sotto forma di tabella, le informazioni riportate sono:
