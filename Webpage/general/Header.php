@@ -1,7 +1,7 @@
 <div id="top">
 </div>
 <div id="menu">
-        <img id="logo" src="images/logo.png" alt="Logo sito"/>     
+        <img id="logo" src="images/logo.png" alt="Logo BuyTech"/>     
         <div class="area">    
             <a href="#mm">
             <div class="comp">
@@ -56,9 +56,9 @@
             <!--</ul>-->
         <!--</nav>-->
             <li class="searchBar">
-            <form action="prodotti.php" method="get">
+            <form action="prodotti.php" method="get" role="search">
                     <button  class="submit" type="submit">Cerca</button>
-                    <input class="search" type="text" name="testo" placeholder="Cosa stai cercando?">
+                    <input aria-label="Casella di Ricerca" class="search" type="text" name="testo" placeholder="Cosa stai cercando?">
             </form> 
             </li>
             </ul>

@@ -66,7 +66,7 @@ include "general/Header.php";
                 echo "Valutazione: ".$x["valutazione"]."/5";
                 echo "</div>";
                 echo "</div>";
-                echo "<div class='img'><img src='images/$id.jpg' alt='immagine prodotto'/>";
+                echo "<div class='img'><img src='images/$id.jpg' alt='".$x["nome"]."'/>";
                 echo "</div>";
                 echo "<div class='button'>";
                 echo "<form method='post' action='recensione.php'>";

@@ -56,7 +56,7 @@
             <!--</ul>-->
         <!--</nav>-->
             <li class="searchBar">
-            <form action="prodotti.php" method="get">
+            <form action="prodotti.php" method="get" role='search'>
                     <button class="submit" type="submit">Cerca</button>
                     <input class="search" type="text" name="testo" placeholder="Cosa stai cercando?">
             </form> 

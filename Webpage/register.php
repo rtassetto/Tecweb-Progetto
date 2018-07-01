@@ -51,8 +51,8 @@ if(isset($_POST["submit"])){
 			<li>Il campo &ldquo;E-mail &rdquo; deve contenere un indirizzo e-mail valido.</li>
 		</ul>
 	</div>
-   <div class="form"> 
-    <form name="registration" class="login-form" action="register.php" method="POST">
+   <div class="form" > 
+    <form name="registration" class="login-form" action="register.php" method="POST" role="form">
         <div class="user">
         <label for="username">Username:</label>
         <input type="text" id='username' class="nome_utente" name="username" maxlength="20" oninput="checkUser()"/>

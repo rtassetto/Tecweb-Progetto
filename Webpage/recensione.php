@@ -76,7 +76,7 @@ session_start();
         }
         ?>
         <h1>Scrivi una recensione per il prodotto <?php echo $nome;?></h1>
-        <form class='login-form' method="post" action="recensione.php">
+        <form class='login-form' method="post" action="recensione.php" aria-label="Inserisci recensione">
         <textarea id="rec" name="rec" rows="10" cols="50" oninput="checkRec()" required><?php if(isset($_POST["rec"])) echo $_POST["rec"]; ?></textarea>
         <fieldset>
 		<legend>Immetti la tua valutazione</legend>

@@ -135,7 +135,7 @@
                 $id=$x['id'];
                 echo "<div class='prodotto'>";
                 echo "<div class='nome'>";
-                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
+                echo "<a id='".$x["nome"]."' href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
                 echo "</div>";
                 echo "<div class='info'>";
                 echo "<div class='categoria'>";
@@ -156,7 +156,7 @@
                 echo "</div>";
                 echo "<div class='img'><img src='images/$id.jpg' alt='".$x["nome"]."'/>";
                 echo "</div>";
-                echo "<div class='dettaglio'><p><a href='productdetails.php?id=".$x["id"]."'>Vai al dettaglio</a></p>";
+                echo "<div class='dettaglio'><p><a aria-label='Dettagli di ".$x["nome"]."' href='productdetails.php?id=".$x["id"]."'>Vai al dettaglio</a></p>";
                 echo "</div>";
                 echo "</div>";
             }
