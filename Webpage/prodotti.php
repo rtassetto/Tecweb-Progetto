@@ -96,17 +96,17 @@
             <option value='' selected>Scegli categoria</option>
             <option value="Monitor">Monitor</option>
             <option value="HDD">HDD</option>
-            <option value="ssd" required>SSD</option>
-            <option value="ram" required>RAM</option> 
-            <option value="motherboard" required>Motherboard</option> 
-            <option value="cpu" required>CPU</option> 
-            <option value="gpu" required>GPU</option> 
-            <option value="mouse" required>Mouse</option>
+            <option value="ssd" >SSD</option>
+            <option value="ram" >RAM</option> 
+            <option value="motherboard" >Motherboard</option> 
+            <option value="cpu" >CPU</option> 
+            <option value="gpu" >GPU</option> 
+            <option value="mouse" >Mouse</option>
         </select> 
         </div>
         <div id="ordinaOrd">
         <label for="ordine">Filtra per ordine:</label>
-        <select id="ordine" name="ordine" required size=''>
+        <select id="ordine" name="ordine" required>
             <option value='' selected>Scegli ordine</option>
             <option value="preC">Prezzo crescente</option>
             <option value="preD">Prezzo decrescente</option>
@@ -135,7 +135,7 @@
                 $id=$x['id'];
                 echo "<div class='prodotto'>";
                 echo "<div class='nome'>";
-                echo "<a id='".$x["nome"]."' href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
+                echo "<a href='productdetails.php?id=".$x["id"]."'>".$x["nome"]."</a>";  
                 echo "</div>";
                 echo "<div class='info'>";
                 echo "<div class='categoria'>";
