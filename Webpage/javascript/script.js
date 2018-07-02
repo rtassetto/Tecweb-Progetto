@@ -111,3 +111,7 @@ function recAlert(){
                     window.alert("Recensione aggiunta correttamente");
                 }
             }
+
+function acqAlert(){
+                window.alert("I prodotti presenti nel carrello sono stati acquistati!");
+            }

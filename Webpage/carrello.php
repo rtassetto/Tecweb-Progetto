@@ -90,7 +90,7 @@ require "general/Header.php";
                     echo "<p class='tot'>Totale : ".$totale." €</p>";
                 ?>
                     <form class="onclick" method="post" action="purchasehistory.php">
-                        <input id='acquista' type="submit"  name="compra" value="Acquista"/>
+                        <input id='acquista' type="submit"  name="compra" value="Acquista" onclick='acqAlert()'/>
                     </form>
                
         

@@ -88,7 +88,7 @@ inoltre l'utilizzo di questa variabile ha reso semplice il logout che viene effe
 \subsubsection{Javascript}
 Per evitare di sovraccaricare di richieste inutili il server abbiamo deciso di utilizzare JavaScript per effettuare dei controlli sull'imput degli utenti, questi controlli sono presenti anche in PHP ma grazie al fatto che Javascript permette di modificare la pagina senza aggiornarla l'utente può vedere in tempo reale se il suo input verrà accettato o meno, questo viene fatto attraverso l'evento HTML \emph{oninput}.\newline
 Inoltre Javascript è utilizzato per notificare all'utente l'avvenimento di una operazione come l'aggiunta di un prodotto al carrello oppure l'aggiunta di una recensione.\newline
-Il codice JavaScript è contenuto nel file \texttt{script.js} e al suo interno ci sono diverse funzioni:
+Il codice JavaScript è contenuto nel file \texttt{script.js} e al suo interno ci sono diverse funzioni utilizzate per effettuare i controlli:
 \begin{itemize}
 	\item \textbf{checkUser():} controlla che l'username inserito nella pagina di registrazione sia conforme alle aspettative;
 	\item \textbf{checkPass():} controlla che la password inserita nella pagina di registrazione sia conforme alle aspettative;
@@ -98,6 +98,12 @@ Il codice JavaScript è contenuto nel file \texttt{script.js} e al suo interno c
 	\item \textbf{checkNome():} controlla che il nome di un prodotto inserito sia conforme alle attese;
 	\item \textbf{checkPrezzo():} controlla che il prezzo sia un valore numerico;
 	\item \textbf{checkBundle():} controlla che il nome del bundle sia conforme alle attese;
+\end{itemize}
+Le funzioni invece che servono per la visualizzazione degli alert sono:
+\begin{itemize}
+	\item \textbf{aggcarrello():} mostra un messaggio quando viene premuto il pulsante "aggiungi al carrello";
+	\item \textbf{recAlert():} mostra un messaggio quando viene aggiunta una recensione che supera i controlli JavaScript; 
+	\item \textbf{acqAlert():} mostra un messaggio quando vengono acquistati gli oggetti presenti nel carrello.
 \end{itemize}
 
 
