@@ -61,8 +61,8 @@ $product=$DB->getProddata($_GET['id']);
         foreach($reviews as $result){
 			$Userevalue=$result['voto']*16;
             echo "<div class='dettRecensione'>
-                  <div id='author'>Autore: ".$result['username']."</div>
-                  <div id='timestamp'>Data: ".$result['data']."</div>
+                  <div class='author'>Autore: ".$result['username']."</div>
+                  <div class='timestamp'>Data: ".$result['data']."</div>
                   <div>Valutazione: ".$result['voto']."
 				  </div>
                   <p>'".$result['review']."'</p>

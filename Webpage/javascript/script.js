@@ -1,21 +1,20 @@
 function checkUser() {
     var nomeinserito = document.getElementById("username").value;
     var pattern = new RegExp("^[a-zA-Z0-9]+$");
-    if(pattern.test(nomeinserito)){
-       document.getElementById("usernameerr").innerHTML="";
-       return false;
-    }
-    if(!pattern.test(nomeinserito)|| nomeinserito.length<6 || nomeinserito.length>20){
-        //mostra errore
+    if(!pattern.test(nomeinserito) || nomeinserito.length<6 || nomeinserito.length>20){
         document.getElementById("usernameerr").innerHTML="l'username può contenere solo lettere e numeri deve essere lungo tra i 6 e i 20 caratteri";
         return true;
+    }
+    else{
+        document.getElementById("usernameerr").innerHTML="";
+        return false;
     }
 }
 
 function checkPass(){
     var pass = document.getElementById("password").value;
     var pattern = new RegExp("^[a-zA-Z0-9@#\$\%\&\-]+$");
-    if(!pattern.test(pass)|| pass.length<6 || pass.length>20){
+    if(!pattern.test(pass) || pass.length<6 || pass.length>20){
         document.getElementById("passerr").innerHTML="la password deve essere lunga tra i 6 e i 20 caratteri e non può contenere spazi";
         return true;
     }
