@@ -72,7 +72,7 @@ session_start();
         $user=$_SESSION['login_user'];
         $isPresent=$DB->checkR($id,$user); 
         if($isPresent){
-            echo "<p class='red'>Hai già inserito una recensione per questo prodotto, se inserisci un'altra recensione la precedente verrà sostituita.</p>";
+            echo "<p class='bigred'>Hai già inserito una recensione per questo prodotto, se inserisci un'altra recensione la precedente verrà sostituita.</p>";
         }
         ?>
         <h1>Scrivi una recensione per il prodotto <?php echo $nome;?></h1>
@@ -85,7 +85,7 @@ session_start();
         <input type="radio" name="voto"  id="scorethree" value="3" required><label for="scorethree">3</label>
         <input type="radio" name="voto"  id="scorefour" value="4" required><label for="scorefour">4</label>
         <input type="radio" name="voto"  id="scorefive" value="5" required><label for="scorefive">5</label>
-        <input id="aggrec" type="submit" name="<?php echo $id."1"; ?>"  value="Aggiungi recensione"/>
+        <input id="aggrec" type="submit" onclick="recAlert()" name="<?php echo $id."1"; ?>"  value="Aggiungi recensione"/>
         </fieldset>
 		</form>
         <div class="errori">

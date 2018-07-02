@@ -17,14 +17,7 @@ $product=$DB->getProddata($_GET['id']);
 <title>Dettagli <?php echo $product['nome'];?> - Buy Tech</title>
 <?php
 	include "general/Meta.php";
-?>
-
-     <script type="text/javascript">
-            function aggcarrello(){
-                window.alert("Prodotto aggiunto correttamente al carrello!");
-            }
-        </script>   
-    
+?>    
     
 </head>
 <body>
